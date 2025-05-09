@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvypon3nq445p"]
+
+[ext_resource type="Script" uid="uid://clywwsghjvi21" path="res://main.gd" id="1_7mycd"]
+[ext_resource type="PackedScene" uid="uid://butfrm6kcwkfv" path="res://enemy.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cdxkfqapdtjo3" path="res://Boundaries.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://tree.tscn" id="5_lquwl"]
+
+[sub_resource type="GDScript" id="GDScript_1bvp3"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	$Node2D/Sprite2D.scale = Vector2(2,2)
+
+func chop():
+	queue_free()
+"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1bvp3"]
+vertices = PackedVector2Array(179.93, 522.094, 751.867, 517.078, 750.117, 662, 5.89844, 662, -0.890625, 20, 181.07, 351.094, 741, 20, 741, 346.078)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-4, 672, 760, 672, 762, 507, 190, 512, 191, 361, 751, 356, 751, 10, -11, 10)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(551, 180)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_1bvp3"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(8, 0)
+script = ExtResource("1_7mycd")
+
+[node name="Enemy" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(597, 566)
+motion_mode = 0
+
+[node name="Player" parent="." instance=ExtResource("4_lquwl")]
+position = Vector2(231, 128)
+collision_mask = 3
+
+[node name="Tree" parent="." instance=ExtResource("5_lquwl")]
+visibility_layer = 2
+position = Vector2(340, 126)
+script = SubResource("GDScript_1bvp3")
+
+[node name="Tree5" parent="." instance=ExtResource("5_lquwl")]
+visibility_layer = 2
+position = Vector2(248, 253)
+script = SubResource("GDScript_1bvp3")
+
+[node name="Tree4" parent="." instance=ExtResource("5_lquwl")]
+visibility_layer = 2
+position = Vector2(635, 613)
+script = SubResource("GDScript_1bvp3")
+
+[node name="Tree2" parent="." instance=ExtResource("5_lquwl")]
+visibility_layer = 2
+position = Vector2(49, 510)
+script = SubResource("GDScript_1bvp3")
+
+[node name="Tree3" parent="." instance=ExtResource("5_lquwl")]
+visibility_layer = 2
+position = Vector2(542, 200)
+script = SubResource("GDScript_1bvp3")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+position = Vector2(-2, -11)
+navigation_polygon = SubResource("NavigationPolygon_1bvp3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(474.5, 415)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="TextureRect" type="TextureRect" parent="StaticBody2D"]
+offset_left = 190.0
+offset_top = 336.0
+offset_right = 747.0
+offset_bottom = 475.0
+texture = SubResource("CanvasTexture_1bvp3")
+
+[node name="Node2D" parent="." instance=ExtResource("5_7mycd")]
+position = Vector2(14, 27)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(368, 334)
+scale = Vector2(2.13102, 0.318842)

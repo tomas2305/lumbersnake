@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b38e16u4df4j2"]
+
+[ext_resource type="Texture2D" uid="uid://bjdxhjctswiri" path="res://assets/Outdoor decoration/Oak_Tree.png" id="1_brfkd"]
+
+[sub_resource type="GDScript" id="GDScript_brfkd"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	$Node2D.scale = Vector2(2,2)
+
+func chop():
+	queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnvrw"]
+size = Vector2(35, 34)
+
+[node name="Tree" type="Node2D"]
+position = Vector2(171, 202)
+script = SubResource("GDScript_brfkd")
+metadata/_edit_group_ = true
+
+[node name="Node2D" type="StaticBody2D" parent="." groups=["trees"]]
+light_mask = 0
+visibility_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(0.5, 5)
+texture = ExtResource("1_brfkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(0.5, 12)
+shape = SubResource("RectangleShape2D_nnvrw")
