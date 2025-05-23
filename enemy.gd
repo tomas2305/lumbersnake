@@ -1,28 +1,30 @@
 extends CharacterBody2D
 class_name Enemy
 
-@export var SPEED := 80.0
+@export var SPEED := 80
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
-@onready var player: Node2D = $"../Player"
+@export var player: Node2D 
 
 func _ready() -> void:
-	agent.target_position = player.global_position
-	agent.path_desired_distance = 4.0
-	agent.target_desired_distance = 4.0
-	agent.avoidance_enabled = true
-	agent.radius = 4.0
+	makepath()
 
 func _physics_process(delta: float) -> void:
+	
+	var next = agent.get_next_path_position()
+	if global_position.distance_to(next) < 1000.0:  # puedes ajustar el umbral
+		velocity = Vector2.ZERO
+	var dir = (next - global_position).normalized()
+	velocity = dir * SPEED
+	move_and_slide()
+	
+
+
+func makepath() -> void:
 	agent.target_position = player.global_position
 
-	if agent.is_navigation_finished():
-		velocity = Vector2.ZERO
-	else:
-		var next = agent.get_next_path_position()
-		var dir = (next - global_position).normalized()
-		velocity = dir * SPEED
 
-	move_and_slide()
+func _on_timer_timeout() -> void:
+	makepath()
 
 #extends CharacterBody2D
 #

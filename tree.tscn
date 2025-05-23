@@ -12,11 +12,12 @@ func chop():
 	queue_free()
 "
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnvrw"]
-size = Vector2(35, 34)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_brfkd"]
+radius = 6.0
+height = 23.0
 
 [node name="Tree" type="Node2D"]
-position = Vector2(171, 202)
+position = Vector2(172, 214)
 script = SubResource("GDScript_brfkd")
 metadata/_edit_group_ = true
 
@@ -29,5 +30,5 @@ position = Vector2(0.5, 5)
 texture = ExtResource("1_brfkd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
-position = Vector2(0.5, 12)
-shape = SubResource("RectangleShape2D_nnvrw")
+position = Vector2(1, 19)
+shape = SubResource("CapsuleShape2D_brfkd")

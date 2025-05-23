@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://dch864dvvnkgw" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://gmie2mc5r43g" path="res://assets/Enemies/Skeleton.png" id="2_qi2p4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
-size = Vector2(17, 26)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
 atlas = ExtResource("2_qi2p4")
 region = Rect2(0, 0, 32, 32)
@@ -21,26 +18,32 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy" type="CharacterBody2D"]
-position = Vector2(575, 176)
-scale = Vector2(2, 2)
-motion_mode = 1
-script = ExtResource("1_4gyqm")
-metadata/_edit_group_ = true
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 6.89656
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.5, -9)
-shape = SubResource("RectangleShape2D_272bh")
+[node name="Enemy" type="CharacterBody2D"]
+position = Vector2(554, 124)
+scale = Vector2(0.6, 0.6)
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(7, -7)
+position = Vector2(1, 0.5)
 scale = Vector2(1.4375, 1.4375)
 sprite_frames = SubResource("SpriteFrames_kek77")
 
-[node name="RayToPlayer" type="RayCast2D" parent="."]
-
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 0.1
-path_metadata_flags = 6
-avoidance_enabled = true
+path_postprocessing = 1
+simplify_epsilon = 10.0
 debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 2.5)
+shape = SubResource("CircleShape2D_4gyqm")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
