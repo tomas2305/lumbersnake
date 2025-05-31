@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://butfrm6kcwkfv"]
+[gd_scene load_steps=7 format=3 uid="uid://butfrm6kcwkfv"]
 
 [ext_resource type="Script" uid="uid://dch864dvvnkgw" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://gmie2mc5r43g" path="res://assets/Enemies/Skeleton.png" id="2_qi2p4"]
@@ -21,12 +21,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
 radius = 6.89656
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qi2p4"]
+radius = 218.969
+
 [node name="Enemy" type="CharacterBody2D"]
-position = Vector2(554, 124)
+position = Vector2(272, 138)
 scale = Vector2(0.6, 0.6)
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4gyqm")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0.5)
@@ -46,4 +50,16 @@ autostart = true
 position = Vector2(1.5, 2.5)
 shape = SubResource("CircleShape2D_4gyqm")
 
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2(-3.33331, 1.66666)
+shape = SubResource("CircleShape2D_qi2p4")
+
+[node name="RandomDir" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="RandomDir" to="." method="_on_random_dir_timeout"]

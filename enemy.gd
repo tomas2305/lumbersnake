@@ -1,20 +1,26 @@
-extends CharacterBody2D
+extends enemy_movement
 class_name Enemy
 
-@export var SPEED := 80
-@onready var agent: NavigationAgent2D = $NavigationAgent2D
+
 @export var player: Node2D 
+@onready var agent: NavigationAgent2D = $NavigationAgent2D
+@onready var detectionArea: Area2D = $DetectionArea
+var playerDetected = false
 
 func _ready() -> void:
-	makepath()
+	random_generation()
 
 func _physics_process(delta: float) -> void:
-	
 	var next = agent.get_next_path_position()
-	if global_position.distance_to(next) < 1000.0:  # puedes ajustar el umbral
+	if global_position.distance_to(next) < 1000.0:  
 		velocity = Vector2.ZERO
 	var dir = (next - global_position).normalized()
-	velocity = dir * SPEED
+	if playerDetected:
+		speed = 80
+		velocity = dir * speed
+	else:
+		speed = 70
+		movement()
 	move_and_slide()
 	
 
@@ -24,59 +30,22 @@ func makepath() -> void:
 
 
 func _on_timer_timeout() -> void:
-	makepath()
+	if playerDetected:
+		makepath()
+	
+func _on_detection_area_body_entered(body: Node2D) -> void:
+	if(body is Player):
+		playerDetected = true
+		$RandomDir.stop()
 
-#extends CharacterBody2D
-#
-#@export var speed: float = 80.0
-#@onready var player = $"../Player"
-#@onready var ray = $RayToPlayer
-#
-#func _physics_process(_delta: float) -> void:
-	#if not player:
-		#return
-#
-	## Dirección hacia el jugador
-	#var dir = (player.global_position - global_position).normalized()
-#
-	## Apuntamos el raycast hacia esa dirección
-	#ray.target_position = dir * 32
-	#ray.force_raycast_update()
-#
-	## Si hay colisión, intentamos moverse por los lados
-	#if ray.is_colliding():
-		#var side_dirs = [
-			#dir.rotated(deg_to_rad(45)),
-			#dir.rotated(deg_to_rad(-45)),
-			#dir.rotated(deg_to_rad(90)),
-			#dir.rotated(deg_to_rad(-90)),
-		#]
-		#for alt in side_dirs:
-			#ray.target_position = alt * 32
-			#ray.force_raycast_update()
-			#if not ray.is_colliding():
-				#dir = alt
-				#break
-#
-	## Movimiento
-	#velocity = dir * speed
-	#move_and_slide()
 
-#extends CharacterBody2D
-#
-#@export var SPEED := 60.0
-#@onready var player: CharacterBody2D = $"../Player"
-#
-#func _physics_process(delta: float) -> void:
-	#if player:
-		#var delta_pos = player.global_position - global_position
-		#var direction := Vector2.ZERO
-#
-		## Elegí el eje con mayor distancia para evitar movimiento diagonal
-		#if abs(delta_pos.x) > abs(delta_pos.y):
-			#direction.x = sign(delta_pos.x)
-		#else:
-			#direction.y = sign(delta_pos.y)
-#
-		#velocity = direction * SPEED
-		#move_and_slide()
+func _on_detection_area_body_exited(body: Node2D) -> void:
+	if(body is Player):
+		playerDetected = false
+		$RandomDir.start()
+
+
+func _on_random_dir_timeout() -> void:
+	random_generation()
+	$RandomDir.start()
+	

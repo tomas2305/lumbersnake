@@ -1,10 +1,12 @@
 extends CharacterBody2D
+class_name Player
 
-@export var SPEED := 150.0
+@export var SPEED := 50.0
 var ctrl_press_count := 0
 const MAX_PRESS_COUNT := 5
 var frozen = false
 @export var tilemap: TileMapLayer
+@export var foreground: TileMapLayer
 var current_interactive_cell: Vector2i = Vector2i(-1, -1)
 var current_type: String = ""
 var carrying_rock := false
@@ -82,3 +84,5 @@ func erase_tree_area(origin: Vector2i):
 		for x in range(4):
 			var pos = origin + Vector2i(x, y)
 			tilemap.set_cell(pos,6,Vector2i(0,0))
+			foreground.erase_cell(pos)
+			
