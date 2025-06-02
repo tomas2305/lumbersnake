@@ -10,7 +10,7 @@ class_name Enemy
 @onready var vision_cone: Node2D       = $VisionCone
 
 const COLOR_SEARCH := Color(1, 1, 0, 0.2)
-const COLOR_ALERT  := Color(1, 0, 0, 0.3)
+const COLOR_ALERT  := Color(1, 0, 0, 0.3) 	
 
 # Parámetros de suavizado
 const ACCELERATION := 400.0

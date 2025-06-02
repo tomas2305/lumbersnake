@@ -1,22 +1,13 @@
-# BodyContainer.gd
 extends Node2D
 
-# — Texturas exportadas —
+@export var segment_scene: PackedScene
 @export var body_texture: Texture2D
 @export var tail_texture: Texture2D
-
-# — Cantidad total de sprites (incluyendo la cola) —
 @export var segment_count: int = 5
-
-# — Delay (en frames) entre cada segmento —
 @export var frames_delay_per_segment: int = 10
-
-# — Offset de rotación (en radianes) —
 @export var segment_rotation_offset: float = -PI / 2
 
-# — Historial de posiciones de la cabeza —
 var positions_history: Array = []
-
 
 func _ready() -> void:
 	_create_body_and_tail()
@@ -24,43 +15,39 @@ func _ready() -> void:
 	_initialize_body_orientation()
 	set_physics_process(true)
 
-
 func _physics_process(delta: float) -> void:
 	var head_pos = get_parent().global_position
 	positions_history.insert(0, head_pos)
-
 	var max_history = _body_segment_count() * frames_delay_per_segment + 1
 	if positions_history.size() > max_history:
 		positions_history.resize(max_history)
-
 	_update_body_segments()
 
-
-# — Instancia los N–1 sprites de cuerpo y luego 1 sprite de cola —
 func _create_body_and_tail() -> void:
-	# Liberamos hijos previos (si recarga la escena)
 	for child in get_children():
 		child.queue_free()
 
-	# Cantidad de “cuerpo” (sin contar la cola)
 	var body_only_count = max(segment_count - 1, 0)
 
-	# 1) Creamos body_only_count sprites con body_texture
 	for i in range(body_only_count):
-		var seg_sprite = Sprite2D.new()
-		seg_sprite.texture = body_texture
-		seg_sprite.centered = true
-		add_child(seg_sprite)
-		seg_sprite.name = "BodySegment_%d" % i
+		var seg = segment_scene.instantiate()
+		var sprite = seg.get_node("Sprite2D")
+		sprite.texture = body_texture
+		add_child(seg)
+		seg.name = "BodySegment_%d" % i
 
-	# 2) Por último, creamos un sprite de cola (tail) si segment_count >= 1
+		if seg.has_signal("player_nearby"):
+			seg.player_nearby.connect(_on_segment_player_nearby)
+
 	if segment_count > 0:
-		var tail_sprite = Sprite2D.new()
-		tail_sprite.texture = tail_texture
-		tail_sprite.centered = true
-		add_child(tail_sprite)
-		tail_sprite.name = "TailSegment"
+		var tail = segment_scene.instantiate()
+		var sprite = tail.get_node("Sprite2D")
+		sprite.texture = tail_texture
+		add_child(tail)
+		tail.name = "TailSegment"
 
+		if tail.has_signal("player_nearby"):
+			tail.player_nearby.connect(_on_segment_player_nearby)
 
 func _init_positions_history() -> void:
 	var needed_length = _body_segment_count() * frames_delay_per_segment + 1
@@ -68,7 +55,6 @@ func _init_positions_history() -> void:
 	var head_pos = get_parent().global_position
 	for i in range(needed_length):
 		positions_history.append(head_pos)
-
 
 func _initialize_body_orientation() -> void:
 	var head_pos = get_parent().global_position
@@ -78,13 +64,10 @@ func _initialize_body_orientation() -> void:
 		segment.global_position = head_pos
 		segment.rotation = head_rot + segment_rotation_offset
 
-
 func _body_segment_count() -> int:
 	return get_child_count()
 
-
 func _update_body_segments() -> void:
-	# Recorremos cada hijo en orden, desde el body hasta la cola
 	for i in range(_body_segment_count()):
 		var segment = get_child(i)
 		var index_in_history = (i + 1) * frames_delay_per_segment
@@ -104,3 +87,8 @@ func _update_body_segments() -> void:
 		var dir_vec = target_pos - prev_pos
 		if dir_vec.length() > 0:
 			segment.rotation = dir_vec.angle() + segment_rotation_offset
+
+func _on_segment_player_nearby(segment: Node, body: Node) -> void:
+	var enemy = get_parent()
+	if enemy and enemy.has_method("start_chase"):
+		enemy.start_chase(body)

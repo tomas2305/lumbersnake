@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dch864dvvnkgw" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://cg5ep6j4tff1q" path="res://assets/Enemies/snake_pixelart_16x16_sheet_red.png" id="2_4gyqm"]
 [ext_resource type="Script" uid="uid://5wxh4mmjok38" path="res://body_container.gd" id="3_qi2p4"]
+[ext_resource type="PackedScene" uid="uid://dc4dediq6oetg" path="res://enemy/body_segment.tscn" id="4_epg4t"]
 [ext_resource type="Script" uid="uid://b72rpg7r4k441" path="res://enemy/vision_cone.gd" id="4_iifgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
@@ -22,9 +23,6 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
 radius = 6.89656
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qi2p4"]
-radius = 218.969
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
 atlas = ExtResource("2_4gyqm")
@@ -55,16 +53,12 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4gyqm")
 
-[node name="DetectionArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-shape = SubResource("CircleShape2D_qi2p4")
-
 [node name="RandomDir" type="Timer" parent="."]
 autostart = true
 
 [node name="BodyContainer" type="Node2D" parent="."]
 script = ExtResource("3_qi2p4")
+segment_scene = ExtResource("4_epg4t")
 body_texture = SubResource("AtlasTexture_iifgy")
 tail_texture = SubResource("AtlasTexture_epg4t")
 
@@ -84,6 +78,4 @@ scale = Vector2(0.8, 0.8)
 polygon = PackedVector2Array(0, 0, 173.2, -100, 173.2, 100)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
-[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
 [connection signal="timeout" from="RandomDir" to="." method="_on_random_dir_timeout"]
