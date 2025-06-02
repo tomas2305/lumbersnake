@@ -70,9 +70,9 @@ tail_texture = SubResource("AtlasTexture_epg4t")
 
 [node name="VisionCone" type="Node2D" parent="."]
 script = ExtResource("4_iifgy")
-rotation_offset = 1.5
 
 [node name="Polygon2D" type="Polygon2D" parent="VisionCone"]
+rotation = 1.5708
 scale = Vector2(0.8, 0.8)
 color = Color(0.880472, 0.880472, 0, 0.329412)
 polygon = PackedVector2Array(0, 0, 173.2, -100, 173.2, 100)
@@ -80,6 +80,8 @@ polygon = PackedVector2Array(0, 0, 173.2, -100, 173.2, 100)
 [node name="VisionArea" type="Area2D" parent="VisionCone"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone/VisionArea"]
+position = Vector2(0, 1)
+rotation = 1.5708
 scale = Vector2(0.8, 0.8)
 polygon = PackedVector2Array(0, 0, 173.2, -100, 173.2, 100)
 
