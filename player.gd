@@ -1,9 +1,15 @@
 extends CharacterBody2D
 class_name Player
 
+signal zona_peligro(pos: Vector2)
+
 @export var SPEED := 50.0
 var frozen = false
 var current_tree: BaseTree = null
+
+var tiempo_inmovil := 0.0
+var ultima_posicion := Vector2.ZERO
+var inmovil := false
 
 func _physics_process(delta):
 	if frozen:
@@ -11,11 +17,23 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 
+	# Movimiento
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = direction * SPEED
 	move_and_slide()
 
-	# Detectar colisiones con árboles y guardar referencia
+	# Inmovilidad
+	if global_position.distance_to(ultima_posicion) < 2.0:
+		tiempo_inmovil += delta
+		if tiempo_inmovil > 5.0 and not inmovil:
+			inmovil = true
+			emit_signal("zona_peligro", global_position)
+	else:
+		tiempo_inmovil = 0.0
+		inmovil = false
+	ultima_posicion = global_position
+
+	# Detección de árboles
 	for i in get_slide_collision_count():
 		var collider = get_slide_collision(i).get_collider()
 		if collider is Enemy:
@@ -23,7 +41,7 @@ func _physics_process(delta):
 		elif collider is BaseTree:
 			current_tree = collider
 
-	# Interacción directa y precisa
+	# Interacción
 	if Input.is_action_just_pressed("ui_select") and current_tree:
 		if current_tree.can_be_chopped(self):
 			current_tree.interact(self)

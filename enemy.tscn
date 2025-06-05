@@ -35,8 +35,6 @@ region = Rect2(16, 32, 16, 16)
 [node name="Enemy" type="CharacterBody2D"]
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4gyqm")
-MAX_SPEED = 110.0
-WALK_SPEED = 90.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1

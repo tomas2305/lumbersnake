@@ -32,7 +32,7 @@ script = ExtResource("1_nnvrw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nnvrw")
-frame_progress = 0.256233
+frame_progress = 0.342551
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15)
@@ -47,5 +47,5 @@ shape = SubResource("CircleShape2D_gvmkm")
 
 [node name="SoundArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SoundArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoundArea" groups=["cursed_trees"]]
 shape = SubResource("CircleShape2D_r65dl")
