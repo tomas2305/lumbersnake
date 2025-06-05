@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b38e16u4df4j2"]
+
+[ext_resource type="Script" uid="uid://bfc38wvohoqp" path="res://base_tree.gd" id="1_nnvrw"]
+[ext_resource type="Texture2D" uid="uid://wo3u4al0qce5" path="res://assets/Outdoor decoration/cursed tree.png" id="2_r65dl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0fvx"]
+atlas = ExtResource("2_r65dl")
+region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnvrw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0fvx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r65dl"]
+size = Vector2(16, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvmkm"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r65dl"]
+radius = 229.035
+
+[node name="BaseTree" type="StaticBody2D"]
+script = ExtResource("1_nnvrw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nnvrw")
+frame_progress = 0.256233
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_r65dl")
+
+[node name="ChopArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChopArea"]
+position = Vector2(-1, 14)
+shape = SubResource("CircleShape2D_gvmkm")
+
+[node name="SoundArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SoundArea"]
+shape = SubResource("CircleShape2D_r65dl")

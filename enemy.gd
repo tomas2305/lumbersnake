@@ -1,23 +1,17 @@
-# Enemy.gd
-extends enemy_movement   # Se asume que enemy_movement hereda de CharacterBody2D
+extends enemy_movement
 class_name Enemy
 
 @export var player: Node2D
-@onready var agent: NavigationAgent2D   = $NavigationAgent2D
-@onready var detectionArea: Area2D       = $DetectionArea
-@onready var body_container: Node2D      = $BodyContainer
+@onready var agent: NavigationAgent2D = $NavigationAgent2D
+@onready var body_container: Node2D = $BodyContainer
+@onready var vision_cone: Node2D = $VisionCone
 
-@onready var vision_cone: Node2D       = $VisionCone
-
-const COLOR_SEARCH := Color(1, 1, 0, 0.2)
-const COLOR_ALERT  := Color(1, 0, 0, 0.3) 	
-
-# Parámetros de suavizado
 const ACCELERATION := 400.0
-const MAX_SPEED := 90.0
-const WALK_SPEED := 70.0
+@export var MAX_SPEED := 90.0
+@export var WALK_SPEED := 70.0
 
-var playerDetected: bool = false
+enum State { IDLE, ALERT, CHASE }
+var state: State = State.IDLE
 var target_player: Node2D = null
 
 const MAP_WIDTH := 2000
@@ -33,66 +27,76 @@ func _ready() -> void:
 	set_physics_process(true)
 
 func _physics_process(delta: float) -> void:
-	# 1) Si estamos en chase, mantener objetivo en el jugador
-	if playerDetected and target_player:
-		agent.target_position = target_player.global_position
+	match state:
+		State.CHASE:
+			if target_player:
+				agent.target_position = target_player.global_position
 
-	# 2) Si terminó la ruta y no hay chase, generar nuevo punto
-	if not playerDetected and agent.is_navigation_finished():
-		movement()
+		State.ALERT:
+			if agent.is_navigation_finished():
+				set_state(State.IDLE)
+				random_generation()
 
-	# 3) Obtener siguiente punto y calcular dirección
+		State.IDLE:
+			if agent.is_navigation_finished():
+				movement()
+
 	var next_point = agent.get_next_path_position()
 	var desired_dir = Vector2.ZERO
 	if global_position.distance_to(next_point) >= 1.0:
 		desired_dir = (next_point - global_position).normalized()
 	else:
-		if not playerDetected:
+		if state == State.IDLE:
 			movement()
 			next_point = agent.get_next_path_position()
 			desired_dir = (next_point - global_position).normalized()
 
-	# 4) Elegir velocidad según estado
 	var desired_speed = WALK_SPEED
-	if playerDetected:
+	if state in [State.CHASE, State.ALERT]:
 		desired_speed = MAX_SPEED
 
 	var desired_vel = desired_dir * desired_speed
 	velocity = velocity.move_toward(desired_vel, ACCELERATION * delta)
-
-	# 5) Mover al enemigo
 	move_and_slide()
 
-	# 6) Actualizar posición del VisionCone (la rotación la gestiona VisionCone.gd)
 	vision_cone.global_position = global_position
 
+func set_state(new_state: State) -> void:
+	state = new_state
+	if vision_cone.has_method("set_state"):
+		vision_cone.set_state(state)
+
 func start_chase(detected_player: Node2D) -> void:
-	playerDetected = true
 	target_player = detected_player
+	set_state(State.CHASE)
 	agent.target_position = detected_player.global_position
+	$RandomDir.stop()
 
 func stop_chase() -> void:
-	playerDetected = false
 	target_player = null
+	set_state(State.IDLE)
 	random_generation()
 	$RandomDir.start()
 
+func hear_sound(sound_position: Vector2) -> void:
+	if state == State.IDLE:
+		print("¡Enemigo escuchó un sonido!")
+		set_state(State.ALERT)
+		agent.target_position = sound_position
+
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if body is Player:
-		playerDetected = true
-		$RandomDir.stop()
+		start_chase(body)
 
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	if body is Player:
-		playerDetected = false
-		$RandomDir.start()
+		stop_chase()
 
 func _on_random_dir_timeout() -> void:
 	random_generation()
 	$RandomDir.start()
 
 func _on_vision_area_body_entered(body: Node2D) -> void:
-	# (La lógica de cambio de color y chase la maneja VisionCone.gd)
 	pass
 
 func _on_vision_area_body_exited(body: Node2D) -> void:
