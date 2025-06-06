@@ -58,8 +58,8 @@ offset_top = -83.0
 offset_right = 144.0
 offset_bottom = -37.0
 grow_horizontal = 2
-text = "La maldición alcanzó todo el bosque..."
 label_settings = SubResource("LabelSettings_35ye2")
+autowrap_mode = 3
 
 [connection signal="pressed" from="VBoxContainer/PlayAgain" to="." method="_on_again_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://tekakvw8q4vb"]
+[gd_scene load_steps=48 format=4 uid="uid://tekakvw8q4vb"]
 
 [ext_resource type="Script" uid="uid://cbbn5x5jj0osc" path="res://game.gd" id="1_215e1"]
 [ext_resource type="PackedScene" uid="uid://ltewb7mjoydk" path="res://tilesets/background.tscn" id="1_lc2xo"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="13_vaj68"]
 [ext_resource type="PackedScene" uid="uid://d3d6m1v37rsag" path="res://menus/pause.tscn" id="16_e8heu"]
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="17_e8heu"]
+[ext_resource type="Script" uid="uid://bbdpr23vetn3h" path="res://instructions.gd" id="18_rvswv"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ycdy4"]
 tile_data = PackedInt32Array(0, 12, 1, 1, 131084, 1)
@@ -398,11 +399,11 @@ position = Vector2(-5, 211)
 collision_layer = 3
 
 [node name="BaseTree3" parent="TreeContainer" instance=ExtResource("13_vaj68")]
-position = Vector2(316, 122)
+position = Vector2(324, 122)
 collision_layer = 3
 
 [node name="BaseTree4" parent="TreeContainer" instance=ExtResource("13_vaj68")]
-position = Vector2(362, -60)
+position = Vector2(356, -62)
 collision_layer = 3
 
 [node name="BaseTree5" parent="TreeContainer" instance=ExtResource("13_vaj68")]
@@ -426,6 +427,70 @@ autostart = true
 position = Vector2(0, 95)
 shape = SubResource("RectangleShape2D_e8heu")
 
+[node name="Instructions" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 72.0
+offset_top = 36.0
+offset_right = 72.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("18_rvswv")
+
+[node name="ColorRect" type="ColorRect" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -32.0
+offset_right = 22.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.64892, 2.94271)
+color = Color(0.0687983, 0.0687983, 0.0687983, 0.635294)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -22.0
+offset_right = 267.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Instructions/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "La maldición acecha...
+Destruye los arboles poseídos antes
+de que alcance a todo el bosque.
+¡Y ten cuidado con la serpiente!
+"
+
+[node name="CloseButton" type="Button" parent="Instructions/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "X"
+
 [connection signal="chased" from="Player" to="." method="_on_player_chased"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
+[connection signal="pressed" from="Instructions/VBoxContainer/CloseButton" to="Instructions" method="_on_close_button_pressed"]

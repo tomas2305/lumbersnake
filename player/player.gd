@@ -17,10 +17,9 @@ func _physics_process(delta):
 		velocity = Vector2.ZERO
 		move_and_slide()
 		chased.emit()
-	
 
 	# Movimiento
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * SPEED
 	move_and_slide()
 
@@ -44,7 +43,7 @@ func _physics_process(delta):
 			current_tree = collider
 
 	# Interacción
-	if Input.is_action_just_pressed("ui_select") and current_tree:
+	if Input.is_action_just_pressed("hit") and current_tree:
 		if current_tree.can_be_chopped(self):
 			current_tree.interact(self)
 			current_tree = null
