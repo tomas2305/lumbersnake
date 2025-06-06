@@ -1,6 +1,7 @@
 extends Control
 
 
+
 func resume():
 	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
@@ -35,3 +36,11 @@ func _on_reset_pressed() -> void:
 	
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_music_pressed() -> void:
+	Music.toggle_mute()
+	if (Music.esta_muted):
+		$StopMusic/Sprite2D.texture = load("res://assets/volume-up.png")
+	else:
+		$StopMusic/Sprite2D.texture = load("res://assets/mute.png")

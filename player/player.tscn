@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6hh4rixs2dfv"]
+[gd_scene load_steps=7 format=3 uid="uid://b6hh4rixs2dfv"]
 
 [ext_resource type="Script" uid="uid://btxulyebp6l8e" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bcvs4wjvv0p2s" path="res://assets/Player/Player.png" id="2_onrkg"]
+[ext_resource type="AudioStream" uid="uid://cagn6a6lb3331" path="res://assets/hitting-stalactites-with-axe-212652.mp3" id="3_g1dw6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
 atlas = ExtResource("2_onrkg")
@@ -36,3 +37,6 @@ frame_progress = 0.744971
 position = Vector2(-0.5, 3.5)
 scale = Vector2(0.715144, -1.20992)
 shape = SubResource("CircleShape2D_onrkg")
+
+[node name="Axe" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_g1dw6")

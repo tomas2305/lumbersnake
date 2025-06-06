@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwadr6fpynfsx"]
+[gd_scene load_steps=5 format=3 uid="uid://cwadr6fpynfsx"]
 
 [ext_resource type="Script" uid="uid://bjtlgc6icfnso" path="res://menus/input_settings.gd" id="1_vn6js"]
 [ext_resource type="PackedScene" uid="uid://cf4uj5igf03o7" path="res://menus/input_button.tscn" id="2_hfmdo"]
+[ext_resource type="FontFile" uid="uid://iublapr1rgpr" path="res://assets/Fonts/EightBitDragon-anqx.ttf" id="3_hfmdo"]
+[ext_resource type="PackedScene" uid="uid://p176ik7k2eot" path="res://menus/texture_rect.tscn" id="4_iruwo"]
 
 [node name="InputSettings" type="Control"]
 layout_mode = 3
@@ -12,6 +14,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vn6js")
 
+[node name="TextureRect" parent="." instance=ExtResource("4_iruwo")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.00002
+offset_top = -7.62939e-06
+offset_right = 2081.0
+offset_bottom = 1155.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -19,10 +33,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -137.0
-offset_top = -84.0
-offset_right = 118.0
-offset_bottom = 81.0
+offset_left = -82.0
+offset_top = -68.0
+offset_right = 64.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.07317, 1.02128)
@@ -47,6 +61,7 @@ size_flags_horizontal = 3
 
 [node name="InputButton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("2_hfmdo")]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hfmdo")
 
 [node name="InputButton2" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("2_hfmdo")]
 layout_mode = 2
@@ -63,10 +78,14 @@ layout_mode = 2
 [node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
+theme_override_fonts/font = ExtResource("3_hfmdo")
+theme_override_font_sizes/font_size = 8
 text = "Default"
 
 [node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hfmdo")
+theme_override_font_sizes/font_size = 8
 text = "Volver"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

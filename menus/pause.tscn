@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3d6m1v37rsag"]
+[gd_scene load_steps=7 format=3 uid="uid://d3d6m1v37rsag"]
 
 [ext_resource type="Script" uid="uid://bfgfowcoby6x6" path="res://menus/pause.gd" id="1_45vjg"]
+[ext_resource type="FontFile" uid="uid://iublapr1rgpr" path="res://assets/Fonts/EightBitDragon-anqx.ttf" id="2_fejog"]
+[ext_resource type="Texture2D" uid="uid://cw6r2y3146rrj" path="res://assets/mute.png" id="3_lqg6t"]
 
 [sub_resource type="Animation" id="Animation_nwcfo"]
 length = 0.3
@@ -42,31 +44,41 @@ _data = {
 [node name="Pause" type="Control"]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_right = 0.391
+anchor_bottom = 0.696
+offset_right = -0.13401
+offset_bottom = 0.071991
 size_flags_horizontal = 4
 script = ExtResource("1_45vjg")
+metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 86.0
-offset_bottom = 101.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.951
+offset_bottom = 0.0179977
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fejog")
+theme_override_font_sizes/font_size = 10
 text = "Continuar"
 
 [node name="Reset" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fejog")
+theme_override_font_sizes/font_size = 10
 text = "Restart"
 
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fejog")
+theme_override_font_sizes/font_size = 10
 text = "Salir"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -74,6 +86,25 @@ libraries = {
 &"": SubResource("AnimationLibrary_nwcfo")
 }
 
+[node name="StopMusic" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.447
+anchor_top = 0.793
+anchor_right = 0.553
+anchor_bottom = 0.89
+offset_left = 0.0279999
+offset_top = -0.026001
+offset_right = -0.0280037
+offset_bottom = 0.0199966
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="StopMusic"]
+position = Vector2(6, 5)
+scale = Vector2(-0.0110659, -0.0120524)
+texture = ExtResource("3_lqg6t")
+
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="StopMusic" to="." method="_on_music_pressed"]

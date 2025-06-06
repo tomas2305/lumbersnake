@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://b38e16u4df4j2"]
+[gd_scene load_steps=10 format=3 uid="uid://b38e16u4df4j2"]
 
 [ext_resource type="Script" uid="uid://bfc38wvohoqp" path="res://trees/base_tree.gd" id="1_nnvrw"]
 [ext_resource type="Texture2D" uid="uid://wo3u4al0qce5" path="res://assets/Outdoor decoration/cursed tree.png" id="2_r65dl"]
+[ext_resource type="AudioStream" uid="uid://ckxajb2sbbta2" path="res://assets/giant-fall-impact-352446.mp3" id="3_y7jcc"]
+[ext_resource type="AudioStream" uid="uid://cagn6a6lb3331" path="res://assets/hitting-stalactites-with-axe-212652.mp3" id="4_y4okj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0fvx"]
 atlas = ExtResource("2_r65dl")
@@ -29,8 +31,6 @@ radius = 229.035
 
 [node name="BaseTree" type="StaticBody2D"]
 script = ExtResource("1_nnvrw")
-min_hits = null
-max_hits = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nnvrw")
@@ -51,3 +51,10 @@ shape = SubResource("CircleShape2D_gvmkm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoundArea" groups=["cursed_trees"]]
 shape = SubResource("CircleShape2D_r65dl")
+
+[node name="Falling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_y7jcc")
+volume_db = 10.927
+
+[node name="Axe" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_y4okj")

@@ -45,6 +45,7 @@ func interact(by: Player):
 		emit_signal("chopped")
 		Global.arboles_destuidos += 1
 		queue_free()
+		
 
 func emit_sound():
 	var bodies = $SoundArea.get_overlapping_bodies()

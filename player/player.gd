@@ -45,5 +45,7 @@ func _physics_process(delta):
 	# Interacción
 	if Input.is_action_just_pressed("hit") and current_tree:
 		if current_tree.can_be_chopped(self):
+			if !Music.esta_muted:
+				$Axe.play(0.3)
 			current_tree.interact(self)
 			current_tree = null

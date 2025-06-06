@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://p176ik7k2eot"]
+
+[ext_resource type="Texture2D" uid="uid://cvdgsgfci6leb" path="res://assets/background-img.png" id="1_jropc"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_left = -137.0
+offset_top = -84.0
+offset_right = 2219.0
+offset_bottom = 1239.0
+scale = Vector2(0.129102, 0.129102)
+texture = ExtResource("1_jropc")

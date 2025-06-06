@@ -1,10 +1,12 @@
 extends enemy_movement
 class_name Enemy
+signal state_changed(new_state)
 
 @export var player: Node2D
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 @onready var body_container: Node2D = $BodyContainer
 @onready var vision_cone: Node2D = $VisionCone
+
 
 const ACCELERATION := 400.0
 @export var MAX_SPEED := 120.0
@@ -96,6 +98,7 @@ func _physics_process(delta: float) -> void:
 
 func set_state(new_state: State) -> void:
 	state = new_state
+	emit_signal("state_changed", new_state)
 	if vision_cone.has_method("set_state"):
 		vision_cone.set_state(state)
 

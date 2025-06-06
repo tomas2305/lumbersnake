@@ -1,18 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl4npwlwqn0do"]
+[gd_scene load_steps=6 format=3 uid="uid://bl4npwlwqn0do"]
 
 [ext_resource type="Script" uid="uid://bsj8adeg4idk6" path="res://menus/control.gd" id="1_85u52"]
+[ext_resource type="PackedScene" uid="uid://p176ik7k2eot" path="res://menus/texture_rect.tscn" id="2_jayei"]
+[ext_resource type="FontFile" uid="uid://iublapr1rgpr" path="res://assets/Fonts/EightBitDragon-anqx.ttf" id="2_y8e4h"]
+[ext_resource type="AudioStream" uid="uid://dimd8ll70ab6w" path="res://assets/intro.mp3" id="3_hl3ms"]
+[ext_resource type="Texture2D" uid="uid://cw6r2y3146rrj" path="res://assets/mute.png" id="4_2d4ws"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 137.0
+offset_top = 84.0
+offset_right = -137.0
+offset_bottom = -84.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
 script = ExtResource("1_85u52")
+
+[node name="TextureRect" parent="." instance=ExtResource("2_jayei")]
+layout_mode = 0
+offset_left = -138.0
+offset_top = -85.0
+offset_right = 2218.0
+offset_bottom = 1238.0
 
 [node name="MarginContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -21,10 +33,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = -50.5
-offset_right = 43.5
-offset_bottom = 50.5
+offset_left = -33.0
+offset_top = -41.0
+offset_right = 34.0
+offset_bottom = 42.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -33,16 +45,49 @@ layout_mode = 2
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y8e4h")
+theme_override_font_sizes/font_size = 10
 text = "Comenzar"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y8e4h")
+theme_override_font_sizes/font_size = 10
 text = "Opciones"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y8e4h")
+theme_override_font_sizes/font_size = 10
 text = "Salir"
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hl3ms")
+
+[node name="StopMusic" type="Button" parent="."]
+layout_mode = 2
+offset_left = -5.0
+offset_top = 48.0
+offset_right = 3.0
+offset_bottom = 56.0
+
+[node name="Sprite2D" type="Sprite2D" parent="StopMusic"]
+position = Vector2(4, 4)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("4_2d4ws")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -61.0
+offset_top = -75.0
+offset_right = 64.0
+offset_bottom = -58.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_y8e4h")
+text = "LUMBERSNAKE"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="StopMusic" to="." method="_on_stop_music_pressed"]

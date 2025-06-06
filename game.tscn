@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://tekakvw8q4vb"]
+[gd_scene load_steps=50 format=4 uid="uid://tekakvw8q4vb"]
 
 [ext_resource type="Script" uid="uid://cbbn5x5jj0osc" path="res://game.gd" id="1_215e1"]
 [ext_resource type="PackedScene" uid="uid://ltewb7mjoydk" path="res://tilesets/background.tscn" id="1_lc2xo"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://d3d6m1v37rsag" path="res://menus/pause.tscn" id="16_e8heu"]
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="17_e8heu"]
 [ext_resource type="Script" uid="uid://bbdpr23vetn3h" path="res://instructions.gd" id="18_rvswv"]
+[ext_resource type="FontFile" uid="uid://iublapr1rgpr" path="res://assets/Fonts/EightBitDragon-anqx.ttf" id="19_boyg6"]
+[ext_resource type="AudioStream" uid="uid://ckxajb2sbbta2" path="res://assets/giant-fall-impact-352446.mp3" id="20_e36ub"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ycdy4"]
 tile_data = PackedInt32Array(0, 12, 1, 1, 131084, 1)
@@ -416,33 +418,45 @@ transform = Transform2D(1, 0, 0, 1, 300, 140)
 follow_viewport_enabled = true
 
 [node name="Pause" parent="PauseMenu" instance=ExtResource("16_e8heu")]
+anchors_preset = -1
+anchor_right = 0.277
+anchor_bottom = 0.488
+offset_right = 0.101997
+offset_bottom = 0.0159912
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 240.0
+wait_time = 60.0
 autostart = true
 
 [node name="WinArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea"]
-position = Vector2(0, 95)
+position = Vector2(0, 94)
 shape = SubResource("RectangleShape2D_e8heu")
 
 [node name="Instructions" type="Control" parent="."]
 process_mode = 3
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 72.0
-offset_top = 36.0
-offset_right = 72.0
-offset_bottom = 36.0
+anchor_left = 0.7
+anchor_top = 0.615
+anchor_right = 1.734
+anchor_bottom = 1.535
+offset_left = 29.2
+offset_top = 64.68
+offset_right = -254.116
+offset_bottom = -89.88
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("18_rvswv")
+
+[node name="ColorRect2" type="ColorRect" parent="Instructions"]
+layout_mode = 0
+offset_left = -211.0
+offset_top = -159.0
+offset_right = 439.0
+offset_bottom = 234.0
+color = Color(0, 0, 0, 0.501961)
 
 [node name="ColorRect" type="ColorRect" parent="Instructions"]
 layout_mode = 1
@@ -451,10 +465,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -22.5
-offset_top = -32.0
-offset_right = 22.5
-offset_bottom = 32.0
+offset_left = -4.0
+offset_top = -17.0
+offset_right = 33.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(6.64892, 2.94271)
@@ -467,10 +481,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -11.0
-offset_top = -22.0
-offset_right = 267.0
-offset_bottom = 140.0
+offset_left = -5.0
+offset_top = -14.0
+offset_right = 242.0
+offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -478,6 +492,8 @@ alignment = 1
 [node name="Label" type="Label" parent="Instructions/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("19_boyg6")
+theme_override_font_sizes/font_size = 10
 text = "La maldición acecha...
 Destruye los arboles poseídos antes
 de que alcance a todo el bosque.
@@ -488,9 +504,28 @@ de que alcance a todo el bosque.
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_font_sizes/font_size = 10
 text = "X"
 
+[node name="ChoppedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_e36ub")
+volume_db = 15.0
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 591.0
+offset_top = 23.0
+offset_right = 631.0
+offset_bottom = 46.0
+theme_override_fonts/font = ExtResource("19_boyg6")
+theme_override_font_sizes/font_size = 12
+
 [connection signal="chased" from="Player" to="." method="_on_player_chased"]
+[connection signal="state_changed" from="Enemy" to="." method="_on_enemy_state_changed"]
+[connection signal="chopped" from="TreeContainer/BaseTree" to="." method="_on_base_tree_chopped"]
+[connection signal="chopped" from="TreeContainer/BaseTree2" to="." method="_on_base_tree_chopped"]
+[connection signal="chopped" from="TreeContainer/BaseTree3" to="." method="_on_base_tree_chopped"]
+[connection signal="chopped" from="TreeContainer/BaseTree4" to="." method="_on_base_tree_chopped"]
+[connection signal="chopped" from="TreeContainer/BaseTree5" to="." method="_on_base_tree_chopped"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
 [connection signal="pressed" from="Instructions/VBoxContainer/CloseButton" to="Instructions" method="_on_close_button_pressed"]

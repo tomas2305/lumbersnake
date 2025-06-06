@@ -1,12 +1,14 @@
 extends Control
+var win_music = load("res://assets/intro.mp3")
+var loose_music = load("res://assets/mystry-forest-278844.mp3")
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Global.won:
 		setWonMessage()
+		Music.reproducir_musica(win_music)
 	else:
 		setLooseMessage()
+		Music.reproducir_musica(loose_music)
 		
 
 
@@ -28,3 +30,7 @@ func setWonMessage():
 	
 func setLooseMessage():
 	$Mensaje.text = "La maldición se esparce, ¿Volverás a intentarlo?"
+
+
+func _on_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://menus/menu.tscn")
