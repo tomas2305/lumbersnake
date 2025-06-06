@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 signal zona_peligro(pos: Vector2)
+signal chased
 
 @export var SPEED := 50.0
 var frozen = false
@@ -15,7 +16,8 @@ func _physics_process(delta):
 	if frozen:
 		velocity = Vector2.ZERO
 		move_and_slide()
-		return
+		chased.emit()
+	
 
 	# Movimiento
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

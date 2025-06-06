@@ -43,6 +43,7 @@ func interact(by: Player):
 
 	if current_hits >= required_hits:
 		emit_signal("chopped")
+		Global.arboles_destuidos += 1
 		queue_free()
 
 func emit_sound():

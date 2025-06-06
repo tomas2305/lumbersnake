@@ -30,12 +30,15 @@ const MAX_WEIGHT := 1.0
 
 var protected_trees: Array[Node] = []
 var total_trees := 0
-var patrol_queue: Array[Node] = []
+var patrol_queue: Array = []
+var patrol_points: Array = []
+
 
 func _ready() -> void:
 	protected_trees = get_tree().get_nodes_in_group("cursed_trees")
 	total_trees = protected_trees.size()
-	patrol_queue = protected_trees.duplicate()
+	patrol_points = protected_trees.map(func(t): return t.global_position) 
+	patrol_queue = patrol_points.duplicate()
 	randomize_patrol_queue()
 
 	for tree in protected_trees:
@@ -161,13 +164,10 @@ func movement():
 		agent.target_position = silent_zone
 		silent_zone_weight = max(silent_zone_weight - 0.1, 0)
 	elif patrol_queue.size() > 0:
-		var next_tree = patrol_queue.pop_front()
-		if is_instance_valid(next_tree):
-			agent.target_position = next_tree.global_position
-		else:
-			movement() # Retry if invalid
+		var next_point = patrol_queue.pop_front()
+		agent.target_position = next_point
 	elif protected_trees.size() > 0:
-		patrol_queue = protected_trees.duplicate()
+		patrol_queue = patrol_points.duplicate()
 		randomize_patrol_queue()
 		movement()
 	else:

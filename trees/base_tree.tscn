@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b38e16u4df4j2"]
 
-[ext_resource type="Script" uid="uid://bfc38wvohoqp" path="res://base_tree.gd" id="1_nnvrw"]
+[ext_resource type="Script" uid="uid://bfc38wvohoqp" path="res://trees/base_tree.gd" id="1_nnvrw"]
 [ext_resource type="Texture2D" uid="uid://wo3u4al0qce5" path="res://assets/Outdoor decoration/cursed tree.png" id="2_r65dl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0fvx"]
@@ -29,6 +29,8 @@ radius = 229.035
 
 [node name="BaseTree" type="StaticBody2D"]
 script = ExtResource("1_nnvrw")
+min_hits = null
+max_hits = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nnvrw")

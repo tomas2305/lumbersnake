@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://ltewb7mjoydk"]
 
-[ext_resource type="Texture2D" uid="uid://dk6gtt6biyvfp" path="res://foreground.png" id="1_i7s6n"]
+[ext_resource type="Texture2D" uid="uid://dk6gtt6biyvfp" path="res://assets/foreground.png" id="1_i7s6n"]
 [ext_resource type="Texture2D" uid="uid://bjdxhjctswiri" path="res://assets/Outdoor decoration/Oak_Tree.png" id="2_xehqc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7mycd"]

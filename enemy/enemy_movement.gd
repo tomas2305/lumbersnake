@@ -36,7 +36,6 @@ func movement() -> void:
 
 func random_generation():
 	dir = randi() % 8
-	print(dir)
 	random_direction()
 
 func random_direction():
