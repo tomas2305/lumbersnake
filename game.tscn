@@ -418,7 +418,6 @@ transform = Transform2D(1, 0, 0, 1, 300, 140)
 follow_viewport_enabled = true
 
 [node name="Pause" parent="PauseMenu" instance=ExtResource("16_e8heu")]
-anchors_preset = -1
 anchor_right = 0.277
 anchor_bottom = 0.488
 offset_right = 0.101997
