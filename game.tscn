@@ -508,7 +508,7 @@ text = "X"
 
 [node name="ChoppedSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_e36ub")
-volume_db = 15.0
+volume_db = 10.0
 
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 591.0
