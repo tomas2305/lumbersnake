@@ -48,3 +48,9 @@ func _on_music_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	get_tree().change_scene_to_file("res://menus/input_settings.tscn")
+
+
+func _on_menu_pressed() -> void:
+	get_tree().paused = false
+	Global.reset()
+	get_tree().change_scene_to_file("res://menus/menu.tscn")

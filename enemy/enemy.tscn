@@ -44,7 +44,6 @@ sprite_frames = SubResource("SpriteFrames_kek77")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
 simplify_epsilon = 10.0
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

@@ -80,11 +80,12 @@ tile_set = SubResource("TileSet_ehuit")
 [node name="Label" type="Label" parent="."]
 offset_left = 23.0
 offset_top = 133.0
-offset_right = 323.0
+offset_right = 360.0
 offset_bottom = 156.0
 theme_override_fonts/font = ExtResource("7_0cr88")
 theme_override_font_sizes/font_size = 10
 text = "Destruye los arboles malditos presionando Talar"
+horizontal_alignment = 1
 
 [node name="Arrow" type="Sprite2D" parent="."]
 position = Vector2(324, 60)

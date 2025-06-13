@@ -50,6 +50,12 @@ theme_override_fonts/font = ExtResource("2_y8e4h")
 theme_override_font_sizes/font_size = 10
 text = "Comenzar"
 
+[node name="Tutorial" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_y8e4h")
+theme_override_font_sizes/font_size = 10
+text = "Tutorial"
+
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_y8e4h")
@@ -89,6 +95,7 @@ theme_override_fonts/font = ExtResource("2_y8e4h")
 text = "LUMBERSNAKE"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="StopMusic" to="." method="_on_stop_music_pressed"]
