@@ -75,6 +75,12 @@ theme_override_fonts/font = ExtResource("2_fejog")
 theme_override_font_sizes/font_size = 10
 text = "Restart"
 
+[node name="Menu" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fejog")
+theme_override_font_sizes/font_size = 10
+text = "Menu Principal"
+
 [node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_fejog")
@@ -106,5 +112,6 @@ texture = ExtResource("3_lqg6t")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="StopMusic" to="." method="_on_music_pressed"]

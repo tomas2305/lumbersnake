@@ -14,7 +14,8 @@ var gate = [Vector2i(23,1),
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	label.text = "Destruye los arboles malditos presionando Talar ("+get_hit_button()+")"
+	label.text = "Destruye los arboles malditos presionando
+	Talar ("+get_hit_button()+")"
 	arrow.hide()
 	
 

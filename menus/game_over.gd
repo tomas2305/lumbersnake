@@ -11,6 +11,10 @@ func _ready() -> void:
 		Music.reproducir_musica(loose_music)
 		
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("hit"):
+		get_tree().change_scene_to_file("res://game.tscn")
+		Global.reset()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
