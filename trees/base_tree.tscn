@@ -58,3 +58,7 @@ volume_db = 10.927
 
 [node name="Axe" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_y4okj")
+
+[node name="ChoppedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y7jcc")
+volume_db = 10.0

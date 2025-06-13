@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://tekakvw8q4vb"]
+[gd_scene load_steps=49 format=4 uid="uid://tekakvw8q4vb"]
 
 [ext_resource type="Script" uid="uid://cbbn5x5jj0osc" path="res://game.gd" id="1_215e1"]
 [ext_resource type="PackedScene" uid="uid://ltewb7mjoydk" path="res://tilesets/background.tscn" id="1_lc2xo"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="17_e8heu"]
 [ext_resource type="Script" uid="uid://bbdpr23vetn3h" path="res://instructions.gd" id="18_rvswv"]
 [ext_resource type="FontFile" uid="uid://iublapr1rgpr" path="res://assets/Fonts/EightBitDragon-anqx.ttf" id="19_boyg6"]
-[ext_resource type="AudioStream" uid="uid://ckxajb2sbbta2" path="res://assets/giant-fall-impact-352446.mp3" id="20_e36ub"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ycdy4"]
 tile_data = PackedInt32Array(0, 12, 1, 1, 131084, 1)
@@ -506,10 +505,6 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 10
 text = "X"
 
-[node name="ChoppedSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("20_e36ub")
-volume_db = 10.0
-
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 591.0
 offset_top = 23.0
@@ -520,11 +515,6 @@ theme_override_font_sizes/font_size = 12
 
 [connection signal="chased" from="Player" to="." method="_on_player_chased"]
 [connection signal="state_changed" from="Enemy" to="." method="_on_enemy_state_changed"]
-[connection signal="chopped" from="TreeContainer/BaseTree" to="." method="_on_base_tree_chopped"]
-[connection signal="chopped" from="TreeContainer/BaseTree2" to="." method="_on_base_tree_chopped"]
-[connection signal="chopped" from="TreeContainer/BaseTree3" to="." method="_on_base_tree_chopped"]
-[connection signal="chopped" from="TreeContainer/BaseTree4" to="." method="_on_base_tree_chopped"]
-[connection signal="chopped" from="TreeContainer/BaseTree5" to="." method="_on_base_tree_chopped"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
 [connection signal="pressed" from="Instructions/VBoxContainer/CloseButton" to="Instructions" method="_on_close_button_pressed"]

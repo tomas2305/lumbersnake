@@ -54,8 +54,6 @@ func _ready() -> void:
 	if agent.target_position == Vector2.ZERO or global_position.distance_to(agent.target_position) < 1.0:
 		agent.target_position = player.global_position
 
-	vision_cone.get_node("VisionArea").body_entered.connect(_on_vision_area_body_entered)
-	vision_cone.get_node("VisionArea").body_exited.connect(_on_vision_area_body_exited)
 	set_physics_process(true)
 
 func _physics_process(delta: float) -> void:
@@ -142,23 +140,12 @@ func update_patrol_speed() -> void:
 	WALK_SPEED = BASE_WALK_SPEED + lerp(0, 40.0, ratio)
 	WALK_SPEED = clamp(WALK_SPEED, BASE_WALK_SPEED, MAX_SPEED - 10)
 
-func _on_detection_area_body_entered(body: Node2D) -> void:
-	if body is Player:
-		start_chase(body)
-
-func _on_detection_area_body_exited(body: Node2D) -> void:
-	if body is Player:
-		stop_chase()
 
 func _on_random_dir_timeout() -> void:
 	random_generation()
 	$RandomDir.start()
 
-func _on_vision_area_body_entered(body: Node2D) -> void:
-	pass
 
-func _on_vision_area_body_exited(body: Node2D) -> void:
-	pass
 
 func movement():
 	if interest_zones.size() > 0:

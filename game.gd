@@ -16,6 +16,8 @@ var gate = [Vector2i(-3,1),
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Arrow.hide()
+	Global.reset()
+
 	Music.reproducir_musica(idle_music)
 
 
@@ -64,8 +66,3 @@ func actualizar_label():
 	var minutos := int($Timer.time_left) / 60
 	var segundos := int($Timer.time_left) % 60
 	$TimerLabel.text = "%02d:%02d" % [minutos, segundos]
-
-
-func _on_base_tree_chopped() -> void:
-	if !Music.esta_muted:
-		$ChoppedSound.play(0.0)

@@ -44,3 +44,7 @@ func _on_music_pressed() -> void:
 		$StopMusic/Sprite2D.texture = load("res://assets/volume-up.png")
 	else:
 		$StopMusic/Sprite2D.texture = load("res://assets/mute.png")
+
+
+func _on_settings_pressed() -> void:
+	get_tree().change_scene_to_file("res://menus/input_settings.tscn")
