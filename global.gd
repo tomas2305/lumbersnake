@@ -2,6 +2,7 @@ extends Node
 
 var arboles_destuidos : int = 0
 var won : bool = false
+var first_run = true
 
 func _process(delta: float) -> void:
 	if arboles_destuidos == 5:

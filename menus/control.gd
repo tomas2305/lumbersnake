@@ -7,8 +7,11 @@ func _ready() -> void:
 	Music.reproducir_musica(preload("res://assets/intro.mp3"))
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://game.tscn")
-	Music.reproducir_musica(preload("res://assets/mystry-forest-278844.mp3"))
+	if Global.first_run:
+		get_tree().change_scene_to_file("res://tutorial.tscn")
+	else:
+		get_tree().change_scene_to_file("res://game.tscn")
+		Music.reproducir_musica(preload("res://assets/mystry-forest-278844.mp3"))
 
 
 func _on_options_pressed() -> void:

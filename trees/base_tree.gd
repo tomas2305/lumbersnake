@@ -1,8 +1,9 @@
 extends StaticBody2D
 class_name BaseTree
 
-signal chopped
 signal sound_emitted(origin: Vector2)
+@onready var chopped_sound: AudioStreamPlayer = $ChoppedSound
+
 
 @export var min_hits := 3
 @export var max_hits := 6
@@ -42,7 +43,8 @@ func interact(by: Player):
 	emit_sound()
 
 	if current_hits >= required_hits:
-		emit_signal("chopped")
+		if !Music.esta_muted:
+			$ChoppedSound.play()
 		Global.arboles_destuidos += 1
 		queue_free()
 		

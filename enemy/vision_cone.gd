@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var polygon_2d: Polygon2D = $Polygon2D
 @onready var vision_area: Area2D = $VisionArea
+@onready var raycast: RayCast2D = $Polygon2D/RayCast2D
+
 
 const COLOR_IDLE := Color(1, 1, 0, 0.2)  # Amarillo claro
 const COLOR_ALERT := Color(1, 0.5, 0, 0.3)  # Naranja
@@ -18,12 +20,13 @@ var _time_accumulator := 0.0
 var _target_player: Node2D = null
 var _rot_vel := 0.0
 var _state := 0  # Referencia a Enemy.State
-
+var _original_raycast_target
 func _ready() -> void:
 	polygon_2d.color = COLOR_IDLE
 	vision_area.monitoring = true
 	vision_area.body_entered.connect(_on_body_entered)
 	vision_area.body_exited.connect(_on_body_exited)
+	_original_raycast_target = raycast.target_position
 	set_physics_process(true)
 
 func _physics_process(delta: float) -> void:
@@ -32,6 +35,17 @@ func _physics_process(delta: float) -> void:
 		return
 
 	_time_accumulator += delta
+	
+	if _target_player:
+		# Actualizar raycast hacia el jugador constantemente
+		var local_dir = raycast.to_local(_target_player.global_position)
+		raycast.target_position = local_dir
+		raycast.force_raycast_update()
+
+		if raycast.is_colliding() and raycast.get_collider() == _target_player:
+			if parent_enemy.state != parent_enemy.State.CHASE:
+				if parent_enemy.has_method("start_chase"):
+					parent_enemy.start_chase(_target_player)
 
 	var target_base: float
 	if _state == parent_enemy.State.CHASE and _target_player:
@@ -61,15 +75,14 @@ func _physics_process(delta: float) -> void:
 	global_position = parent_enemy.global_position
 
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("Player") or body.name == "Player":
+	if (body.is_in_group("Player") or body.name == "Player"):
 		_target_player = body
-		var parent_enemy = get_parent()
-		if parent_enemy and parent_enemy.has_method("start_chase"):
-			parent_enemy.start_chase(body)
+
 
 func _on_body_exited(body: Node) -> void:
 	if (body.is_in_group("Player") or body.name == "Player") and _target_player == body:
 		_target_player = null
+		
 		var parent_enemy = get_parent()
 		if parent_enemy and parent_enemy.has_method("stop_chase"):
 			parent_enemy.stop_chase()
