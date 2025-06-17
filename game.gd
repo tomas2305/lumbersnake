@@ -18,8 +18,7 @@ func _ready() -> void:
 	$Arrow.hide()
 	Global.reset()
 
-	Music.reproducir_musica(idle_music)
-
+	Music.reproducir_musica(preload("res://assets/mystry-forest-278844.mp3"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
