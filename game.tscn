@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://tekakvw8q4vb"]
+[gd_scene load_steps=48 format=4 uid="uid://tekakvw8q4vb"]
 
 [ext_resource type="Script" uid="uid://cbbn5x5jj0osc" path="res://game.gd" id="1_215e1"]
 [ext_resource type="PackedScene" uid="uid://ltewb7mjoydk" path="res://tilesets/background.tscn" id="1_lc2xo"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="13_vaj68"]
 [ext_resource type="PackedScene" uid="uid://d3d6m1v37rsag" path="res://menus/pause.tscn" id="16_e8heu"]
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="17_e8heu"]
-[ext_resource type="Script" uid="uid://bbdpr23vetn3h" path="res://instructions.gd" id="18_rvswv"]
 [ext_resource type="FontFile" uid="uid://iublapr1rgpr" path="res://assets/Fonts/EightBitDragon-anqx.ttf" id="19_boyg6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ycdy4"]
@@ -381,10 +380,10 @@ position_smoothing_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("11_qhcbd")]
 position = Vector2(84, 110)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.7, 0.7)
 
 [node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_f1jbl")]
-position = Vector2(361, 132)
+position = Vector2(495, 311)
 scale = Vector2(0.7, 0.7)
 player = NodePath("../Player")
 
@@ -432,79 +431,6 @@ autostart = true
 position = Vector2(0, 94)
 shape = SubResource("RectangleShape2D_e8heu")
 
-[node name="Instructions" type="Control" parent="."]
-process_mode = 3
-layout_mode = 3
-anchor_left = 0.7
-anchor_top = 0.615
-anchor_right = 1.734
-anchor_bottom = 1.535
-offset_left = 29.2
-offset_top = 64.68
-offset_right = -254.116
-offset_bottom = -89.88
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-script = ExtResource("18_rvswv")
-
-[node name="ColorRect2" type="ColorRect" parent="Instructions"]
-layout_mode = 0
-offset_left = -211.0
-offset_top = -159.0
-offset_right = 439.0
-offset_bottom = 234.0
-color = Color(0, 0, 0, 0.501961)
-
-[node name="ColorRect" type="ColorRect" parent="Instructions"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -17.0
-offset_right = 33.0
-offset_bottom = 18.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(6.64892, 2.94271)
-color = Color(0.0687983, 0.0687983, 0.0687983, 0.635294)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Instructions"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -5.0
-offset_top = -14.0
-offset_right = 241.0
-offset_bottom = 86.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Instructions/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("19_boyg6")
-theme_override_font_sizes/font_size = 10
-text = "La maldición acecha...
-Destruye los arboles poseídos antes
-de que alcance a todo el bosque.
-¡Y ten cuidado con la serpiente!
-"
-
-[node name="CloseButton" type="Button" parent="Instructions/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 10
-text = "X"
-
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 591.0
 offset_top = 23.0
@@ -517,4 +443,3 @@ theme_override_font_sizes/font_size = 12
 [connection signal="state_changed" from="Enemy" to="." method="_on_enemy_state_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
-[connection signal="pressed" from="Instructions/VBoxContainer/CloseButton" to="Instructions" method="_on_close_button_pressed"]
