@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bl4npwlwqn0do"]
 
-[ext_resource type="Script" uid="uid://bsj8adeg4idk6" path="res://menus/control.gd" id="1_85u52"]
+[ext_resource type="Script" uid="uid://4dfc677fxg7i" path="res://menus/menu.gd" id="1_jayei"]
 [ext_resource type="PackedScene" uid="uid://p176ik7k2eot" path="res://menus/texture_rect.tscn" id="2_jayei"]
 [ext_resource type="FontFile" uid="uid://iublapr1rgpr" path="res://assets/Fonts/EightBitDragon-anqx.ttf" id="2_y8e4h"]
 [ext_resource type="AudioStream" uid="uid://dimd8ll70ab6w" path="res://assets/intro.mp3" id="3_hl3ms"]
@@ -18,7 +18,7 @@ offset_bottom = -84.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
-script = ExtResource("1_85u52")
+script = ExtResource("1_jayei")
 
 [node name="TextureRect" parent="." instance=ExtResource("2_jayei")]
 layout_mode = 0
