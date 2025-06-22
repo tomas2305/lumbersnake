@@ -1,12 +1,11 @@
-extends enemy_movement
+extends CharacterBody2D
 class_name Enemy
+
 signal state_changed(new_state)
 
 @export var player: Node2D
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
-@onready var body_container: Node2D = $BodyContainer
 @onready var vision_cone: Node2D = $VisionCone
-
 
 const ACCELERATION := 400.0
 @export var MAX_SPEED := 120.0
@@ -50,7 +49,6 @@ func _ready() -> void:
 	if player and player.has_signal("zona_peligro"):
 		player.connect("zona_peligro", Callable(self, "on_player_idle"))
 
-	random_generation()
 	if agent.target_position == Vector2.ZERO or global_position.distance_to(agent.target_position) < 1.0:
 		agent.target_position = player.global_position
 
@@ -69,7 +67,6 @@ func _physics_process(delta: float) -> void:
 					agent.target_position = last_alert_position + offset
 				else:
 					set_state(State.IDLE)
-					random_generation()
 		State.IDLE:
 			if agent.is_navigation_finished():
 				movement()
@@ -109,7 +106,6 @@ func start_chase(detected_player: Node2D) -> void:
 func stop_chase() -> void:
 	target_player = null
 	set_state(State.IDLE)
-	random_generation()
 	$RandomDir.start()
 
 func hear_sound(sound_position: Vector2) -> void:
@@ -142,10 +138,7 @@ func update_patrol_speed() -> void:
 
 
 func _on_random_dir_timeout() -> void:
-	random_generation()
 	$RandomDir.start()
-
-
 
 func movement():
 	if interest_zones.size() > 0:
