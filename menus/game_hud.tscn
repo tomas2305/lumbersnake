@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b28305gqwv13b"]
+[gd_scene load_steps=23 format=3 uid="uid://b28305gqwv13b"]
 
 [ext_resource type="Script" uid="uid://blssc8wmxi1sb" path="res://menus/game_hud.gd" id="1_2s4jt"]
 [ext_resource type="Texture2D" uid="uid://dj3jo5bw8q7y4" path="res://assets/Menu/time_circle.png" id="2_r8ccr"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ck385ph7vogp0" path="res://assets/Enemies/snake-eye-searching.png" id="4_nc3pq"]
 [ext_resource type="Texture2D" uid="uid://mj10for8maar" path="res://assets/Enemies/snake-eye-alert..png" id="5_gvyqo"]
 [ext_resource type="Texture2D" uid="uid://bqw0ud74yum7h" path="res://assets/Enemies/snake-eye-idle.png" id="6_71jtt"]
+[ext_resource type="AudioStream" uid="uid://dx2f04t1t2d0l" path="res://menus/woods_saved.mp3" id="7_r8ccr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_36jdj"]
 atlas = ExtResource("4_nc3pq")
@@ -152,3 +153,7 @@ position = Vector2(68, 19)
 sprite_frames = SubResource("SpriteFrames_l1i01")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="win_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_r8ccr")
+volume_db = 4.0

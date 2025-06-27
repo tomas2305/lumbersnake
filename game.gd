@@ -25,8 +25,8 @@ func _ready() -> void:
 	$Arrow.hide()
 	Global.reset()
 	hud_layer.set_curse_timer(curse_duration)
-	Global.arboles_a_destruir = 1
-
+	Global.arboles_a_destruir = tree_container.get_child_count()
+	
 	Music.reproducir_musica(preload("res://assets/mystry-forest-278844.mp3"))
 
 func _process(delta: float) -> void:

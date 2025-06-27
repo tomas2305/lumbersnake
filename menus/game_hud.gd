@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var enemy_state_hud: AnimatedSprite2D = $HUD/EnemyStateHUD
 @onready var curse_bar: TextureProgressBar = $HUD/CurseBar
+@onready var win_sound: AudioStreamPlayer2D = $win_sound
 
 func _on_enemy_state_changed(new_state: Variant) -> void:
 	match new_state:
@@ -20,6 +21,7 @@ func restore_time():
 	tween.parallel().tween_property(curse_bar, "modulate", Color(1.5, 1.5, 1.5, 1.0), 0.3)
 	tween.tween_property(curse_bar, "modulate", Color(1, 1, 1, 1), 0.6)\
 		 .set_delay(0.3)
+	win_sound.play()
 
 func set_curse_bar(value : Variant):
 	curse_bar.value = value
