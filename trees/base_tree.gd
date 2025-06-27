@@ -15,7 +15,6 @@ var player_ref: Player = null
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
-	
 	required_hits = randi_range(min_hits, max_hits)
 	$ChopArea.body_entered.connect(_on_body_entered)
 	$ChopArea.body_exited.connect(_on_body_exited)

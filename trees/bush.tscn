@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2pitdc17bfai"]
+
+[ext_resource type="Script" uid="uid://b5ngwp4hjrqaa" path="res://trees/bush.gd" id="1_7itxe"]
+[ext_resource type="Texture2D" uid="uid://ddehcf3vaud7f" path="res://assets/Outdoor decoration/shadow.png" id="2_ms1a6"]
+[ext_resource type="Texture2D" uid="uid://dixk1qw5mjv7e" path="res://assets/Outdoor decoration/bushv2.png" id="2_x13fg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ms1a6"]
+radius = 18.0278
+
+[node name="Bush" type="Area2D"]
+script = ExtResource("1_7itxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ms1a6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-5.96046e-08, 10)
+scale = Vector2(1.05469, 0.534771)
+texture = ExtResource("2_ms1a6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x13fg")

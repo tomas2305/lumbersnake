@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://tekakvw8q4vb"]
+[gd_scene load_steps=49 format=4 uid="uid://tekakvw8q4vb"]
 
 [ext_resource type="Script" uid="uid://cbbn5x5jj0osc" path="res://game.gd" id="1_215e1"]
 [ext_resource type="PackedScene" uid="uid://ltewb7mjoydk" path="res://tilesets/background.tscn" id="1_lc2xo"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d3d6m1v37rsag" path="res://menus/pause.tscn" id="16_e8heu"]
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="17_e8heu"]
 [ext_resource type="PackedScene" uid="uid://b28305gqwv13b" path="res://menus/game_hud.tscn" id="18_rvswv"]
+[ext_resource type="PackedScene" uid="uid://d2pitdc17bfai" path="res://trees/bush.tscn" id="19_boyg6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ycdy4"]
 tile_data = PackedInt32Array(0, 12, 1, 1, 131084, 1)
@@ -386,6 +387,8 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(495, 311)
 scale = Vector2(0.7, 0.7)
 player = NodePath("../Player")
+MAX_SPEED = 115.0
+BASE_WALK_SPEED = 100.0
 
 [node name="TreeContainer" type="Node2D" parent="."]
 position = Vector2(84, 110)
@@ -410,6 +413,14 @@ collision_layer = 3
 position = Vector2(475, -59)
 collision_layer = 3
 
+[node name="BaseTree6" parent="TreeContainer" instance=ExtResource("13_vaj68")]
+position = Vector2(506, 249)
+collision_layer = 3
+
+[node name="BaseTree7" parent="TreeContainer" instance=ExtResource("13_vaj68")]
+position = Vector2(83, -42)
+collision_layer = 3
+
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 offset = Vector2(300, 140)
 transform = Transform2D(1, 0, 0, 1, 300, 140)
@@ -422,8 +433,6 @@ offset_right = 0.101997
 offset_bottom = 0.0159912
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
-autostart = true
 
 [node name="WinArea" type="Area2D" parent="."]
 
@@ -432,6 +441,23 @@ position = Vector2(0, 94)
 shape = SubResource("RectangleShape2D_e8heu")
 
 [node name="HUDLayer" parent="." instance=ExtResource("18_rvswv")]
+
+[node name="BushesBox" type="Node" parent="."]
+
+[node name="Bush" parent="BushesBox" instance=ExtResource("19_boyg6")]
+position = Vector2(281, 154)
+
+[node name="Bush2" parent="BushesBox" instance=ExtResource("19_boyg6")]
+position = Vector2(43, 231)
+
+[node name="Bush3" parent="BushesBox" instance=ExtResource("19_boyg6")]
+position = Vector2(232, 381)
+
+[node name="Bush4" parent="BushesBox" instance=ExtResource("19_boyg6")]
+position = Vector2(570, 228)
+
+[node name="Bush5" parent="BushesBox" instance=ExtResource("19_boyg6")]
+position = Vector2(624, 153)
 
 [connection signal="chased" from="Player" to="." method="_on_player_chased"]
 [connection signal="state_changed" from="Enemy" to="HUDLayer" method="_on_enemy_state_changed"]

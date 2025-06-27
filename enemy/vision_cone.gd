@@ -37,6 +37,11 @@ func _physics_process(delta: float) -> void:
 	_time_accumulator += delta
 	
 	if _target_player:
+		
+		if _target_player.is_hidden:
+			parent_enemy.stop_chase()
+			return
+		
 		# Actualizar raycast hacia el jugador constantemente
 		var local_dir = raycast.to_local(_target_player.global_position)
 		raycast.target_position = local_dir

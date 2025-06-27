@@ -15,7 +15,7 @@ func _ready() -> void:
 	_initialize_body_orientation()
 	set_physics_process(true)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var head_pos = get_parent().global_position
 	positions_history.insert(0, head_pos)
 	var max_history = _body_segment_count() * frames_delay_per_segment + 1
@@ -88,7 +88,7 @@ func _update_body_segments() -> void:
 		if dir_vec.length() > 0:
 			segment.rotation = dir_vec.angle() + segment_rotation_offset
 
-func _on_segment_player_nearby(segment: Node, body: Node) -> void:
+func _on_segment_player_nearby(_segment: Node, body: Node) -> void:
 	var enemy = get_parent()
 	if enemy and enemy.has_method("start_chase"):
 		enemy.start_chase(body)

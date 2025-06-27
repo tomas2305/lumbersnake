@@ -2,11 +2,15 @@ extends Node
 
 @export var game_over_scene : PackedScene
 @onready var nav_layer = $Nav
+@export var curse_duration: float = 60.0
+@onready var hud_layer: CanvasLayer = $HUDLayer
+@onready var tree_container: Node2D = $TreeContainer
+@onready var timer: Timer = $Timer
+
+var has_processed_win := false
 enum State { IDLE, ALERT, CHASE }
 var idle_music = load("res://assets/mystry-forest-278844.mp3")
 var chasing_music = load("res://assets/imminent-contact-dark-hybrid-trailer-horror-action-music-215163.mp3")
-@onready var curse_bar: TextureProgressBar = $HUDLayer/HUD/CurseBar
-@export var curse_duration: float = 60.0
 
 var gate = [Vector2i(-3,1),
 			Vector2i(-3,2),
@@ -16,20 +20,25 @@ var gate = [Vector2i(-3,1),
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	timer.wait_time = curse_duration
+	timer.start()
 	$Arrow.hide()
 	Global.reset()
-	set_curse_timer()
+	hud_layer.set_curse_timer(curse_duration)
+	Global.arboles_a_destruir = 1
 
 	Music.reproducir_musica(preload("res://assets/mystry-forest-278844.mp3"))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.won:
+	if Global.won and not has_processed_win:
+		has_processed_win = true
 		$Arrow.show()
 		open_gate()
-		$Timer.stop()
-	var elapsed_time = curse_duration - $Timer.time_left
-	curse_bar.value = elapsed_time
+		timer.stop()
+		hud_layer.restore_time()
+	elif !has_processed_win:
+		var elapsed_time = curse_duration - timer.time_left
+		hud_layer.set_curse_bar(elapsed_time)
 
 
 func _on_timer_timeout() -> void:
@@ -37,7 +46,6 @@ func _on_timer_timeout() -> void:
 	
 	
 func game_over():
-	
 	get_tree().change_scene_to_packed(game_over_scene)
 
 
@@ -62,7 +70,3 @@ func _on_enemy_state_changed(new_state: Variant) -> void:
 	else:
 		Music.reproducir_musica(chasing_music) 
 	
-func set_curse_timer():
-	curse_bar.min_value = 0
-	curse_bar.max_value = curse_duration
-	curse_bar.value = 100

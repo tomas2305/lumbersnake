@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bm8y3c23tnk0f"]
+[gd_scene load_steps=28 format=4 uid="uid://bm8y3c23tnk0f"]
 
 [ext_resource type="Script" uid="uid://cu34b60ickuu5" path="res://tutorials/tutorial_2.gd" id="1_hxdvl"]
 [ext_resource type="Texture2D" uid="uid://cxch0i1mgtrgf" path="res://assets/Tiles/Grass_Middle.png" id="2_h8fsf"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player/player.tscn" id="7_e4dj3"]
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="8_80yv5"]
 [ext_resource type="PackedScene" uid="uid://butfrm6kcwkfv" path="res://enemy/enemy.tscn" id="10_euvwd"]
-[ext_resource type="PackedScene" uid="uid://b28305gqwv13b" path="res://menus/game_hud.tscn" id="11_euvwd"]
+[ext_resource type="PackedScene" uid="uid://d2pitdc17bfai" path="res://trees/bush.tscn" id="12_75y7t"]
+[ext_resource type="Texture2D" uid="uid://bqw0ud74yum7h" path="res://assets/Enemies/snake-eye-idle.png" id="12_ateyf"]
+[ext_resource type="Texture2D" uid="uid://dj3jo5bw8q7y4" path="res://assets/Menu/time_circle.png" id="13_e4dj3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oet7r"]
 
@@ -205,20 +207,28 @@ theme_override_font_sizes/font_size = 10
 text = "¡Cuidado con la serpiente!"
 horizontal_alignment = 1
 
+[node name="Label3" type="Label" parent="."]
+offset_left = 153.0
+offset_top = -12.0
+offset_right = 490.0
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("5_75y7t")
+theme_override_font_sizes/font_size = 10
+text = "¡Escondete para evitarla!"
+horizontal_alignment = 1
+
 [node name="Arrow" type="Sprite2D" parent="."]
 position = Vector2(446, 61)
 scale = Vector2(0.169289, 0.107157)
 texture = ExtResource("6_ateyf")
 
 [node name="Player" parent="." instance=ExtResource("7_e4dj3")]
+z_index = 1
 position = Vector2(-132, 66)
 scale = Vector2(0.7, 0.7)
 
 [node name="BaseTree" parent="." instance=ExtResource("8_80yv5")]
 position = Vector2(309, 130)
-
-[node name="BaseTree2" parent="." instance=ExtResource("8_80yv5")]
-position = Vector2(316, 4)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(169, 88)
@@ -247,7 +257,21 @@ shape = SubResource("RectangleShape2D_hxdvl")
 position = Vector2(39, -46)
 player = NodePath("../Player")
 
-[node name="HUDLayer" parent="." instance=ExtResource("11_euvwd")]
+[node name="Bush" parent="." instance=ExtResource("12_75y7t")]
+position = Vector2(277, -39)
+
+[node name="Bush2" parent="." instance=ExtResource("12_75y7t")]
+position = Vector2(277, -39)
+
+[node name="Bush3" parent="." instance=ExtResource("12_75y7t")]
+position = Vector2(350, -39)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-46, 179)
+texture = ExtResource("12_ateyf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(188, 218)
+texture = ExtResource("13_e4dj3")
 
 [connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]
-[connection signal="state_changed" from="Enemy" to="HUDLayer" method="_on_enemy_state_changed"]
