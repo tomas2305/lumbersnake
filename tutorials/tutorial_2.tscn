@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://bm8y3c23tnk0f"]
+[gd_scene load_steps=26 format=4 uid="uid://bm8y3c23tnk0f"]
 
 [ext_resource type="Script" uid="uid://cu34b60ickuu5" path="res://tutorials/tutorial_2.gd" id="1_hxdvl"]
 [ext_resource type="Texture2D" uid="uid://cxch0i1mgtrgf" path="res://assets/Tiles/Grass_Middle.png" id="2_h8fsf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player/player.tscn" id="7_e4dj3"]
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="8_80yv5"]
 [ext_resource type="PackedScene" uid="uid://butfrm6kcwkfv" path="res://enemy/enemy.tscn" id="10_euvwd"]
+[ext_resource type="PackedScene" uid="uid://b28305gqwv13b" path="res://menus/game_hud.tscn" id="11_euvwd"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oet7r"]
 
@@ -246,4 +247,7 @@ shape = SubResource("RectangleShape2D_hxdvl")
 position = Vector2(39, -46)
 player = NodePath("../Player")
 
+[node name="HUDLayer" parent="." instance=ExtResource("11_euvwd")]
+
 [connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]
+[connection signal="state_changed" from="Enemy" to="HUDLayer" method="_on_enemy_state_changed"]

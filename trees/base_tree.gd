@@ -12,8 +12,10 @@ var required_hits := 0
 var current_hits := 0
 var player_in_area := false
 var player_ref: Player = null
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
+	
 	required_hits = randi_range(min_hits, max_hits)
 	$ChopArea.body_entered.connect(_on_body_entered)
 	$ChopArea.body_exited.connect(_on_body_exited)
@@ -22,12 +24,14 @@ func _on_body_entered(body: Node) -> void:
 	if body is Player:
 		player_in_area = true
 		player_ref = body
+		animated_sprite_2d.play("focus")
 		print("Jugador en el área del árbol")
 
 func _on_body_exited(body: Node) -> void:
 	if body is Player:
 		player_in_area = false
 		player_ref = null
+		animated_sprite_2d.play("default")
 
 func can_be_chopped(by: Player) -> bool:
 	return player_in_area and player_ref == by
