@@ -4,9 +4,6 @@ var ended = false
 @onready var arrow: Sprite2D = $Arrow
 
 @onready var tree: BaseTree = $BaseTree
-@onready var tree_2: BaseTree = $BaseTree2
-
-
 @onready var lock: StaticBody2D = $Lock
 
 
@@ -15,8 +12,8 @@ func _ready() -> void:
 	set_tags()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if tree == null and tree_2 == null:
+func _process(_delta: float) -> void:
+	if tree == null:
 		end_tutorial()
 
 		
@@ -30,5 +27,5 @@ func end_tutorial():
 			lock.queue_free()
 		arrow.show()
 
-func _on_level_area_body_entered(body: Node2D) -> void:
+func _on_level_area_body_entered(_body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://game.tscn")

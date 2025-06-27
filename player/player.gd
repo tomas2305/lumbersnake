@@ -14,16 +14,17 @@ var ultima_posicion := Vector2.ZERO
 var inmovil := false
 var golpeando = false
 var found_tree = null
-
-
-
+var is_hidden := false
 var look_dir := Vector2.DOWN  # Dirección actual de mirada
 
 func _ready():
+	await get_tree().process_frame
+	_connect_bushes()
 	anim.play("idle_down")
 	anim.connect("animation_finished", Callable(self, "_on_anim_finished"))
 
 func _physics_process(delta):
+	
 	if frozen:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -116,3 +117,20 @@ func _play_hit_animation(dir: Vector2) -> void:
 		anim.play("hit_x")
 		print("played hit x")
 		anim.flip_h = dir.x < 0
+
+func _on_bush_player_entered_bush(body: Node2D) -> void:
+	if body == self:
+		is_hidden = true
+		anim.modulate.a = 0.8
+		print("Entered bush")
+
+func _on_bush_player_exited_bush(body: Node2D) -> void:
+	if body == self:
+		is_hidden = false
+		anim.modulate.a = 1.0
+
+func _connect_bushes():
+	for bush in get_tree().get_nodes_in_group("bushes"):
+		print("Conectando con:", bush.name)
+		bush.connect("player_entered_bush", Callable(self, "_on_bush_player_entered_bush"))
+		bush.connect("player_exited_bush", Callable(self, "_on_bush_player_exited_bush"))

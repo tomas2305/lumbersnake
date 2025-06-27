@@ -1,13 +1,22 @@
-[gd_scene load_steps=10 format=3 uid="uid://b38e16u4df4j2"]
+[gd_scene load_steps=13 format=3 uid="uid://b38e16u4df4j2"]
 
 [ext_resource type="Script" uid="uid://bfc38wvohoqp" path="res://trees/base_tree.gd" id="1_nnvrw"]
 [ext_resource type="Texture2D" uid="uid://wo3u4al0qce5" path="res://assets/Outdoor decoration/cursed tree.png" id="2_r65dl"]
+[ext_resource type="Texture2D" uid="uid://dhkpaxdgtfv2k" path="res://assets/Outdoor decoration/cursed_tree_focus.png" id="3_8uk1c"]
 [ext_resource type="AudioStream" uid="uid://ckxajb2sbbta2" path="res://assets/giant-fall-impact-352446.mp3" id="3_y7jcc"]
 [ext_resource type="AudioStream" uid="uid://cagn6a6lb3331" path="res://assets/hitting-stalactites-with-axe-212652.mp3" id="4_y4okj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0fvx"]
 atlas = ExtResource("2_r65dl")
 region = Rect2(0, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0p8k"]
+atlas = ExtResource("3_8uk1c")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1s62u"]
+atlas = ExtResource("3_8uk1c")
+region = Rect2(128, 0, 64, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nnvrw"]
 animations = [{
@@ -18,6 +27,17 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0p8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1s62u")
+}],
+"loop": true,
+"name": &"focus",
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r65dl"]
@@ -34,7 +54,8 @@ script = ExtResource("1_nnvrw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nnvrw")
-frame_progress = 0.342551
+autoplay = "default"
+frame_progress = 0.589086
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15)

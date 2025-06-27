@@ -34,6 +34,8 @@ var total_trees := 0
 var patrol_queue: Array = []
 var patrol_points: Array = []
 
+var route_timer := 0.0
+const MAX_ROUTE_TIME := 10.0
 
 func _ready() -> void:
 	protected_trees = get_tree().get_nodes_in_group("cursed_trees")
@@ -55,6 +57,21 @@ func _ready() -> void:
 	set_physics_process(true)
 
 func _physics_process(delta: float) -> void:
+	update_route_timer(delta)
+	handle_state_logic()
+	handle_movement(delta)
+	update_vision_cone()
+
+func update_route_timer(delta: float) -> void:
+	if state != State.CHASE:
+		route_timer += delta
+		if route_timer > MAX_ROUTE_TIME and not agent.is_navigation_finished():
+			movement()
+			route_timer = 0.0
+	else:
+		route_timer = 0.0
+
+func handle_state_logic() -> void:
 	match state:
 		State.CHASE:
 			if target_player:
@@ -71,8 +88,10 @@ func _physics_process(delta: float) -> void:
 			if agent.is_navigation_finished():
 				movement()
 
+func handle_movement(delta: float) -> void:
 	var next_point = agent.get_next_path_position()
 	var desired_dir = Vector2.ZERO
+
 	if global_position.distance_to(next_point) >= 1.0:
 		desired_dir = (next_point - global_position).normalized()
 	else:
@@ -89,6 +108,7 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(desired_vel, ACCELERATION * delta)
 	move_and_slide()
 
+func update_vision_cone() -> void:
 	vision_cone.global_position = global_position
 
 func set_state(new_state: State) -> void:

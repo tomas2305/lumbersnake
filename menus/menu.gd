@@ -26,8 +26,3 @@ func _on_stop_music_pressed() -> void:
 		$StopMusic/Sprite2D.texture = load("res://assets/volume-up.png")
 	else:
 		$StopMusic/Sprite2D.texture = load("res://assets/mute.png")
-
-
-func _on_tutorial_pressed() -> void:
-	Global.first_run = false
-	get_tree().change_scene_to_file("res://tutorials/tutorial_1.tscn")
