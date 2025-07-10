@@ -1,35 +1,52 @@
-[gd_scene load_steps=11 format=3 uid="uid://butfrm6kcwkfv"]
+[gd_scene load_steps=13 format=3 uid="uid://butfrm6kcwkfv"]
 
 [ext_resource type="Script" uid="uid://dch864dvvnkgw" path="res://enemy/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://cg5ep6j4tff1q" path="res://assets/Enemies/snake_pixelart_16x16_sheet_red.png" id="2_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://cuk6w7l06s887" path="res://assets/Enemies/snake.png" id="2_pmsee"]
 [ext_resource type="Script" uid="uid://5wxh4mmjok38" path="res://enemy/body_container.gd" id="3_qi2p4"]
 [ext_resource type="PackedScene" uid="uid://dc4dediq6oetg" path="res://enemy/body_segment.tscn" id="4_epg4t"]
 [ext_resource type="Script" uid="uid://b72rpg7r4k441" path="res://enemy/vision_cone.gd" id="4_iifgy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
-atlas = ExtResource("2_4gyqm")
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wwld"]
+atlas = ExtResource("2_pmsee")
 region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5vj3"]
+atlas = ExtResource("2_pmsee")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ffra"]
+atlas = ExtResource("2_pmsee")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kek77"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qi2p4")
+"texture": SubResource("AtlasTexture_1wwld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5vj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ffra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5vj3")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
 radius = 6.89656
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_pmsee")
 region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epg4t"]
-atlas = ExtResource("2_4gyqm")
+atlas = ExtResource("2_pmsee")
 region = Rect2(16, 32, 16, 16)
 
 [node name="Enemy" type="CharacterBody2D"]
@@ -40,6 +57,8 @@ script = ExtResource("1_4gyqm")
 z_index = 1
 scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_kek77")
+autoplay = "default"
+frame_progress = 0.144827
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1
