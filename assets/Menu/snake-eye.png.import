@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck385ph7vogp0"
-path="res://.godot/imported/snake-eye-searching.png-1ea9e3d54806691103422abab42ef24f.ctex"
+uid="uid://cpcsf1oni7wui"
+path="res://.godot/imported/snake-eye.png-ee7f972e11d1b5e733951131ea762dcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/snake-eye-searching.png"
-dest_files=["res://.godot/imported/snake-eye-searching.png-1ea9e3d54806691103422abab42ef24f.ctex"]
+source_file="res://assets/Menu/snake-eye.png"
+dest_files=["res://.godot/imported/snake-eye.png-ee7f972e11d1b5e733951131ea762dcd.ctex"]
 
 [params]
 

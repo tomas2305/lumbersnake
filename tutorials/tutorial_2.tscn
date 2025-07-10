@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="8_80yv5"]
 [ext_resource type="PackedScene" uid="uid://butfrm6kcwkfv" path="res://enemy/enemy.tscn" id="10_euvwd"]
 [ext_resource type="PackedScene" uid="uid://d2pitdc17bfai" path="res://trees/bush.tscn" id="12_75y7t"]
-[ext_resource type="Texture2D" uid="uid://bqw0ud74yum7h" path="res://assets/Enemies/snake-eye-idle.png" id="12_ateyf"]
-[ext_resource type="Texture2D" uid="uid://dj3jo5bw8q7y4" path="res://assets/Menu/time_circle.png" id="13_e4dj3"]
+[ext_resource type="Texture2D" path="res://assets/Enemies/snake-eye-idle.png" id="12_ateyf"]
+[ext_resource type="Texture2D" path="res://assets/Menu/time_circle.png" id="13_e4dj3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oet7r"]
 

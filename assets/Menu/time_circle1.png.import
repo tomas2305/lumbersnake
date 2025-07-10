@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mj10for8maar"
-path="res://.godot/imported/snake-eye-alert..png-56a36652bad262f9dc03214a209d382d.ctex"
+uid="uid://wsq6ynxx0wjs"
+path="res://.godot/imported/time_circle1.png-0af3cfd4b66f3092b8c812f5acfb55c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/snake-eye-alert..png"
-dest_files=["res://.godot/imported/snake-eye-alert..png-56a36652bad262f9dc03214a209d382d.ctex"]
+source_file="res://assets/Menu/time_circle1.png"
+dest_files=["res://.godot/imported/time_circle1.png-0af3cfd4b66f3092b8c812f5acfb55c6.ctex"]
 
 [params]
 
