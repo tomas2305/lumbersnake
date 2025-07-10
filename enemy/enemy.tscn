@@ -58,7 +58,7 @@ z_index = 1
 scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_kek77")
 autoplay = "default"
-frame_progress = 0.144827
+frame_progress = 0.743917
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_postprocessing = 1

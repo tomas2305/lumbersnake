@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3a3yqkdrvdtr"
-path="res://.godot/imported/time_circle2.png-8fb623222fbfc1a12bce6b033451169d.ctex"
+uid="uid://byt10ut721w50"
+path="res://.godot/imported/time_circle_v2_2.png-922a1ff0a8df105e503e7b1c57f035fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Menu/time_circle2.png"
-dest_files=["res://.godot/imported/time_circle2.png-8fb623222fbfc1a12bce6b033451169d.ctex"]
+source_file="res://assets/Menu/time_circle_v2_2.png"
+dest_files=["res://.godot/imported/time_circle_v2_2.png-922a1ff0a8df105e503e7b1c57f035fe.ctex"]
 
 [params]
 

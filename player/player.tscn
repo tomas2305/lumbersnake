@@ -343,7 +343,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pnw6m")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_down",
 "speed": 10.0
 }, {
@@ -375,7 +375,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j55il")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_up",
 "speed": 8.0
 }, {
@@ -413,6 +413,7 @@ animations = [{
 radius = 6.30599
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_onrkg")
 SPEED = 100.0
 metadata/_edit_group_ = true
@@ -421,7 +422,7 @@ metadata/_edit_group_ = true
 position = Vector2(0, -2)
 scale = Vector2(1.2, 1.352)
 sprite_frames = SubResource("SpriteFrames_gcmgo")
-animation = &"walk_x"
+animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 3.5)

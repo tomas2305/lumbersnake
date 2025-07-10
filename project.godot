@@ -13,6 +13,7 @@ config_version=5
 config/name="demo-lumbersnake"
 run/main_scene="uid://bl4npwlwqn0do"
 config/features=PackedStringArray("4.4", "Forward Plus")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -27,6 +28,7 @@ window/size/viewport_height=168
 window/size/window_width_override=1096
 window/size/window_height_override=672
 window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [global_group]
 
@@ -72,6 +74,11 @@ hit={
 ]
 }
 
+[physics]
+
+common/physics_interpolation=true
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
