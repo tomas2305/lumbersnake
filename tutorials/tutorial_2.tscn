@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://bm8y3c23tnk0f"]
+[gd_scene load_steps=27 format=4 uid="uid://bm8y3c23tnk0f"]
 
 [ext_resource type="Script" uid="uid://cu34b60ickuu5" path="res://tutorials/tutorial_2.gd" id="1_hxdvl"]
 [ext_resource type="Texture2D" uid="uid://cxch0i1mgtrgf" path="res://assets/Tiles/Grass_Middle.png" id="2_h8fsf"]
@@ -11,8 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="8_80yv5"]
 [ext_resource type="PackedScene" uid="uid://butfrm6kcwkfv" path="res://enemy/enemy.tscn" id="10_euvwd"]
 [ext_resource type="PackedScene" uid="uid://d2pitdc17bfai" path="res://trees/bush.tscn" id="12_75y7t"]
-[ext_resource type="Texture2D" uid="uid://bqw0ud74yum7h" path="res://assets/Enemies/snake-eye-idle.png" id="12_ateyf"]
-[ext_resource type="Texture2D" uid="uid://dj3jo5bw8q7y4" path="res://assets/Menu/time_circle.png" id="13_e4dj3"]
+[ext_resource type="PackedScene" uid="uid://cm64eealci0wu" path="res://camera/camera.tscn" id="12_ateyf"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_oet7r"]
 
@@ -230,10 +229,6 @@ scale = Vector2(0.7, 0.7)
 [node name="BaseTree" parent="." instance=ExtResource("8_80yv5")]
 position = Vector2(309, 130)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(169, 88)
-zoom = Vector2(0.418, 0.42)
-
 [node name="LevelArea" type="Area2D" parent="."]
 position = Vector2(10, -1)
 
@@ -268,10 +263,11 @@ position = Vector2(350, -39)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-46, 179)
-texture = ExtResource("12_ateyf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(188, 218)
-texture = ExtResource("13_e4dj3")
+
+[node name="Camera" parent="." instance=ExtResource("12_ateyf")]
+position = Vector2(170, 89)
 
 [connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]

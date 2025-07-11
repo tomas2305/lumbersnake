@@ -1,43 +1,132 @@
-[gd_scene load_steps=13 format=3 uid="uid://b38e16u4df4j2"]
+[gd_scene load_steps=25 format=3 uid="uid://b38e16u4df4j2"]
 
 [ext_resource type="Script" uid="uid://bfc38wvohoqp" path="res://trees/base_tree.gd" id="1_nnvrw"]
-[ext_resource type="Texture2D" uid="uid://wo3u4al0qce5" path="res://assets/Outdoor decoration/cursed tree.png" id="2_r65dl"]
-[ext_resource type="Texture2D" uid="uid://dhkpaxdgtfv2k" path="res://assets/Outdoor decoration/cursed_tree_focus.png" id="3_8uk1c"]
+[ext_resource type="Texture2D" uid="uid://7cumewu8cl6f" path="res://assets/forest/cursed_tree.png" id="2_y4okj"]
 [ext_resource type="AudioStream" uid="uid://ckxajb2sbbta2" path="res://assets/giant-fall-impact-352446.mp3" id="3_y7jcc"]
 [ext_resource type="AudioStream" uid="uid://cagn6a6lb3331" path="res://assets/hitting-stalactites-with-axe-212652.mp3" id="4_y4okj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k0fvx"]
-atlas = ExtResource("2_r65dl")
-region = Rect2(0, 0, 64, 80)
+[sub_resource type="Curve" id="Curve_y4okj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.995169, 0.146068), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_y4okj"]
+offsets = PackedFloat32Array(0.674033, 1)
+colors = PackedColorArray(1, 0.466667, 0.658824, 1, 1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uk1c"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvxhm"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(32, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w0p8k"]
-atlas = ExtResource("3_8uk1c")
-region = Rect2(64, 0, 64, 80)
+atlas = ExtResource("2_y4okj")
+region = Rect2(64, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s62u"]
-atlas = ExtResource("3_8uk1c")
-region = Rect2(128, 0, 64, 80)
+atlas = ExtResource("2_y4okj")
+region = Rect2(96, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ct7b4"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(128, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1v4u"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(160, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gqdc"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(192, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8abn"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(0, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tofx5"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(32, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skier"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(64, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qek4k"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(96, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lrwt"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(128, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj7v1"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(160, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a35r5"]
+atlas = ExtResource("2_y4okj")
+region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nnvrw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k0fvx")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+"texture": SubResource("AtlasTexture_8uk1c")
 }, {
-"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvxhm")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w0p8k")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1s62u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ct7b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1v4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gqdc")
 }],
 "loop": true,
 "name": &"focus",
-"speed": 2.0
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8abn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tofx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skier")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qek4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lrwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj7v1")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a35r5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r65dl"]
@@ -52,16 +141,34 @@ radius = 229.035
 [node name="BaseTree" type="StaticBody2D"]
 script = ExtResource("1_nnvrw")
 
+[node name="TreeHitParticle" type="CPUParticles2D" parent="."]
+position = Vector2(1, 4)
+emitting = false
+amount = 40
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_y4okj")
+color_ramp = SubResource("Gradient_y4okj")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nnvrw")
-autoplay = "default"
-frame_progress = 0.589086
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_r65dl")
 
 [node name="ChopArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChopArea"]
@@ -71,6 +178,7 @@ shape = SubResource("CircleShape2D_gvmkm")
 [node name="SoundArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoundArea" groups=["cursed_trees"]]
+visible = false
 shape = SubResource("CircleShape2D_r65dl")
 
 [node name="Falling" type="AudioStreamPlayer2D" parent="."]

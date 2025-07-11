@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq4doprvyubt5"
-path="res://.godot/imported/Cow.png-37c00c1f6271fae7c3dcf0ec7b25f62a.ctex"
+uid="uid://cuk6w7l06s887"
+path="res://.godot/imported/snake.png-55bf78d00086b510a914ca5ae8e7d9f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Animals/Cow/Cow.png"
-dest_files=["res://.godot/imported/Cow.png-37c00c1f6271fae7c3dcf0ec7b25f62a.ctex"]
+source_file="res://assets/Enemies/snake.png"
+dest_files=["res://.godot/imported/snake.png-55bf78d00086b510a914ca5ae8e7d9f1.ctex"]
 
 [params]
 

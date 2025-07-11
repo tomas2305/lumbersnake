@@ -4,6 +4,7 @@ class_name Player
 signal zona_peligro(pos: Vector2)
 signal chased
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var walk_particles: CPUParticles2D = $WalkParticles
 
 @export var SPEED := 50.0
 var frozen = false
@@ -81,6 +82,7 @@ func _physics_process(delta):
 		current_tree = null
 
 func _update_walk_animation(dir: Vector2) -> void:
+	walk_particles.emitting = true
 	if dir.y < 0:
 		anim.play("walk_up")
 	elif dir.y > 0:
@@ -90,6 +92,7 @@ func _update_walk_animation(dir: Vector2) -> void:
 		anim.flip_h = dir.x < 0
 
 func _update_idle_animation(dir: Vector2) -> void:
+	walk_particles.emitting = false
 	if dir.y < 0:
 		anim.play("idle_up")
 	elif dir.y > 0:

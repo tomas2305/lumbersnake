@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6tclwp12a3w5"
-path="res://.godot/imported/Slime.png-68938716f2a1a8818de827b86b98bc50.ctex"
+uid="uid://nekv60ak06du"
+path="res://.godot/imported/lumber_v11.png-e69903454db6437910f7eb819debf48a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/Slime.png"
-dest_files=["res://.godot/imported/Slime.png-68938716f2a1a8818de827b86b98bc50.ctex"]
+source_file="res://assets/Player/lumber_v11.png"
+dest_files=["res://.godot/imported/lumber_v11.png-e69903454db6437910f7eb819debf48a.ctex"]
 
 [params]
 

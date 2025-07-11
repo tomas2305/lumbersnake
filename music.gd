@@ -7,12 +7,14 @@ func _ready():
 	musica_actual = AudioStreamPlayer.new()
 	add_child(musica_actual)
 	musica_actual.bus = "Music"
+	musica_actual.volume_db = -10
 	musica_actual.stream_paused = false
 	actualizar_volumen()
 
 func reproducir_musica(stream: AudioStream):
 	if musica_actual.stream != stream:
 		musica_actual.stream = stream
+		musica_actual.volume_db = -10
 		musica_actual.play()
 
 func mutear():

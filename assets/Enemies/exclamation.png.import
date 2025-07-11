@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgyg51le35lfj"
-path="res://.godot/imported/Chicken.png-f2dee0c04ea3497f69939fd14a277d76.ctex"
+uid="uid://cha0fahwpfrxp"
+path="res://.godot/imported/exclamation.png-39bc2486c548482899c5e206829c6601.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Animals/Chicken/Chicken.png"
-dest_files=["res://.godot/imported/Chicken.png-f2dee0c04ea3497f69939fd14a277d76.ctex"]
+source_file="res://assets/Enemies/exclamation.png"
+dest_files=["res://.godot/imported/exclamation.png-39bc2486c548482899c5e206829c6601.ctex"]
 
 [params]
 

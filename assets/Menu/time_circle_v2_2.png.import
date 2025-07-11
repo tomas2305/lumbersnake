@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg8wup8wrufgj"
-path="res://.godot/imported/Slime_Green.png-17234e40c7e8b75dd95c825743dc65e8.ctex"
+uid="uid://byt10ut721w50"
+path="res://.godot/imported/time_circle_v2_2.png-922a1ff0a8df105e503e7b1c57f035fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/Slime_Green.png"
-dest_files=["res://.godot/imported/Slime_Green.png-17234e40c7e8b75dd95c825743dc65e8.ctex"]
+source_file="res://assets/Menu/time_circle_v2_2.png"
+dest_files=["res://.godot/imported/time_circle_v2_2.png-922a1ff0a8df105e503e7b1c57f035fe.ctex"]
 
 [params]
 
