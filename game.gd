@@ -29,6 +29,7 @@ func _ready() -> void:
 	
 	Music.reproducir_musica(preload("res://assets/mystry-forest-278844.mp3"))
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if Global.won and not has_processed_win:
 		has_processed_win = true

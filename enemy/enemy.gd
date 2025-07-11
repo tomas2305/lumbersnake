@@ -6,6 +6,7 @@ signal state_changed(new_state)
 @export var player: Node2D
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 @onready var vision_cone: Node2D = $VisionCone
+@onready var animation_alert: AnimatedSprite2D = $AnimationAlert
 
 const ACCELERATION := 400.0
 @export var MAX_SPEED := 120.0
@@ -77,6 +78,7 @@ func handle_state_logic() -> void:
 			if target_player:
 				agent.target_position = target_player.global_position
 		State.ALERT:
+			animation_alert.play("alert")
 			if agent.is_navigation_finished():
 				alert_steps += 1
 				if alert_steps < MAX_ALERT_STEPS:
@@ -85,6 +87,7 @@ func handle_state_logic() -> void:
 				else:
 					set_state(State.IDLE)
 		State.IDLE:
+			animation_alert.stop()
 			if agent.is_navigation_finished():
 				movement()
 

@@ -1,9 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://b38e16u4df4j2"]
+[gd_scene load_steps=25 format=3 uid="uid://b38e16u4df4j2"]
 
 [ext_resource type="Script" uid="uid://bfc38wvohoqp" path="res://trees/base_tree.gd" id="1_nnvrw"]
 [ext_resource type="Texture2D" uid="uid://7cumewu8cl6f" path="res://assets/forest/cursed_tree.png" id="2_y4okj"]
 [ext_resource type="AudioStream" uid="uid://ckxajb2sbbta2" path="res://assets/giant-fall-impact-352446.mp3" id="3_y7jcc"]
 [ext_resource type="AudioStream" uid="uid://cagn6a6lb3331" path="res://assets/hitting-stalactites-with-axe-212652.mp3" id="4_y4okj"]
+
+[sub_resource type="Curve" id="Curve_y4okj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.995169, 0.146068), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_y4okj"]
+offsets = PackedFloat32Array(0.674033, 1)
+colors = PackedColorArray(1, 0.466667, 0.658824, 1, 1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8uk1c"]
 atlas = ExtResource("2_y4okj")
@@ -133,16 +141,34 @@ radius = 229.035
 [node name="BaseTree" type="StaticBody2D"]
 script = ExtResource("1_nnvrw")
 
+[node name="TreeHitParticle" type="CPUParticles2D" parent="."]
+position = Vector2(1, 4)
+emitting = false
+amount = 40
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 50.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_y4okj")
+color_ramp = SubResource("Gradient_y4okj")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nnvrw")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_r65dl")
 
 [node name="ChopArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChopArea"]
@@ -152,6 +178,7 @@ shape = SubResource("CircleShape2D_gvmkm")
 [node name="SoundArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoundArea" groups=["cursed_trees"]]
+visible = false
 shape = SubResource("CircleShape2D_r65dl")
 
 [node name="Falling" type="AudioStreamPlayer2D" parent="."]
