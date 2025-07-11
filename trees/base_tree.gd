@@ -9,6 +9,7 @@ signal sound_emitted(origin: Vector2)
 @export var max_hits := 6
 
 @onready var chop_area: Area2D = $ChopArea
+@onready var tree_hit_particle: CPUParticles2D = $TreeHitParticle
 
 var required_hits := 0
 var current_hits := 0
@@ -48,6 +49,7 @@ func interact(by: Player):
 
 	emit_signal("sound_emitted", global_position)
 	animated_sprite_2d.play("hit")
+	tree_hit_particle.emitting = true
 	returning_to_focus_after_hit = true
 
 	if camera.has_method("trigger_shake"):
