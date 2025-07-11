@@ -34,6 +34,7 @@ window/stretch/scale_mode="integer"
 
 cursed_trees=""
 bushes="bushes for hiding"
+camera=""
 
 [input]
 

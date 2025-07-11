@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://tekakvw8q4vb"]
+[gd_scene load_steps=50 format=4 uid="uid://tekakvw8q4vb"]
 
 [ext_resource type="Script" uid="uid://cbbn5x5jj0osc" path="res://game.gd" id="1_215e1"]
 [ext_resource type="PackedScene" uid="uid://ltewb7mjoydk" path="res://tilesets/background.tscn" id="1_lc2xo"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="17_e8heu"]
 [ext_resource type="PackedScene" uid="uid://b28305gqwv13b" path="res://menus/game_hud.tscn" id="18_rvswv"]
 [ext_resource type="PackedScene" uid="uid://d2pitdc17bfai" path="res://trees/bush.tscn" id="19_boyg6"]
+[ext_resource type="PackedScene" uid="uid://cm64eealci0wu" path="res://camera/camera.tscn" id="20_e36ub"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ycdy4"]
 tile_data = PackedInt32Array(0, 12, 1, 1, 131084, 1)
@@ -370,15 +371,6 @@ rotation = -3.14159
 scale = Vector2(0.137916, 0.107157)
 texture = ExtResource("17_e8heu")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(336, 205)
-zoom = Vector2(0.42, 0.42)
-limit_left = 0
-limit_top = 0
-limit_right = 960
-limit_bottom = 528
-position_smoothing_enabled = true
-
 [node name="Player" parent="." instance=ExtResource("11_qhcbd")]
 position = Vector2(84, 110)
 scale = Vector2(0.7, 0.7)
@@ -458,6 +450,11 @@ position = Vector2(570, 228)
 
 [node name="Bush5" parent="BushesBox" instance=ExtResource("19_boyg6")]
 position = Vector2(624, 153)
+
+[node name="Camera" parent="." instance=ExtResource("20_e36ub")]
+position = Vector2(331, 199)
+max_shake = 0.0
+shake_fade = 0.0
 
 [connection signal="chased" from="Player" to="." method="_on_player_chased"]
 [connection signal="state_changed" from="Enemy" to="HUDLayer" method="_on_enemy_state_changed"]

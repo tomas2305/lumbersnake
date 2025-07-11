@@ -3,7 +3,7 @@ class_name BaseTree
 
 signal sound_emitted(origin: Vector2)
 @onready var chopped_sound: AudioStreamPlayer = $ChoppedSound
-
+@onready var camera: Camera2D = get_tree().get_first_node_in_group("camera")
 
 @export var min_hits := 3
 @export var max_hits := 6
@@ -50,6 +50,8 @@ func interact(by: Player):
 	animated_sprite_2d.play("hit")
 	returning_to_focus_after_hit = true
 
+	if camera.has_method("trigger_shake"):
+		camera.trigger_shake()
 
 	emit_sound()
 
