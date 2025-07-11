@@ -422,7 +422,7 @@ metadata/_edit_group_ = true
 position = Vector2(0, -2)
 scale = Vector2(1.2, 1.352)
 sprite_frames = SubResource("SpriteFrames_gcmgo")
-animation = &"idle_down"
+animation = &"hit_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 3.5)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhkpaxdgtfv2k"
-path="res://.godot/imported/cursed_tree_focus.png-3fa7a5bb80bf3b57cb3146ed80a3225d.ctex"
+uid="uid://7cumewu8cl6f"
+path="res://.godot/imported/cursed_tree.png-fa59c5dae6f9ca0096f5adeef5290a35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Outdoor decoration/cursed_tree_focus.png"
-dest_files=["res://.godot/imported/cursed_tree_focus.png-3fa7a5bb80bf3b57cb3146ed80a3225d.ctex"]
+source_file="res://assets/forest/cursed_tree.png"
+dest_files=["res://.godot/imported/cursed_tree.png-fa59c5dae6f9ca0096f5adeef5290a35.ctex"]
 
 [params]
 
