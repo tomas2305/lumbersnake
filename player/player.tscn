@@ -1,8 +1,12 @@
-[gd_scene load_steps=54 format=3 uid="uid://b6hh4rixs2dfv"]
+[gd_scene load_steps=55 format=3 uid="uid://b6hh4rixs2dfv"]
 
 [ext_resource type="Script" uid="uid://btxulyebp6l8e" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://nekv60ak06du" path="res://assets/Player/lumber_v11.png" id="2_g1dw6"]
 [ext_resource type="AudioStream" uid="uid://cagn6a6lb3331" path="res://assets/hitting-stalactites-with-axe-212652.mp3" id="3_g1dw6"]
+
+[sub_resource type="Curve" id="Curve_g1dw6"]
+_data = [Vector2(0.00966183, 1), 0.0, 0.0, 0, 0, Vector2(0.256039, 1), -0.0930334, -0.0930334, 0, 0, Vector2(0.782609, 0.011236), -4.01737, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
 atlas = ExtResource("2_g1dw6")
@@ -396,6 +400,20 @@ motion_mode = 1
 script = ExtResource("1_onrkg")
 SPEED = 100.0
 metadata/_edit_group_ = true
+
+[node name="WalkParticles" type="CPUParticles2D" parent="."]
+position = Vector2(2, 11)
+rotation = -2.10737
+amount = 6
+lifetime = 0.3
+explosiveness = 0.5
+spread = 62.11
+gravity = Vector2(0, 0)
+initial_velocity_min = 12.0
+initial_velocity_max = 12.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_g1dw6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2)
