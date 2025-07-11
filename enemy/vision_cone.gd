@@ -5,9 +5,9 @@ extends Node2D
 @onready var raycast: RayCast2D = $Polygon2D/RayCast2D
 
 
-const COLOR_IDLE := Color(1, 1, 0, 0.2)  # Amarillo claro
-const COLOR_ALERT := Color(1, 0.5, 0, 0.3)  # Naranja
-const COLOR_CHASE := Color(1, 0, 0, 0.3)  # Rojo
+const COLOR_IDLE := Color8(0xFF, 0xEC, 0x27, 0.3 * 255)   # Amarillo (PICO-8)
+const COLOR_ALERT := Color8(0xFF, 0xA3, 0x00, 0.3 * 255)  # Naranja (PICO-8)
+const COLOR_CHASE := Color8(0xFF, 0x00, 0x4D, 0.3 * 255)  # Rojo (PICO-8)
 
 @export var idle_sway_angle: float = 0.05
 @export var idle_sway_speed: float = 0.30

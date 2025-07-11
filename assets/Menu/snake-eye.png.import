@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wo3u4al0qce5"
-path="res://.godot/imported/cursed tree.png-1f594c8a9c23db4027c87e7e2b7ed808.ctex"
+uid="uid://cpcsf1oni7wui"
+path="res://.godot/imported/snake-eye.png-ee7f972e11d1b5e733951131ea762dcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Outdoor decoration/cursed tree.png"
-dest_files=["res://.godot/imported/cursed tree.png-1f594c8a9c23db4027c87e7e2b7ed808.ctex"]
+source_file="res://assets/Menu/snake-eye.png"
+dest_files=["res://.godot/imported/snake-eye.png-ee7f972e11d1b5e733951131ea762dcd.ctex"]
 
 [params]
 

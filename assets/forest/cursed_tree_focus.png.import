@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg5ep6j4tff1q"
-path="res://.godot/imported/snake_pixelart_16x16_sheet_red.png-9949823c0d2d1a9e6e2dc6a7585c96f3.ctex"
+uid="uid://cfciydfyaq0ob"
+path="res://.godot/imported/cursed_tree_focus.png-9e3e625d320f89275629a9744e2c5d9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Enemies/snake_pixelart_16x16_sheet_red.png"
-dest_files=["res://.godot/imported/snake_pixelart_16x16_sheet_red.png-9949823c0d2d1a9e6e2dc6a7585c96f3.ctex"]
+source_file="res://assets/forest/cursed_tree_focus.png"
+dest_files=["res://.godot/imported/cursed_tree_focus.png-9e3e625d320f89275629a9744e2c5d9b.ctex"]
 
 [params]
 
