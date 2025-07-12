@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://b6hh4rixs2dfv"]
+[gd_scene load_steps=50 format=3 uid="uid://b6hh4rixs2dfv"]
 
 [ext_resource type="Script" uid="uid://btxulyebp6l8e" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bcvs4wjvv0p2s" path="res://assets/Player/Player.png" id="2_onrkg"]
@@ -347,10 +347,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 7.70185
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
+size = Vector2(13.9832, 11.571)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjkh3"]
+size = Vector2(21.0355, 34.3002)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_onrkg")
 SPEED = 100.0
 metadata/_edit_group_ = true
@@ -362,9 +367,22 @@ sprite_frames = SubResource("SpriteFrames_hg6s5")
 animation = &"hit_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 3.5)
+position = Vector2(0, 1)
 scale = Vector2(0.715144, -1.20992)
-shape = SubResource("CircleShape2D_onrkg")
+shape = SubResource("RectangleShape2D_yw30f")
 
 [node name="Axe" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_g1dw6")
+
+[node name="ChasedArea" type="Area2D" parent="."]
+position = Vector2(0, -1)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChasedArea"]
+y_sort_enabled = true
+position = Vector2(-0.5, 2)
+rotation = -3.14159
+scale = Vector2(0.998311, -0.699705)
+shape = SubResource("RectangleShape2D_qjkh3")
+
+[connection signal="body_entered" from="ChasedArea" to="." method="_on_chased_area_body_entered"]

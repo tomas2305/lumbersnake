@@ -6,6 +6,7 @@ signal state_changed(new_state)
 @export var player: Node2D
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 @onready var vision_cone: Node2D = $VisionCone
+@onready var anim: AnimatedSprite2D = $Animation
 
 const ACCELERATION := 400.0
 @export var MAX_SPEED := 120.0
@@ -38,10 +39,12 @@ var route_timer := 0.0
 const MAX_ROUTE_TIME := 10.0
 
 func _ready() -> void:
+	anim.hide()
 	protected_trees = get_tree().get_nodes_in_group("cursed_trees")
 	total_trees = protected_trees.size()
 	patrol_points = protected_trees.map(func(t): return t.global_position) 
 	patrol_queue = patrol_points.duplicate()
+	print(patrol_queue)
 	randomize_patrol_queue()
 
 	for tree in protected_trees:
@@ -84,6 +87,7 @@ func handle_state_logic() -> void:
 					agent.target_position = last_alert_position + offset
 				else:
 					set_state(State.IDLE)
+					anim.hide()
 		State.IDLE:
 			if agent.is_navigation_finished():
 				movement()
@@ -118,6 +122,9 @@ func set_state(new_state: State) -> void:
 		vision_cone.set_state(state)
 
 func start_chase(detected_player: Node2D) -> void:
+	if !anim.is_visible_in_tree():
+		anim.show()
+		anim.play("alert")
 	target_player = detected_player
 	set_state(State.CHASE)
 	agent.target_position = detected_player.global_position
@@ -125,24 +132,28 @@ func start_chase(detected_player: Node2D) -> void:
 
 func stop_chase() -> void:
 	target_player = null
+	anim.hide()
 	set_state(State.IDLE)
 	$RandomDir.start()
 
 func hear_sound(sound_position: Vector2) -> void:
 	if state != State.CHASE:
 		interest_zones.append(sound_position)
-		if state == State.IDLE:
-			investigate_zone(sound_position)
+		investigate_zone(sound_position)
 
 func investigate_zone(pos: Vector2) -> void:
-	set_state(State.ALERT)
-	last_alert_position = pos
-	alert_steps = 0
-	agent.target_position = pos
+	if state != State.CHASE:
+		anim.show()
+		anim.play("alert")
+		set_state(State.ALERT)
+		last_alert_position = pos
+		alert_steps = 0
+		agent.target_position = pos
 
 func on_player_idle(pos: Vector2) -> void:
-	silent_zone = pos
-	silent_zone_weight = clamp(silent_zone_weight + 0.1, 0, MAX_WEIGHT)
+	if player and not player.is_hidden:
+		silent_zone = pos
+		silent_zone_weight = clamp(silent_zone_weight + 0.1, 0, MAX_WEIGHT)
 
 func on_tree_chopped(pos: Vector2) -> void:
 	print("Tree chopped near:", pos)
@@ -186,4 +197,15 @@ func movement():
 		agent.target_position = new_target
 
 func randomize_patrol_queue():
-	patrol_queue.shuffle()
+	if patrol_points.size() == 2:
+		# Alternar entre ellos forzadamente
+		var a = patrol_points[0]
+		var b = patrol_points[1]
+		# Alternar: que el primero de la cola no sea el mismo que el último anterior
+		if patrol_queue.size() > 0 and patrol_queue[-1] == a:
+			patrol_queue = [b, a]
+		else:
+			patrol_queue = [a, b]
+	else:
+		patrol_queue = patrol_points.duplicate()
+		patrol_queue.shuffle()

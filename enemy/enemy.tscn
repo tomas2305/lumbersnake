@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://butfrm6kcwkfv"]
+[gd_scene load_steps=19 format=3 uid="uid://butfrm6kcwkfv"]
 
 [ext_resource type="Script" uid="uid://dch864dvvnkgw" path="res://enemy/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://cg5ep6j4tff1q" path="res://assets/Enemies/snake_pixelart_16x16_sheet_red.png" id="2_4gyqm"]
 [ext_resource type="Script" uid="uid://5wxh4mmjok38" path="res://enemy/body_container.gd" id="3_qi2p4"]
 [ext_resource type="PackedScene" uid="uid://dc4dediq6oetg" path="res://enemy/body_segment.tscn" id="4_epg4t"]
 [ext_resource type="Script" uid="uid://b72rpg7r4k441" path="res://enemy/vision_cone.gd" id="4_iifgy"]
+[ext_resource type="Texture2D" uid="uid://0g8g3dbcbbfi" path="res://assets/exclamation.png" id="6_1wwld"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qi2p4"]
 atlas = ExtResource("2_4gyqm")
@@ -22,7 +23,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
-radius = 6.89656
+radius = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iifgy"]
 atlas = ExtResource("2_4gyqm")
@@ -32,7 +33,58 @@ region = Rect2(32, 32, 16, 16)
 atlas = ExtResource("2_4gyqm")
 region = Rect2(16, 32, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5vj3"]
+atlas = ExtResource("6_1wwld")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ffra"]
+atlas = ExtResource("6_1wwld")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e355f"]
+atlas = ExtResource("6_1wwld")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78jik"]
+atlas = ExtResource("6_1wwld")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3pv7"]
+atlas = ExtResource("6_1wwld")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoplw"]
+atlas = ExtResource("6_1wwld")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6yflr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5vj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ffra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e355f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78jik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3pv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoplw")
+}],
+"loop": true,
+"name": &"alert",
+"speed": 8.0
+}]
+
 [node name="Enemy" type="CharacterBody2D"]
+y_sort_enabled = true
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4gyqm")
 
@@ -50,6 +102,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_4gyqm")
 
 [node name="RandomDir" type="Timer" parent="."]
@@ -80,6 +133,11 @@ collision_mask = 255
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone/VisionArea"]
 scale = Vector2(0.8, 0.8)
 polygon = PackedVector2Array(0, 0, 173.2, -100, 173.2, 100)
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -29)
+sprite_frames = SubResource("SpriteFrames_6yflr")
+animation = &"alert"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RandomDir" to="." method="_on_random_dir_timeout"]

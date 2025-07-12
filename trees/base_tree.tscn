@@ -47,15 +47,16 @@ size = Vector2(16, 20)
 radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r65dl"]
-radius = 229.035
+radius = 270.002
 
 [node name="BaseTree" type="StaticBody2D"]
+collision_layer = 3
 script = ExtResource("1_nnvrw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nnvrw")
+animation = &"focus"
 autoplay = "default"
-frame_progress = 0.589086
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15)
@@ -74,6 +75,7 @@ shape = SubResource("CircleShape2D_gvmkm")
 shape = SubResource("CircleShape2D_r65dl")
 
 [node name="Falling" type="AudioStreamPlayer2D" parent="."]
+y_sort_enabled = true
 stream = ExtResource("3_y7jcc")
 volume_db = 10.927
 

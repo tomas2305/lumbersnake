@@ -90,5 +90,5 @@ func _update_body_segments() -> void:
 
 func _on_segment_player_nearby(_segment: Node, body: Node) -> void:
 	var enemy = get_parent()
-	if enemy and enemy.has_method("start_chase"):
-		enemy.start_chase(body)
+	if enemy and enemy.has_method("investigate_zone"):
+		enemy.investigate_zone(body.global_position)

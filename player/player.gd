@@ -35,6 +35,8 @@ func _physics_process(delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * SPEED
 	move_and_slide()
+	
+		
 
 	if not golpeando:
 		if direction != Vector2.ZERO:
@@ -58,9 +60,7 @@ func _physics_process(delta):
 	var sigue_colisionando_con_arbol := false
 	for i in get_slide_collision_count():
 		var collider = get_slide_collision(i).get_collider()
-		if collider is Enemy:
-			frozen = true
-		elif collider is BaseTree:
+		if collider is BaseTree:
 			current_tree = collider
 			sigue_colisionando_con_arbol = true
 
@@ -109,10 +109,8 @@ func _play_hit_animation(dir: Vector2) -> void:
 
 	if dir.y < 0:
 		anim.play("hit_up")
-		print("played hit up")
 	elif dir.y > 0:
 		anim.play("hit_down")
-		print("played hit down")
 	else:
 		anim.play("hit_x")
 		print("played hit x")
@@ -121,8 +119,7 @@ func _play_hit_animation(dir: Vector2) -> void:
 func _on_bush_player_entered_bush(body: Node2D) -> void:
 	if body == self:
 		is_hidden = true
-		anim.modulate.a = 0.8
-		print("Entered bush")
+		anim.modulate.a = 0.5
 
 func _on_bush_player_exited_bush(body: Node2D) -> void:
 	if body == self:
@@ -131,6 +128,13 @@ func _on_bush_player_exited_bush(body: Node2D) -> void:
 
 func _connect_bushes():
 	for bush in get_tree().get_nodes_in_group("bushes"):
-		print("Conectando con:", bush.name)
 		bush.connect("player_entered_bush", Callable(self, "_on_bush_player_entered_bush"))
 		bush.connect("player_exited_bush", Callable(self, "_on_bush_player_exited_bush"))
+		
+
+
+
+
+func _on_chased_area_body_entered(body: Node2D) -> void:
+	if body is Enemy:
+		frozen = true # Replace with function body.
