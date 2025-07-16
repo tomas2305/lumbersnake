@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="17_e8heu"]
 [ext_resource type="PackedScene" uid="uid://b28305gqwv13b" path="res://menus/game_hud.tscn" id="18_rvswv"]
 [ext_resource type="PackedScene" uid="uid://d2pitdc17bfai" path="res://trees/bush.tscn" id="19_boyg6"]
-[ext_resource type="PackedScene" uid="uid://cm64eealci0wu" path="res://camera/camera.tscn" id="20_e36ub"]
+[ext_resource type="PackedScene" path="res://camera/camera.tscn" id="20_e36ub"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ycdy4"]
 tile_data = PackedInt32Array(0, 12, 1, 1, 131084, 1)
