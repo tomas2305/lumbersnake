@@ -5,8 +5,10 @@ signal zona_peligro(pos: Vector2)
 signal chased
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var walk_particles: CPUParticles2D = $WalkParticles
-
 @export var SPEED := 50.0
+@onready var camera: Camera2D = $Camera
+@onready var enemy = get_tree().get_first_node_in_group("enemy")
+
 var frozen = false
 var current_tree: BaseTree = null
 
@@ -21,6 +23,7 @@ var look_dir := Vector2.DOWN
 func _ready():
 	await get_tree().process_frame
 	_connect_bushes()
+	_connect_enemy()
 	anim.play("idle_down")
 	anim.connect("animation_finished", Callable(self, "_on_anim_finished"))
 
@@ -136,3 +139,15 @@ func _connect_bushes():
 	for bush in get_tree().get_nodes_in_group("bushes"):
 		bush.connect("player_entered_bush", Callable(self, "_on_bush_player_entered_bush"))
 		bush.connect("player_exited_bush", Callable(self, "_on_bush_player_exited_bush"))
+		
+		
+func _connect_enemy():
+	enemy.connect("state_changed", Callable(self, "_on_enemy_state_changed"))
+	
+	
+func _on_enemy_state_changed(state: Enemy.State):
+	print(state)
+	if state == Enemy.State.CHASE:
+		camera.zoom_out()
+	elif camera.zoom != camera.zoom_default:
+		camera.set_zoom_default()

@@ -39,6 +39,7 @@ var route_timer := 0.0
 const MAX_ROUTE_TIME := 10.0
 
 func _ready() -> void:
+	add_to_group("enemy")
 	protected_trees = get_tree().get_nodes_in_group("cursed_trees")
 	total_trees = protected_trees.size()
 	patrol_points = protected_trees.map(func(t): return t.global_position) 

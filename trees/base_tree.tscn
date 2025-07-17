@@ -150,7 +150,7 @@ size = Vector2(16, 20)
 radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r65dl"]
-radius = 229.035
+radius = 882.164
 
 [node name="BaseTree" type="StaticBody2D"]
 script = ExtResource("1_nnvrw")
@@ -184,7 +184,6 @@ position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_r65dl")
 
 [node name="ChopArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChopArea"]
@@ -192,9 +191,9 @@ position = Vector2(-1, 14)
 shape = SubResource("CircleShape2D_gvmkm")
 
 [node name="SoundArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoundArea" groups=["cursed_trees"]]
-visible = false
 shape = SubResource("CircleShape2D_r65dl")
 
 [node name="Falling" type="AudioStreamPlayer2D" parent="."]

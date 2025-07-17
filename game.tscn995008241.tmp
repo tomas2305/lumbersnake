@@ -735,21 +735,6 @@ collision_layer = 3
 [node name="Bush" parent="BushesBox" instance=ExtResource("19_boyg6")]
 position = Vector2(368, 200)
 
-[node name="Bush15" parent="BushesBox" instance=ExtResource("19_boyg6")]
-position = Vector2(140, 189)
-
-[node name="Bush16" parent="BushesBox" instance=ExtResource("19_boyg6")]
-position = Vector2(140, 217)
-
-[node name="Bush17" parent="BushesBox" instance=ExtResource("19_boyg6")]
-position = Vector2(639, 365)
-
-[node name="Bush18" parent="BushesBox" instance=ExtResource("19_boyg6")]
-position = Vector2(785, 341)
-
-[node name="Bush19" parent="BushesBox" instance=ExtResource("19_boyg6")]
-position = Vector2(786, 398)
-
 [node name="Bush2" parent="BushesBox" instance=ExtResource("19_boyg6")]
 position = Vector2(103, 314)
 
