@@ -6,3 +6,4 @@
 script = ExtResource("1_lw1ob")
 max_shake = 0.5
 shake_fade = 0.5
+zoom_default = Vector2(0.8, 0.8)

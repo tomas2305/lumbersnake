@@ -5,16 +5,18 @@ signal sound_emitted(origin: Vector2)
 @onready var chopped_sound: AudioStreamPlayer = $ChoppedSound
 @onready var camera: Camera2D = get_tree().get_first_node_in_group("camera")
 
-@export var min_hits := 3
-@export var max_hits := 6
+@export var min_hits := 10
+@export var max_hits := 20
 
 @onready var chop_area: Area2D = $ChopArea
 @onready var tree_hit_particle: CPUParticles2D = $TreeHitParticle
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var required_hits := 0
 var current_hits := 0
 var player_in_area := false
 var player_ref: Player = null
+var dead = false
 var returning_to_focus_after_hit = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -35,13 +37,13 @@ func _on_body_exited(body: Node) -> void:
 	if body is Player:
 		player_in_area = false
 		player_ref = null
-		animated_sprite_2d.play("default")
+		queue_free()
 
 func can_be_chopped(by: Player) -> bool:
 	return player_in_area and player_ref == by
 
 func interact(by: Player):
-	if not can_be_chopped(by):
+	if not can_be_chopped(by) or dead:
 		return
 
 	current_hits += 1
@@ -61,7 +63,8 @@ func interact(by: Player):
 		if !Music.esta_muted:
 			$ChoppedSound.play()
 		Global.arboles_destuidos += 1
-		queue_free()
+		dead = true
+		animation_player.play("kill_tree")
 		
 
 func emit_sound():
@@ -74,3 +77,7 @@ func _on_animation_finished():
 	if returning_to_focus_after_hit and animated_sprite_2d.animation == "hit":
 		animated_sprite_2d.play("focus")
 		returning_to_focus_after_hit = false
+
+func kill():
+	print("KILL TREE!")
+	queue_free()

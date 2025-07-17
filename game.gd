@@ -2,7 +2,7 @@ extends Node
 
 @export var game_over_scene : PackedScene
 @onready var nav: TileMapLayer = $Map/Nav
-@export var curse_duration: float = 60.0
+@export var curse_duration: float = 120.0
 @onready var hud_layer: CanvasLayer = $HUDLayer
 @onready var tree_container: Node2D = $TreeContainer
 @onready var timer: Timer = $Timer
