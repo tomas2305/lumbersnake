@@ -142,7 +142,8 @@ func _connect_bushes():
 		
 		
 func _connect_enemy():
-	enemy.connect("state_changed", Callable(self, "_on_enemy_state_changed"))
+	if enemy != null:
+		enemy.connect("state_changed", Callable(self, "_on_enemy_state_changed"))
 	
 	
 func _on_enemy_state_changed(state: Enemy.State):

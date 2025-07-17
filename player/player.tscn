@@ -436,5 +436,5 @@ visible = false
 max_shake = 3.0
 shake_fade = 3.0
 offset_distance = 32.0
-offset_smoothness = 10.0
+offset_smoothness = 2.0
 player_path = NodePath("..")
