@@ -27,23 +27,22 @@ func _ready() -> void:
 	animated_sprite_2d.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _on_body_entered(body: Node) -> void:
-	if body is Player:
+	if body is Player and not dead:
 		player_in_area = true
 		player_ref = body
 		animated_sprite_2d.play("focus")
 		print("Jugador en el área del árbol")
+		body.set_tree(self)
 
 func _on_body_exited(body: Node) -> void:
-	if body is Player:
+	if body is Player and not dead:
 		player_in_area = false
 		player_ref = null
-		queue_free()
-
-func can_be_chopped(by: Player) -> bool:
-	return player_in_area and player_ref == by
+		animated_sprite_2d.play("idle")
+		body.set_tree(null)
 
 func interact(by: Player):
-	if not can_be_chopped(by) or dead:
+	if dead:
 		return
 
 	current_hits += 1
@@ -79,5 +78,4 @@ func _on_animation_finished():
 		returning_to_focus_after_hit = false
 
 func kill():
-	print("KILL TREE!")
 	queue_free()

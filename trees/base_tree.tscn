@@ -214,8 +214,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r65dl"]
 size = Vector2(16, 20)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gvmkm"]
-radius = 20.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_y4okj"]
+radius = 24.0208
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r65dl"]
 radius = 882.164
@@ -244,7 +244,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.36667),
+"times": PackedFloat32Array(2.53333),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -295,8 +295,8 @@ shape = SubResource("RectangleShape2D_r65dl")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChopArea"]
-position = Vector2(-1, 14)
-shape = SubResource("CircleShape2D_gvmkm")
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_y4okj")
 
 [node name="SoundArea" type="Area2D" parent="."]
 visible = false

@@ -56,29 +56,15 @@ func _physics_process(delta):
 		inmovil = false
 	ultima_posicion = global_position
 
-	var sigue_colisionando_con_arbol := false
-	for i in get_slide_collision_count():
-		var collider = get_slide_collision(i).get_collider()
-		if collider is Enemy:
-			frozen = true
-		elif collider is BaseTree:
-			current_tree = collider
-			sigue_colisionando_con_arbol = true
-
-	if current_tree and not sigue_colisionando_con_arbol:
-		current_tree = null
-
 	# Interacción
-	if Input.is_action_just_pressed("hit") and current_tree:
-		_play_hit_animation(look_dir)
-		if current_tree.can_be_chopped(self):
+	if Input.is_action_just_pressed("hit"):
+		if current_tree:
+			_play_hit_animation()
 			if !Music.esta_muted:
 				$Axe.play(0.3)
 			current_tree.interact(self)
-			current_tree = null
-
-	if current_tree and global_position.distance_to(current_tree.global_position) > 16:
-		current_tree = null
+		elif direction.length() == 0.0:
+			_play_hit_animation()
 
 func _update_walk_animation(dir: Vector2) -> void:
 	walk_particles.emitting = true
@@ -113,17 +99,19 @@ func _on_anim_finished():
 		golpeando = false
 		_update_idle_animation(look_dir)
 
-func _play_hit_animation(dir: Vector2) -> void:
+func _play_hit_animation(_unused: Vector2 = Vector2.ZERO) -> void:
 	golpeando = true
 	anim.frame = 0
-	if abs(dir.y) > abs(dir.x):
-		if dir.y < 0:
+
+	if abs(look_dir.y) > abs(look_dir.x):
+		if look_dir.y < 0:
 			anim.play("hit_up")
 		else:
 			anim.play("hit_down")
 	else:
 		anim.play("hit_x")
-		anim.flip_h = dir.x < 0
+		anim.flip_h = look_dir.x < 0
+
 
 func _on_bush_player_entered_bush(body: Node2D) -> void:
 	if body == self:
@@ -152,3 +140,6 @@ func _on_enemy_state_changed(state: Enemy.State):
 		camera.zoom_out()
 	elif camera.zoom != camera.zoom_default:
 		camera.set_zoom_default()
+
+func set_tree(tree : BaseTree):
+	current_tree = tree
