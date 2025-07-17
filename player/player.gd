@@ -143,3 +143,7 @@ func _on_enemy_state_changed(state: Enemy.State):
 
 func set_tree(tree : BaseTree):
 	current_tree = tree
+
+func kill():
+	frozen = true
+	emit_signal("chased")
