@@ -134,6 +134,5 @@ func _on_bush_player_exited_bush(body: Node2D) -> void:
 
 func _connect_bushes():
 	for bush in get_tree().get_nodes_in_group("bushes"):
-		print("Conectando con:", bush.name)
 		bush.connect("player_entered_bush", Callable(self, "_on_bush_player_entered_bush"))
 		bush.connect("player_exited_bush", Callable(self, "_on_bush_player_exited_bush"))
