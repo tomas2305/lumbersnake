@@ -1,7 +1,7 @@
 extends Node
 
 @export var game_over_scene : PackedScene
-@onready var nav_layer = $Nav
+@onready var nav: TileMapLayer = $Map/Nav
 @export var curse_duration: float = 60.0
 @onready var hud_layer: CanvasLayer = $HUDLayer
 @onready var tree_container: Node2D = $TreeContainer
@@ -34,7 +34,6 @@ func _process(delta: float) -> void:
 	if Global.won and not has_processed_win:
 		has_processed_win = true
 		$Arrow.show()
-		open_gate()
 		timer.stop()
 		hud_layer.restore_time()
 	elif !has_processed_win:
@@ -52,10 +51,6 @@ func game_over():
 
 func _on_player_chased() -> void:
 	game_over()
-
-func open_gate():
-	for celda in gate:
-		nav_layer.erase_cell(celda) 
 
 
 func _on_win_area_body_entered(body: Node2D) -> void:

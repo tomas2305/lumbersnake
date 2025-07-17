@@ -1,10 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm64eealci0wu"]
+[gd_scene load_steps=2 format=3 uid="uid://bwnm8og34ktju"]
 
 [ext_resource type="Script" uid="uid://ycx6mtqsfqen" path="res://camera/camera.gd" id="1_lw1ob"]
 
 [node name="Camera" type="Camera2D" groups=["camera"]]
-position = Vector2(1, 0)
-zoom = Vector2(0.418, 0.42)
 script = ExtResource("1_lw1ob")
 max_shake = 0.5
 shake_fade = 0.5
