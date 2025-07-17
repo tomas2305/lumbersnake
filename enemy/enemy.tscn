@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://butfrm6kcwkfv"]
+[gd_scene load_steps=22 format=3 uid="uid://butfrm6kcwkfv"]
 
 [ext_resource type="Script" uid="uid://dch864dvvnkgw" path="res://enemy/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://cuk6w7l06s887" path="res://assets/Enemies/snake.png" id="2_pmsee"]
@@ -103,6 +103,9 @@ region = Rect2(32, 32, 16, 16)
 atlas = ExtResource("2_pmsee")
 region = Rect2(16, 32, 16, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1wwld"]
+radius = 8.0
+
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4gyqm")
@@ -161,5 +164,12 @@ collision_mask = 255
 scale = Vector2(0.8, 0.8)
 polygon = PackedVector2Array(0, 0, 173.2, -100, 173.2, 100)
 
+[node name="Killzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_1wwld")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RandomDir" to="." method="_on_random_dir_timeout"]
+[connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]

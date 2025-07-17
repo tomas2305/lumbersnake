@@ -417,6 +417,7 @@ scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_g1dw6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -2)
 scale = Vector2(1.2, 1.352)
 sprite_frames = SubResource("SpriteFrames_gcmgo")
@@ -436,5 +437,5 @@ visible = false
 max_shake = 3.0
 shake_fade = 3.0
 offset_distance = 32.0
-offset_smoothness = 10.0
+offset_smoothness = 2.0
 player_path = NodePath("..")

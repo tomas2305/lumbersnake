@@ -191,3 +191,8 @@ func movement():
 
 func randomize_patrol_queue():
 	patrol_queue.shuffle()
+	
+
+func _on_killzone_body_entered(body: Node2D) -> void:
+	if body is Player:
+		player.kill()

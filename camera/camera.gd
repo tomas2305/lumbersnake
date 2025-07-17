@@ -5,17 +5,20 @@ extends Camera2D
 @export var offset_distance: float = 24.0
 @export var offset_smoothness: float = 0
 @export var player_path: NodePath
+@export  var zoom_default : Vector2 = Vector2(1, 1)
+@export  var zoom_out_value : Vector2 = Vector2(0.7, 0.7) 
 
 var _shake_strength: float = 0.0
 var _target_offset: Vector2 = Vector2.ZERO
 var _direction_offset: Vector2 = Vector2.ZERO
 var _player: Node2D
-var zoom_default : Vector2 = Vector2(1, 1) 
 var zoom_target: Vector2 = Vector2(1, 1)
 
 
 func _ready():
 	_player = get_node(player_path)
+	zoom = zoom_default
+	zoom_target = zoom_default
 
 func trigger_shake():
 	_shake_strength = max_shake
@@ -42,7 +45,7 @@ func _process(delta: float) -> void:
 	offset = _direction_offset + shake_offset
 
 func zoom_out():
-	zoom_target = Vector2(0.8, 0.8)
+	zoom_target = zoom_out_value
 
 func set_zoom_default():
 	zoom_target = zoom_default
