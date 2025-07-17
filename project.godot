@@ -36,6 +36,7 @@ cursed_trees=""
 bushes="bushes for hiding"
 camera=""
 enemy=""
+player=""
 
 [input]
 
