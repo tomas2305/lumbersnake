@@ -1,8 +1,9 @@
-[gd_scene load_steps=55 format=3 uid="uid://b6hh4rixs2dfv"]
+[gd_scene load_steps=56 format=3 uid="uid://b6hh4rixs2dfv"]
 
 [ext_resource type="Script" uid="uid://btxulyebp6l8e" path="res://player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://nekv60ak06du" path="res://assets/Player/lumber_v11.png" id="2_g1dw6"]
 [ext_resource type="AudioStream" uid="uid://cagn6a6lb3331" path="res://assets/hitting-stalactites-with-axe-212652.mp3" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://bwnm8og34ktju" path="res://camera/camera.tscn" id="4_yw30f"]
 
 [sub_resource type="Curve" id="Curve_g1dw6"]
 _data = [Vector2(0.00966183, 1), 0.0, 0.0, 0, 0, Vector2(0.256039, 1), -0.0930334, -0.0930334, 0, 0, Vector2(0.782609, 0.011236), -4.01737, 0.0, 0, 0]
@@ -420,8 +421,7 @@ position = Vector2(0, -2)
 scale = Vector2(1.2, 1.352)
 sprite_frames = SubResource("SpriteFrames_gcmgo")
 animation = &"walk_x"
-frame = 3
-frame_progress = 0.1876
+frame_progress = 0.10748
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 3.5)
@@ -430,3 +430,11 @@ shape = SubResource("CircleShape2D_onrkg")
 
 [node name="Axe" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_g1dw6")
+
+[node name="Camera" parent="." instance=ExtResource("4_yw30f")]
+visible = false
+max_shake = 3.0
+shake_fade = 3.0
+offset_distance = 32.0
+offset_smoothness = 10.0
+player_path = NodePath("..")
