@@ -1,25 +1,17 @@
-[gd_scene load_steps=61 format=4 uid="uid://bm8y3c23tnk0f"]
+[gd_scene load_steps=48 format=4 uid="uid://bm8y3c23tnk0f"]
 
 [ext_resource type="Script" uid="uid://cu34b60ickuu5" path="res://tutorials/tutorial_2.gd" id="1_hxdvl"]
-[ext_resource type="Texture2D" uid="uid://dy0332soslfc3" path="res://assets/Tiles/Path_Middle.png" id="2_h8fsf"]
 [ext_resource type="Texture2D" uid="uid://cypquqhjpllxb" path="res://assets/forest/combination-v3-export.png" id="2_rgtiw"]
-[ext_resource type="Texture2D" uid="uid://c6knd2soisgya" path="res://assets/Tiles/Cliff_Tile.png" id="3_oet7r"]
-[ext_resource type="Texture2D" uid="uid://bqx08jgnivlxi" path="res://assets/Tiles/Path_Tile.png" id="4_euvwd"]
 [ext_resource type="Texture2D" uid="uid://61stnq0st0dt" path="res://assets/Tiles/tiles-combination-6-export-sheet-export.png" id="5_517tr"]
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="6_ateyf"]
-[ext_resource type="Texture2D" uid="uid://bnug2nhyirwi6" path="res://assets/forest/Plant6.png" id="6_rgtiw"]
 [ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player/player.tscn" id="7_e4dj3"]
-[ext_resource type="Texture2D" uid="uid://s3psw4bfcwql" path="res://assets/forest/Plant13.png" id="7_nspky"]
-[ext_resource type="Texture2D" uid="uid://ircqbvlybc0k" path="res://assets/forest/Plant15.png" id="8_4put2"]
+[ext_resource type="Texture2D" uid="uid://dieuijvrtxoky" path="res://assets/forest/Plant13.png" id="7_nspky"]
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="8_80yv5"]
 [ext_resource type="Texture2D" uid="uid://bdawlh7bro72c" path="res://assets/forest/tree.png" id="9_70rov"]
 [ext_resource type="PackedScene" uid="uid://butfrm6kcwkfv" path="res://enemy/enemy.tscn" id="10_euvwd"]
 [ext_resource type="Texture2D" uid="uid://c5o76kkxpjb6m" path="res://assets/forest/bush.png" id="10_r8pnc"]
-[ext_resource type="Texture2D" uid="uid://pw53r1xx815b" path="res://assets/forest/Plant16.png" id="11_fvyqq"]
 [ext_resource type="PackedScene" uid="uid://d2pitdc17bfai" path="res://trees/bush.tscn" id="12_75y7t"]
 [ext_resource type="PackedScene" uid="uid://bwnm8og34ktju" path="res://camera/camera.tscn" id="12_ateyf"]
-[ext_resource type="Texture2D" uid="uid://cn3bwauimu53t" path="res://assets/forest/Plant28.png" id="12_mmdsk"]
-[ext_resource type="Texture2D" uid="uid://cn07vhmbexx1l" path="res://assets/forest/Plant29.png" id="13_cvpam"]
 [ext_resource type="Texture2D" uid="uid://bxi2t8quk44du" path="res://assets/forest/cursed tree_v3.png" id="14_3sthd"]
 [ext_resource type="PackedScene" uid="uid://dwbgiis415ekt" path="res://trees/decoration_tree_b.tscn" id="16_4put2"]
 [ext_resource type="PackedScene" uid="uid://b28305gqwv13b" path="res://menus/game_hud.tscn" id="24_4put2"]
@@ -347,11 +339,9 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_4put2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yb1ct"]
-texture = ExtResource("2_h8fsf")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4t6hg"]
-texture = ExtResource("3_oet7r")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -379,7 +369,6 @@ texture = ExtResource("3_oet7r")
 2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7vrqn"]
-texture = ExtResource("4_euvwd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -695,13 +684,11 @@ texture = ExtResource("5_517tr")
 16:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_alfsv"]
-texture = ExtResource("6_rgtiw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ja834"]
 texture = ExtResource("7_nspky")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qaqs"]
-texture = ExtResource("8_4put2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ne2ul"]
 texture = ExtResource("9_70rov")
@@ -724,25 +711,6 @@ texture = ExtResource("10_r8pnc")
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1unl"]
-texture = ExtResource("6_rgtiw")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s2mnf"]
 texture = ExtResource("7_nspky")
 1:0/0 = 0
@@ -750,53 +718,6 @@ texture = ExtResource("7_nspky")
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxldx"]
-texture = ExtResource("8_4put2")
-1:1/0 = 0
-2:1/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_454sr"]
-texture = ExtResource("11_fvyqq")
-1:1/0 = 0
-2:1/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghu36"]
-texture = ExtResource("12_mmdsk")
-1:0/0 = 0
-2:0/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsu18"]
-texture = ExtResource("13_cvpam")
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -1522,12 +1443,7 @@ texture = ExtResource("14_3sthd")
 [sub_resource type="TileSet" id="TileSet_hn2gq"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nc8b3")
-sources/1 = SubResource("TileSetAtlasSource_d1unl")
 sources/2 = SubResource("TileSetAtlasSource_s2mnf")
-sources/3 = SubResource("TileSetAtlasSource_kxldx")
-sources/4 = SubResource("TileSetAtlasSource_454sr")
-sources/5 = SubResource("TileSetAtlasSource_ghu36")
-sources/6 = SubResource("TileSetAtlasSource_dsu18")
 sources/7 = SubResource("TileSetAtlasSource_p0g4l")
 sources/8 = SubResource("TileSetAtlasSource_s4813")
 sources/9 = SubResource("TileSetAtlasSource_wvird")
@@ -1848,7 +1764,8 @@ size = Vector2(13, 90)
 script = ExtResource("1_hxdvl")
 
 [node name="Nav" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD5/wAAAAAMAA8AAAD5////AAAOAA8AAAD6/wAAAAAMAA8AAAD7/wAAAAAMAA8AAAD8////AAAOAA8AAAD8/wAAAAACAAAAAAD9////AAAOAA8AAAD9/wAAAAAOAA8AAAD+////AAAOAA8AAAD+/wAAAAABAAAAAAD/////AAAOAA8AAAD//wAAAAAMAA8AAAAAAP//AAAOAA8AAAACAP//AAAOAA8AAAACAAAAAAAMAA8AAAADAP//AAAOAA8AAAADAAAAAAAMAA8AAAAEAP//AAAOAA8AAAAEAAAAAAAMAA8AAAAFAP//AAAOAA8AAAAFAAAAAAAMAA8AAAAGAP//AAAOAA8AAAAGAAAAAAAMAA8AAAAHAP//AAAOAA8AAAAHAAAAAAAMAA8AAAAIAP//AAAOAA8AAAAIAAAAAAAMAA8AAAAJAP//AAAOAA8AAAAJAAAAAAAMAA8AAAAKAP//AAAOAA8AAAAKAAAAAAAMAA8AAAALAP//AAAOAA8AAAALAAAAAAAMAA8AAAAMAP//AAAOAA8AAAAMAAAAAAAMAA8AAAANAP//AAAOAA8AAAANAAAAAAAMAA8AAAAOAP//AAAOAA8AAAAOAAAAAAAMAA8AAAAPAP//AAAOAA8AAAAPAAAAAAAMAA8AAAAQAP//AAAOAA8AAAAQAAAAAAAMAA8AAAARAP//AAAOAA8AAAASAP//AAAOAA8AAAATAP//AAAOAA8AAAATAAAAAAAMAA8AAAAUAP//AAAOAA8AAAAVAP//AAAOAA8AAAAVAAAAAAACAAAAAAAWAP//AAAOAA8AAAAWAAAAAAAOAA8AAAAXAP//AAAOAA8AAAAXAAAAAAABAAAAAAD8/wcAAAACAAEAAAD8/wgAAAAOAA8AAAD8/wkAAAAOAA8AAAD9/wcAAAAOAA8AAAD9/wgAAAAOAA8AAAD9/wkAAAAOAA8AAAD+/wgAAAAOAA8AAAD+/wkAAAAOAA8AAAD//wcAAAANAA8AAAD//wgAAAAOAA8AAAD//wkAAAAOAA8AAAD//wsAAAAOAA8AAAD//wwAAAAOAA8AAAAAAAcAAAANAA8AAAAAAAgAAAAOAA8AAAAAAAkAAAAOAA8AAAAAAAoAAAAOAA8AAAAAAAsAAAAOAA8AAAAAAAwAAAAOAA8AAAABAAcAAAANAA8AAAABAAgAAAAOAA8AAAABAAkAAAAOAA8AAAABAAoAAAAOAA8AAAABAAsAAAAOAA8AAAABAAwAAAAOAA8AAAABAA0AAAAOAA8AAAABAA4AAAAOAA8AAAACAAcAAAANAA8AAAACAAgAAAAOAA8AAAACAAkAAAAOAA8AAAACAAoAAAAOAA8AAAACAAsAAAAOAA8AAAACAAwAAAAOAA8AAAACAA0AAAAOAA8AAAACAA4AAAAOAA8AAAADAAcAAAANAA8AAAADAAgAAAAOAA8AAAADAAkAAAAOAA8AAAADAAoAAAAOAA8AAAADAAsAAAAOAA8AAAADAAwAAAAOAA8AAAADAA0AAAAOAA8AAAADAA4AAAAOAA8AAAAEAAcAAAANAA8AAAAEAAgAAAAOAA8AAAAEAAkAAAAOAA8AAAAEAAoAAAAOAA8AAAAEAAsAAAAOAA8AAAAEAAwAAAAOAA8AAAAEAA0AAAAOAA8AAAAEAA4AAAAOAA8AAAAFAAcAAAANAA8AAAAFAAgAAAAOAA8AAAAFAAkAAAAOAA8AAAAFAAoAAAAOAA8AAAAFAAsAAAAOAA8AAAAFAAwAAAAOAA8AAAAFAA0AAAAOAA8AAAAFAA4AAAAOAA8AAAAGAAcAAAANAA8AAAAGAAgAAAAOAA8AAAAGAAkAAAAOAA8AAAAGAAoAAAAOAA8AAAAGAAsAAAAOAA8AAAAGAAwAAAAOAA8AAAAGAA0AAAAOAA8AAAAGAA4AAAAOAA8AAAAHAAcAAAANAA8AAAAHAAgAAAAOAA8AAAAHAAkAAAAOAA8AAAAHAAoAAAAOAA8AAAAHAAsAAAAOAA8AAAAHAA4AAAAOAA8AAAAIAAcAAAANAA8AAAAIAAgAAAAOAA8AAAAIAAkAAAAOAA8AAAAIAAoAAAAOAA8AAAAIAAsAAAAOAA8AAAAIAA4AAAAOAA8AAAAJAAcAAAANAA8AAAAJAAgAAAAOAA8AAAAJAAkAAAAOAA8AAAAJAAoAAAAOAA8AAAAJAAsAAAAOAA8AAAAJAAwAAAAOAA8AAAAJAA0AAAAOAA8AAAAJAA4AAAAOAA8AAAAKAAcAAAANAA8AAAAKAAgAAAAOAA8AAAAKAAkAAAAOAA8AAAAKAAoAAAAOAA8AAAAKAAsAAAAOAA8AAAAKAAwAAAAOAA8AAAAKAA0AAAAOAA8AAAAKAA4AAAAOAA8AAAALAAcAAAANAA8AAAALAAgAAAAOAA8AAAALAAkAAAAOAA8AAAALAA0AAAAOAA8AAAALAA4AAAAOAA8AAAAMAAcAAAANAA8AAAAMAAgAAAAOAA8AAAAMAAkAAAAOAA8AAAAMAA4AAAAOAA8AAAANAAcAAAANAA8AAAANAAgAAAAOAA8AAAANAAkAAAAOAA8AAAANAA4AAAAOAA8AAAAOAAcAAAANAA8AAAAOAAgAAAAOAA8AAAAOAAkAAAAOAA8AAAAPAAcAAAANAA8AAAAPAAgAAAAOAA8AAAAPAAkAAAAOAA8AAAAPAA4AAAAOAA8AAAAQAAcAAAANAA8AAAAQAAgAAAAOAA8AAAAQAAkAAAAOAA8AAAARAAcAAAANAA8AAAARAAgAAAAOAA8AAAARAAkAAAAOAA8AAAASAAcAAAANAA8AAAASAAgAAAAOAA8AAAASAAkAAAAOAA8AAAASAAoAAAAOAA8AAAATAAcAAAANAA8AAAATAAgAAAAOAA8AAAATAAkAAAAOAA8AAAATAAoAAAAOAA8AAAAUAAcAAAANAA8AAAAUAAgAAAAOAA8AAAAUAAkAAAAOAA8AAAAUAAoAAAAOAA8AAAAUAAsAAAAOAA8AAAAUAAwAAAAOAA8AAAAUAA0AAAAOAA8AAAAUAA4AAAAOAA8AAAAVAAcAAAACAAEAAAAVAAgAAAAOAA8AAAAVAAkAAAAOAA8AAAAVAAoAAAAOAA8AAAAVAAsAAAAOAA8AAAAVAAwAAAAOAA8AAAAVAA0AAAAOAA8AAAAVAA4AAAAOAA8AAAAWAAcAAAAOAA8AAAAWAAgAAAAOAA8AAAAWAAkAAAAOAA8AAAAWAAoAAAAOAA8AAAAWAA0AAAAOAA8AAAAWAA4AAAAOAA8AAAAXAAcAAAABAAEAAAAXAAgAAAAOAA8AAAAXAAkAAAAOAA8AAAAYAAcAAAAOAA8AAAAYAAgAAAAOAA8AAAAZAAcAAAAOAA8AAAAZAAgAAAAOAA8AAAAaAAcAAAAOAA8AAAAaAAgAAAAOAA8AAAAaAAkAAAAOAA8AAAAbAAcAAAAOAA8AAAAbAAgAAAAOAA8AAAAbAAkAAAAOAA8AAAAbAA4AAAAOAA8AAAD8/wEAAAAKAA8AAAD8/wIAAAAKAA8AAAD8/wMAAAAKAA8AAAD8/wQAAAAKAA8AAAD8/wUAAAAKAA8AAAD8/wYAAAAKAA8AAAD9/wEAAAAOAA8AAAD9/wIAAAAOAA8AAAD9/wMAAAAOAA8AAAD9/wQAAAAOAA8AAAD9/wUAAAAOAA8AAAD9/wYAAAAOAA8AAAD+/wEAAAALAA8AAAD+/wIAAAALAA8AAAD+/wMAAAALAA8AAAD+/wQAAAALAA8AAAD+/wUAAAALAA8AAAD+/wYAAAALAA8AAAD+/wcAAAABAAEAAAAVAAEAAAAOAA8AAAAVAAIAAAAKAA8AAAAVAAMAAAAKAA8AAAAVAAQAAAAKAA8AAAAVAAUAAAAKAA8AAAAVAAYAAAAKAA8AAAAWAAEAAAAOAA8AAAAWAAIAAAAOAA8AAAAWAAMAAAAOAA8AAAAWAAQAAAAOAA8AAAAWAAUAAAAOAA8AAAAWAAYAAAAOAA8AAAAXAAEAAAALAA8AAAAXAAIAAAALAA8AAAAXAAMAAAALAA8AAAAXAAQAAAALAA8AAAAXAAUAAAALAA8AAAAXAAYAAAALAA8AAAAUAAAAAAAMAA8AAAAYAAQAAAALAA8AAAAYAAMAAAALAA8AAAD7////AAAOAA8AAAANAA0AAAAOAA8AAAAOAA4AAAAOAA8AAAD+/wsAAAAOAA8AAAD9/wsAAAAOAA8AAAATAAsAAAAOAA8AAAATAAwAAAAOAA8AAAATAA0AAAAOAA8AAAAWAAsAAAAOAA8AAAAWAAwAAAAOAA8AAAASAAsAAAAOAA8AAAASAAwAAAAOAA8AAAASAA0AAAAOAA8AAAD5//j/AAAOAA8AAAD5//n/AAAOAA8AAAD5//r/AAAOAA8AAAD5//v/AAAOAA8AAAD5//z/AAAOAA8AAAD5//3/AAAOAA8AAAD5//7/AAAOAA8AAAD6//j/AAAOAA8AAAD6//n/AAAOAA8AAAD6//r/AAAOAA8AAAD6//v/AAAOAA8AAAD6//z/AAAOAA8AAAD6//3/AAAOAA8AAAD7//j/AAAOAA8AAAD7//n/AAAOAA8AAAD7//r/AAAOAA8AAAD7//v/AAAOAA8AAAD7//z/AAAOAA8AAAD7//3/AAAOAA8AAAD7//7/AAAOAA8AAAD8//j/AAAOAA8AAAD8//n/AAAOAA8AAAD8//r/AAAOAA8AAAD8//v/AAAOAA8AAAD8//z/AAAOAA8AAAD8//3/AAAOAA8AAAD8//7/AAAOAA8AAAD9//j/AAAOAA8AAAD9//n/AAAOAA8AAAD9//r/AAAOAA8AAAD9//v/AAAOAA8AAAD9//z/AAAOAA8AAAD9//3/AAAOAA8AAAD9//7/AAAOAA8AAAD+//z/AAAOAA8AAAD+//3/AAAOAA8AAAD+//7/AAAOAA8AAAD///z/AAAOAA8AAAD///3/AAAOAA8AAAD///7/AAAOAA8AAAAAAPz/AAAOAA8AAAAAAP3/AAAOAA8AAAAAAP7/AAAOAA8AAAABAPz/AAAOAA8AAAABAP3/AAAOAA8AAAABAP7/AAAOAA8AAAACAPv/AAAOAA8AAAACAPz/AAAOAA8AAAACAP3/AAAOAA8AAAACAP7/AAAOAA8AAAADAPv/AAAOAA8AAAADAPz/AAAOAA8AAAADAP3/AAAOAA8AAAADAP7/AAAOAA8AAAAEAPv/AAAOAA8AAAAEAPz/AAAOAA8AAAAEAP3/AAAOAA8AAAAEAP7/AAAOAA8AAAAFAPj/AAAOAA8AAAAFAPn/AAAOAA8AAAAFAPr/AAAOAA8AAAAFAPv/AAAOAA8AAAAFAPz/AAAOAA8AAAAFAP3/AAAOAA8AAAAFAP7/AAAOAA8AAAAGAPz/AAAOAA8AAAAGAP3/AAAOAA8AAAAGAP7/AAAOAA8AAAAHAPj/AAAOAA8AAAAHAPn/AAAOAA8AAAAHAPz/AAAOAA8AAAAHAP3/AAAOAA8AAAAHAP7/AAAOAA8AAAAIAPz/AAAOAA8AAAAIAP3/AAAOAA8AAAAIAP7/AAAOAA8AAAAJAPz/AAAOAA8AAAAJAP3/AAAOAA8AAAAJAP7/AAAOAA8AAAAKAPz/AAAOAA8AAAAKAP3/AAAOAA8AAAAKAP7/AAAOAA8AAAALAPj/AAAOAA8AAAALAPn/AAAOAA8AAAALAPr/AAAOAA8AAAALAPv/AAAOAA8AAAALAPz/AAAOAA8AAAALAP3/AAAOAA8AAAALAP7/AAAOAA8AAAAMAPz/AAAOAA8AAAAMAP3/AAAOAA8AAAAMAP7/AAAOAA8AAAANAPz/AAAOAA8AAAANAP3/AAAOAA8AAAANAP7/AAAOAA8AAAAOAPz/AAAOAA8AAAAOAP3/AAAOAA8AAAAOAP7/AAAOAA8AAAAPAPz/AAAOAA8AAAAPAP3/AAAOAA8AAAAPAP7/AAAOAA8AAAAQAPz/AAAOAA8AAAAQAP3/AAAOAA8AAAAQAP7/AAAOAA8AAAARAPj/AAAOAA8AAAARAPn/AAAOAA8AAAARAPr/AAAOAA8AAAARAPv/AAAOAA8AAAARAPz/AAAOAA8AAAARAP3/AAAOAA8AAAARAP7/AAAOAA8AAAASAPj/AAAOAA8AAAASAPn/AAAOAA8AAAASAPr/AAAOAA8AAAASAPv/AAAOAA8AAAASAPz/AAAOAA8AAAASAP3/AAAOAA8AAAASAP7/AAAOAA8AAAATAPr/AAAOAA8AAAATAPv/AAAOAA8AAAATAPz/AAAOAA8AAAATAP3/AAAOAA8AAAATAP7/AAAOAA8AAAAUAPr/AAAOAA8AAAAUAPv/AAAOAA8AAAAUAPz/AAAOAA8AAAAUAP3/AAAOAA8AAAAUAP7/AAAOAA8AAAAVAPj/AAAOAA8AAAAVAPn/AAAOAA8AAAAVAPr/AAAOAA8AAAAVAPv/AAAOAA8AAAAVAPz/AAAOAA8AAAAVAP3/AAAOAA8AAAAVAP7/AAAOAA8AAAAWAPj/AAAOAA8AAAAWAPn/AAAOAA8AAAAWAPr/AAAOAA8AAAAWAPv/AAAOAA8AAAAWAPz/AAAOAA8AAAAWAP3/AAAOAA8AAAAWAP7/AAAOAA8AAAAXAPj/AAAOAA8AAAAXAPn/AAAOAA8AAAAXAPr/AAAOAA8AAAAXAPv/AAAOAA8AAAAXAPz/AAAOAA8AAAAXAP3/AAAOAA8AAAAXAP7/AAAOAA8AAAAYAPj/AAAOAA8AAAAYAPn/AAAOAA8AAAAYAPr/AAAOAA8AAAAYAPv/AAAOAA8AAAAYAPz/AAAOAA8AAAAZAPj/AAAOAA8AAAAZAPn/AAAOAA8AAAAZAPr/AAAOAA8AAAAZAPv/AAAOAA8AAAAaAPj/AAAOAA8AAAAaAPn/AAAOAA8AAAAaAP7/AAAOAA8AAAAbAPj/AAAOAA8AAAAbAPn/AAAOAA8AAAAMAPv/AAAOAA8AAAAMAPr/AAAOAA8AAAAMAPn/AAAOAA8AAAAMAPj/AAAOAA8AAAANAPj/AAAOAA8AAAANAPn/AAAOAA8AAAANAPr/AAAOAA8AAAANAPv/AAAOAA8AAAAOAPv/AAAOAA8AAAAPAPv/AAAOAA8AAAAQAPv/AAAOAA8AAAAQAPr/AAAOAA8AAAAQAPn/AAAOAA8AAAAQAPj/AAAOAA8AAAAPAPj/AAAOAA8AAAAOAPj/AAAOAA8AAAA=")
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAD5/wAAAAAMAA8AAAD5////AAAOAA8AAAD6/wAAAAAMAA8AAAD7/wAAAAAMAA8AAAD8////AAAOAA8AAAD8/wAAAAACAAAAAAD9////AAAOAA8AAAD9/wAAAAAOAA8AAAD+////AAAOAA8AAAD+/wAAAAABAAAAAAD/////AAAOAA8AAAD//wAAAAAMAA8AAAAAAP//AAAOAA8AAAACAP//AAAOAA8AAAACAAAAAAAMAA8AAAADAP//AAAOAA8AAAADAAAAAAAMAA8AAAAEAP//AAAOAA8AAAAEAAAAAAAMAA8AAAAFAP//AAAOAA8AAAAFAAAAAAAMAA8AAAAGAP//AAAOAA8AAAAGAAAAAAAMAA8AAAAHAP//AAAOAA8AAAAHAAAAAAAMAA8AAAAIAP//AAAOAA8AAAAIAAAAAAAMAA8AAAAJAP//AAAOAA8AAAAJAAAAAAAMAA8AAAAKAP//AAAOAA8AAAAKAAAAAAAMAA8AAAALAP//AAAOAA8AAAALAAAAAAAMAA8AAAAMAP//AAAOAA8AAAAMAAAAAAAMAA8AAAANAP//AAAOAA8AAAANAAAAAAAMAA8AAAAOAP//AAAOAA8AAAAOAAAAAAAMAA8AAAAPAP//AAAOAA8AAAAPAAAAAAAMAA8AAAAQAP//AAAOAA8AAAAQAAAAAAAMAA8AAAARAP//AAAOAA8AAAASAP//AAAOAA8AAAATAP//AAAOAA8AAAATAAAAAAAMAA8AAAAUAP//AAAOAA8AAAAVAP//AAAOAA8AAAAVAAAAAAACAAAAAAAWAP//AAAOAA8AAAAWAAAAAAAOAA8AAAAXAP//AAAOAA8AAAAXAAAAAAABAAAAAAD8/wcAAAACAAEAAAD8/wgAAAAOAA8AAAD9/wcAAAAOAA8AAAD9/wgAAAAOAA8AAAD9/wkAAAAOAA8AAAD+/wgAAAAOAA8AAAD+/wkAAAAOAA8AAAD//wcAAAANAA8AAAD//wgAAAAOAA8AAAD//wkAAAAOAA8AAAD//wsAAAAOAA8AAAD//wwAAAAOAA8AAAAAAAcAAAANAA8AAAAAAAgAAAAOAA8AAAAAAAkAAAAOAA8AAAAAAAoAAAAOAA8AAAAAAAsAAAAOAA8AAAAAAAwAAAAOAA8AAAABAAcAAAANAA8AAAABAAgAAAAOAA8AAAABAAkAAAAOAA8AAAABAAoAAAAOAA8AAAABAAsAAAAOAA8AAAABAAwAAAAOAA8AAAABAA4AAAAOAA8AAAACAAcAAAANAA8AAAACAAgAAAAOAA8AAAACAAkAAAAOAA8AAAACAAoAAAAOAA8AAAACAAsAAAAOAA8AAAACAAwAAAAOAA8AAAACAA4AAAAOAA8AAAADAAcAAAANAA8AAAADAAgAAAAOAA8AAAADAAkAAAAOAA8AAAADAAoAAAAOAA8AAAADAAsAAAAOAA8AAAADAAwAAAAOAA8AAAADAA4AAAAOAA8AAAAEAAcAAAANAA8AAAAEAAgAAAAOAA8AAAAEAAkAAAAOAA8AAAAEAAoAAAAOAA8AAAAEAAsAAAAOAA8AAAAEAAwAAAAOAA8AAAAFAAcAAAANAA8AAAAFAAgAAAAOAA8AAAAFAAkAAAAOAA8AAAAFAAoAAAAOAA8AAAAFAAsAAAAOAA8AAAAFAAwAAAAOAA8AAAAFAA0AAAAOAA8AAAAGAAcAAAANAA8AAAAGAAgAAAAOAA8AAAAGAAkAAAAOAA8AAAAGAAoAAAAOAA8AAAAGAAsAAAAOAA8AAAAGAAwAAAAOAA8AAAAHAAcAAAANAA8AAAAHAAgAAAAOAA8AAAAHAAkAAAAOAA8AAAAHAAoAAAAOAA8AAAAHAAsAAAAOAA8AAAAHAA4AAAAOAA8AAAAIAAcAAAANAA8AAAAIAAgAAAAOAA8AAAAIAAkAAAAOAA8AAAAIAAoAAAAOAA8AAAAIAAsAAAAOAA8AAAAIAA4AAAAOAA8AAAAJAAcAAAANAA8AAAAJAAgAAAAOAA8AAAAJAAkAAAAOAA8AAAAJAAoAAAAOAA8AAAAJAAsAAAAOAA8AAAAJAAwAAAAOAA8AAAAJAA4AAAAOAA8AAAAKAAcAAAANAA8AAAAKAAgAAAAOAA8AAAAKAAkAAAAOAA8AAAAKAAoAAAAOAA8AAAAKAAsAAAAOAA8AAAAKAAwAAAAOAA8AAAAKAA4AAAAOAA8AAAALAAcAAAANAA8AAAALAAgAAAAOAA8AAAALAAkAAAAOAA8AAAALAA0AAAAOAA8AAAALAA4AAAAOAA8AAAAMAAcAAAANAA8AAAAMAAgAAAAOAA8AAAAMAAkAAAAOAA8AAAAMAA4AAAAOAA8AAAANAAcAAAANAA8AAAANAAgAAAAOAA8AAAANAAkAAAAOAA8AAAANAA4AAAAOAA8AAAAOAAcAAAANAA8AAAAOAAgAAAAOAA8AAAAOAAkAAAAOAA8AAAAPAAcAAAANAA8AAAAPAAgAAAAOAA8AAAAPAAkAAAAOAA8AAAAPAA4AAAAOAA8AAAAQAAcAAAANAA8AAAAQAAgAAAAOAA8AAAAQAAkAAAAOAA8AAAARAAcAAAANAA8AAAARAAgAAAAOAA8AAAARAAkAAAAOAA8AAAASAAcAAAANAA8AAAASAAgAAAAOAA8AAAASAAkAAAAOAA8AAAASAAoAAAAOAA8AAAATAAcAAAANAA8AAAATAAgAAAAOAA8AAAATAAkAAAAOAA8AAAATAAoAAAAOAA8AAAAUAAcAAAANAA8AAAAUAAgAAAAOAA8AAAAUAAkAAAAOAA8AAAAUAAoAAAAOAA8AAAAUAAsAAAAOAA8AAAAUAAwAAAAOAA8AAAAUAA0AAAAOAA8AAAAUAA4AAAAOAA8AAAAVAAcAAAACAAEAAAAVAAgAAAAOAA8AAAAVAAkAAAAOAA8AAAAVAAoAAAAOAA8AAAAVAAsAAAAOAA8AAAAVAAwAAAAOAA8AAAAVAA0AAAAOAA8AAAAVAA4AAAAOAA8AAAAWAAcAAAAOAA8AAAAWAAgAAAAOAA8AAAAWAAkAAAAOAA8AAAAWAAoAAAAOAA8AAAAWAA0AAAAOAA8AAAAWAA4AAAAOAA8AAAAXAAcAAAABAAEAAAAXAAgAAAAOAA8AAAAXAAkAAAAOAA8AAAAYAAcAAAAOAA8AAAAYAAgAAAAOAA8AAAAZAAcAAAAOAA8AAAAZAAgAAAAOAA8AAAAaAAcAAAAOAA8AAAAaAAgAAAAOAA8AAAAaAAkAAAAOAA8AAAAbAAcAAAAOAA8AAAAbAAgAAAAOAA8AAAAbAAkAAAAOAA8AAAAbAA4AAAAOAA8AAAD8/wEAAAAKAA8AAAD8/wIAAAAKAA8AAAD8/wMAAAAKAA8AAAD8/wQAAAAKAA8AAAD8/wUAAAAKAA8AAAD8/wYAAAAKAA8AAAD9/wEAAAAOAA8AAAD9/wIAAAAOAA8AAAD9/wMAAAAOAA8AAAD9/wQAAAAOAA8AAAD9/wUAAAAOAA8AAAD9/wYAAAAOAA8AAAD+/wEAAAALAA8AAAD+/wIAAAALAA8AAAD+/wMAAAALAA8AAAD+/wQAAAALAA8AAAD+/wUAAAALAA8AAAD+/wYAAAALAA8AAAD+/wcAAAABAAEAAAAVAAEAAAAOAA8AAAAVAAIAAAAKAA8AAAAVAAMAAAAKAA8AAAAVAAQAAAAKAA8AAAAVAAUAAAAKAA8AAAAVAAYAAAAKAA8AAAAWAAEAAAAOAA8AAAAWAAIAAAAOAA8AAAAWAAMAAAAOAA8AAAAWAAQAAAAOAA8AAAAWAAUAAAAOAA8AAAAWAAYAAAAOAA8AAAAXAAEAAAALAA8AAAAXAAIAAAALAA8AAAAXAAMAAAALAA8AAAAXAAQAAAALAA8AAAAXAAUAAAALAA8AAAAXAAYAAAALAA8AAAAUAAAAAAAMAA8AAAAYAAQAAAALAA8AAAAYAAMAAAALAA8AAAD7////AAAOAA8AAAANAA0AAAAOAA8AAAAOAA4AAAAOAA8AAAD+/wsAAAAOAA8AAAD9/wsAAAAOAA8AAAATAAsAAAAOAA8AAAATAAwAAAAOAA8AAAATAA0AAAAOAA8AAAAWAAsAAAAOAA8AAAAWAAwAAAAOAA8AAAASAAsAAAAOAA8AAAASAAwAAAAOAA8AAAASAA0AAAAOAA8AAAD5//j/AAAOAA8AAAD5//n/AAAOAA8AAAD5//r/AAAOAA8AAAD5//v/AAAOAA8AAAD5//z/AAAOAA8AAAD5//3/AAAOAA8AAAD5//7/AAAOAA8AAAD6//j/AAAOAA8AAAD6//n/AAAOAA8AAAD6//r/AAAOAA8AAAD6//v/AAAOAA8AAAD6//z/AAAOAA8AAAD6//3/AAAOAA8AAAD7//j/AAAOAA8AAAD7//n/AAAOAA8AAAD7//r/AAAOAA8AAAD7//v/AAAOAA8AAAD7//z/AAAOAA8AAAD7//3/AAAOAA8AAAD7//7/AAAOAA8AAAD8//j/AAAOAA8AAAD8//n/AAAOAA8AAAD8//r/AAAOAA8AAAD8//v/AAAOAA8AAAD8//z/AAAOAA8AAAD8//3/AAAOAA8AAAD8//7/AAAOAA8AAAD9//j/AAAOAA8AAAD9//n/AAAOAA8AAAD9//r/AAAOAA8AAAD9//v/AAAOAA8AAAD9//z/AAAOAA8AAAD9//3/AAAOAA8AAAD9//7/AAAOAA8AAAD+//z/AAAOAA8AAAD+//3/AAAOAA8AAAD+//7/AAAOAA8AAAD///z/AAAOAA8AAAD///3/AAAOAA8AAAD///7/AAAOAA8AAAAAAPz/AAAOAA8AAAAAAP3/AAAOAA8AAAAAAP7/AAAOAA8AAAABAPz/AAAOAA8AAAABAP3/AAAOAA8AAAABAP7/AAAOAA8AAAACAPv/AAAOAA8AAAACAPz/AAAOAA8AAAACAP3/AAAOAA8AAAACAP7/AAAOAA8AAAADAPv/AAAOAA8AAAADAPz/AAAOAA8AAAADAP3/AAAOAA8AAAADAP7/AAAOAA8AAAAEAPv/AAAOAA8AAAAEAPz/AAAOAA8AAAAEAP3/AAAOAA8AAAAEAP7/AAAOAA8AAAAFAPv/AAAOAA8AAAAFAPz/AAAOAA8AAAAFAP3/AAAOAA8AAAAFAP7/AAAOAA8AAAAGAPz/AAAOAA8AAAAGAP3/AAAOAA8AAAAGAP7/AAAOAA8AAAAHAPj/AAAOAA8AAAAHAPn/AAAOAA8AAAAHAPz/AAAOAA8AAAAHAP3/AAAOAA8AAAAHAP7/AAAOAA8AAAAIAPz/AAAOAA8AAAAIAP3/AAAOAA8AAAAIAP7/AAAOAA8AAAAJAPz/AAAOAA8AAAAJAP3/AAAOAA8AAAAJAP7/AAAOAA8AAAAKAPz/AAAOAA8AAAAKAP3/AAAOAA8AAAAKAP7/AAAOAA8AAAALAPj/AAAOAA8AAAALAPn/AAAOAA8AAAALAPr/AAAOAA8AAAALAPv/AAAOAA8AAAALAPz/AAAOAA8AAAALAP3/AAAOAA8AAAALAP7/AAAOAA8AAAAMAPz/AAAOAA8AAAAMAP3/AAAOAA8AAAAMAP7/AAAOAA8AAAANAPz/AAAOAA8AAAANAP3/AAAOAA8AAAANAP7/AAAOAA8AAAAOAPz/AAAOAA8AAAAOAP3/AAAOAA8AAAAOAP7/AAAOAA8AAAAPAPz/AAAOAA8AAAAPAP3/AAAOAA8AAAAPAP7/AAAOAA8AAAAQAPz/AAAOAA8AAAAQAP3/AAAOAA8AAAAQAP7/AAAOAA8AAAARAPj/AAAOAA8AAAARAPn/AAAOAA8AAAARAPr/AAAOAA8AAAARAPv/AAAOAA8AAAARAPz/AAAOAA8AAAARAP3/AAAOAA8AAAARAP7/AAAOAA8AAAASAPj/AAAOAA8AAAASAPn/AAAOAA8AAAASAPr/AAAOAA8AAAASAPv/AAAOAA8AAAASAPz/AAAOAA8AAAASAP3/AAAOAA8AAAASAP7/AAAOAA8AAAATAPr/AAAOAA8AAAATAPv/AAAOAA8AAAATAPz/AAAOAA8AAAATAP3/AAAOAA8AAAATAP7/AAAOAA8AAAAUAPr/AAAOAA8AAAAUAPv/AAAOAA8AAAAUAPz/AAAOAA8AAAAUAP3/AAAOAA8AAAAUAP7/AAAOAA8AAAAVAPj/AAAOAA8AAAAVAPn/AAAOAA8AAAAVAPr/AAAOAA8AAAAVAPv/AAAOAA8AAAAVAPz/AAAOAA8AAAAVAP3/AAAOAA8AAAAVAP7/AAAOAA8AAAAWAPj/AAAOAA8AAAAWAPn/AAAOAA8AAAAWAPr/AAAOAA8AAAAWAPv/AAAOAA8AAAAWAPz/AAAOAA8AAAAWAP3/AAAOAA8AAAAWAP7/AAAOAA8AAAAXAPj/AAAOAA8AAAAXAPn/AAAOAA8AAAAXAPr/AAAOAA8AAAAXAPv/AAAOAA8AAAAXAPz/AAAOAA8AAAAXAP3/AAAOAA8AAAAXAP7/AAAOAA8AAAAYAPj/AAAOAA8AAAAYAPn/AAAOAA8AAAAYAPr/AAAOAA8AAAAYAPv/AAAOAA8AAAAYAPz/AAAOAA8AAAAZAPj/AAAOAA8AAAAZAPn/AAAOAA8AAAAZAPr/AAAOAA8AAAAZAPv/AAAOAA8AAAAaAPj/AAAOAA8AAAAaAPn/AAAOAA8AAAAaAP7/AAAOAA8AAAAbAPn/AAAOAA8AAAAMAPv/AAAOAA8AAAAMAPr/AAAOAA8AAAAMAPn/AAAOAA8AAAAMAPj/AAAOAA8AAAANAPj/AAAOAA8AAAANAPn/AAAOAA8AAAANAPr/AAAOAA8AAAANAPv/AAAOAA8AAAAOAPv/AAAOAA8AAAAPAPv/AAAOAA8AAAAQAPv/AAAOAA8AAAAQAPr/AAAOAA8AAAAQAPn/AAAOAA8AAAAQAPj/AAAOAA8AAAAPAPj/AAAOAA8AAAAOAPj/AAAOAA8AAAD8/wkAAAAOAA8AAAA=")
 tile_set = SubResource("TileSet_70rov")
 
 [node name="TutorialBackground" type="TileMapLayer" parent="."]
@@ -2573,6 +2490,2508 @@ texture = ExtResource("9_70rov")
 position = Vector2(535, 274)
 texture = ExtResource("7_nspky")
 
+[node name="DecorationTreesDown" type="Node2D" parent="DecorationTreesDown"]
+position = Vector2(749, 24)
+
+[node name="Tree" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-131, 110)
+texture = ExtResource("9_70rov")
+
+[node name="Tree24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-142, 129)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-147, 149)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-127, 161)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB35" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(547, 173)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-129, 200)
+texture = ExtResource("7_nspky")
+
+[node name="Tree3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-121, 248)
+texture = ExtResource("9_70rov")
+
+[node name="Tree2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-145, 228)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(434, 239)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(61, 243)
+texture = ExtResource("7_nspky")
+
+[node name="Tree4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-79, 239)
+texture = ExtResource("9_70rov")
+
+[node name="Tree25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-149, 175)
+texture = ExtResource("9_70rov")
+
+[node name="Tree5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-31, 241)
+texture = ExtResource("9_70rov")
+
+[node name="Tree6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-55, 267)
+texture = ExtResource("9_70rov")
+
+[node name="Tree22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-24, 268)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(218, 235)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+z_index = 1
+position = Vector2(170, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(125, 242)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(126, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(28, 243)
+texture = ExtResource("9_70rov")
+
+[node name="Tree9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(88, 240)
+texture = ExtResource("9_70rov")
+
+[node name="Tree27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(186, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(114, 264)
+texture = ExtResource("9_70rov")
+
+[node name="Tree8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(64, 266)
+texture = ExtResource("9_70rov")
+
+[node name="Tree21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(241, 252)
+texture = ExtResource("9_70rov")
+
+[node name="Tree11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(198, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(253, 269)
+texture = ExtResource("9_70rov")
+
+[node name="Tree14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(307, 246)
+texture = ExtResource("9_70rov")
+
+[node name="Tree16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(389, 236)
+texture = ExtResource("9_70rov")
+
+[node name="Tree17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(417, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(476, 130)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(478, 154)
+texture = ExtResource("7_nspky")
+
+[node name="Tree20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(478, 180)
+texture = ExtResource("9_70rov")
+
+[node name="Tree23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(479, 220)
+scale = Vector2(1, 0.975)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+z_index = 1
+position = Vector2(509, 185)
+texture = ExtResource("7_nspky")
+
+[node name="Tree19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(502, 274)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(0, 265)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-141, 231)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-97, 267)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(142, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(89, 268)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(32, 270)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(306, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(229, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(282, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-144, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(387, 264)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(342, 241)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(337, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(467, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(360, 270)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(519, 232)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(442, 261)
+texture = ExtResource("7_nspky")
+
+[node name="Tree28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-173, 109)
+texture = ExtResource("9_70rov")
+
+[node name="Tree29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(548, 219)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-189, 148)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-169, 160)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-171, 199)
+texture = ExtResource("7_nspky")
+
+[node name="Tree30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-163, 247)
+texture = ExtResource("9_70rov")
+
+[node name="Tree31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-187, 227)
+texture = ExtResource("9_70rov")
+
+[node name="Tree32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-191, 174)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-183, 230)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(-183, 269)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(514, 121)
+texture = ExtResource("7_nspky")
+
+[node name="Tree33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(517, 158)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB36" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown"]
+position = Vector2(535, 274)
+texture = ExtResource("7_nspky")
+
+[node name="DecorationTreesDown2" type="Node2D" parent="DecorationTreesDown"]
+position = Vector2(841, -9)
+
+[node name="Tree" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-131, 110)
+texture = ExtResource("9_70rov")
+
+[node name="Tree24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-142, 129)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-147, 149)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-127, 161)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB35" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(547, 173)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-129, 200)
+texture = ExtResource("7_nspky")
+
+[node name="Tree3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-121, 248)
+texture = ExtResource("9_70rov")
+
+[node name="Tree2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-145, 228)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(434, 239)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(61, 243)
+texture = ExtResource("7_nspky")
+
+[node name="Tree4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-79, 239)
+texture = ExtResource("9_70rov")
+
+[node name="Tree25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-149, 175)
+texture = ExtResource("9_70rov")
+
+[node name="Tree5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-31, 241)
+texture = ExtResource("9_70rov")
+
+[node name="Tree6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-55, 267)
+texture = ExtResource("9_70rov")
+
+[node name="Tree22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-24, 268)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(218, 235)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+z_index = 1
+position = Vector2(170, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(125, 242)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(126, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(28, 243)
+texture = ExtResource("9_70rov")
+
+[node name="Tree9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(88, 240)
+texture = ExtResource("9_70rov")
+
+[node name="Tree27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(186, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(114, 264)
+texture = ExtResource("9_70rov")
+
+[node name="Tree8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(64, 266)
+texture = ExtResource("9_70rov")
+
+[node name="Tree21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(241, 252)
+texture = ExtResource("9_70rov")
+
+[node name="Tree11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(198, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(253, 269)
+texture = ExtResource("9_70rov")
+
+[node name="Tree14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(307, 246)
+texture = ExtResource("9_70rov")
+
+[node name="Tree16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(389, 236)
+texture = ExtResource("9_70rov")
+
+[node name="Tree17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(417, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(476, 130)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(478, 154)
+texture = ExtResource("7_nspky")
+
+[node name="Tree20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(478, 180)
+texture = ExtResource("9_70rov")
+
+[node name="Tree23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(479, 220)
+scale = Vector2(1, 0.975)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+z_index = 1
+position = Vector2(509, 185)
+texture = ExtResource("7_nspky")
+
+[node name="Tree19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(502, 274)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(0, 265)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-141, 231)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-97, 267)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(142, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(89, 268)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(32, 270)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(306, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(229, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(282, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-144, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(387, 264)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(342, 241)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(337, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(467, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(360, 270)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(519, 232)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(442, 261)
+texture = ExtResource("7_nspky")
+
+[node name="Tree28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-173, 109)
+texture = ExtResource("9_70rov")
+
+[node name="Tree29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(548, 219)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-189, 148)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-169, 160)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-171, 199)
+texture = ExtResource("7_nspky")
+
+[node name="Tree30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-163, 247)
+texture = ExtResource("9_70rov")
+
+[node name="Tree31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-187, 227)
+texture = ExtResource("9_70rov")
+
+[node name="Tree32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-191, 174)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-183, 230)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(-183, 269)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(514, 121)
+texture = ExtResource("7_nspky")
+
+[node name="Tree33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(517, 158)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB36" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown2"]
+position = Vector2(535, 274)
+texture = ExtResource("7_nspky")
+
+[node name="DecorationTreesDown3" type="Node2D" parent="DecorationTreesDown"]
+position = Vector2(760, -287)
+
+[node name="Tree" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-131, 110)
+texture = ExtResource("9_70rov")
+
+[node name="Tree24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-142, 129)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-147, 149)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-127, 161)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB35" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(547, 173)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-129, 200)
+texture = ExtResource("7_nspky")
+
+[node name="Tree3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-121, 248)
+texture = ExtResource("9_70rov")
+
+[node name="Tree2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-145, 228)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(434, 239)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(61, 243)
+texture = ExtResource("7_nspky")
+
+[node name="Tree4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-79, 239)
+texture = ExtResource("9_70rov")
+
+[node name="Tree25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-149, 175)
+texture = ExtResource("9_70rov")
+
+[node name="Tree5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-31, 241)
+texture = ExtResource("9_70rov")
+
+[node name="Tree6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-55, 267)
+texture = ExtResource("9_70rov")
+
+[node name="Tree22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-24, 268)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(218, 235)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+z_index = 1
+position = Vector2(170, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(125, 242)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(126, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(28, 243)
+texture = ExtResource("9_70rov")
+
+[node name="Tree9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(88, 240)
+texture = ExtResource("9_70rov")
+
+[node name="Tree27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(186, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(114, 264)
+texture = ExtResource("9_70rov")
+
+[node name="Tree8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(64, 266)
+texture = ExtResource("9_70rov")
+
+[node name="Tree21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(241, 252)
+texture = ExtResource("9_70rov")
+
+[node name="Tree11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(198, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(253, 269)
+texture = ExtResource("9_70rov")
+
+[node name="Tree14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(307, 246)
+texture = ExtResource("9_70rov")
+
+[node name="Tree16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(389, 236)
+texture = ExtResource("9_70rov")
+
+[node name="Tree17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(417, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(476, 130)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(478, 154)
+texture = ExtResource("7_nspky")
+
+[node name="Tree20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(478, 180)
+texture = ExtResource("9_70rov")
+
+[node name="Tree23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(479, 220)
+scale = Vector2(1, 0.975)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+z_index = 1
+position = Vector2(509, 185)
+texture = ExtResource("7_nspky")
+
+[node name="Tree19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(502, 274)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(0, 265)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-141, 231)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-97, 267)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(142, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(89, 268)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(32, 270)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(306, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(229, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(282, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-144, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(387, 264)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(342, 241)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(337, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(467, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(360, 270)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(519, 232)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(442, 261)
+texture = ExtResource("7_nspky")
+
+[node name="Tree28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-173, 109)
+texture = ExtResource("9_70rov")
+
+[node name="Tree29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(548, 219)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-189, 148)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-169, 160)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-171, 199)
+texture = ExtResource("7_nspky")
+
+[node name="Tree30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-163, 247)
+texture = ExtResource("9_70rov")
+
+[node name="Tree31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-187, 227)
+texture = ExtResource("9_70rov")
+
+[node name="Tree32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-191, 174)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-183, 230)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(-183, 269)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(514, 121)
+texture = ExtResource("7_nspky")
+
+[node name="Tree33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(517, 158)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB36" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown3"]
+position = Vector2(535, 274)
+texture = ExtResource("7_nspky")
+
+[node name="DecorationTreesDown4" type="Node2D" parent="DecorationTreesDown"]
+position = Vector2(779, -141)
+
+[node name="Tree" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-131, 110)
+texture = ExtResource("9_70rov")
+
+[node name="Tree24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-142, 129)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-147, 149)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-127, 161)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB35" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(547, 173)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-129, 200)
+texture = ExtResource("7_nspky")
+
+[node name="Tree3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-121, 248)
+texture = ExtResource("9_70rov")
+
+[node name="Tree2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-145, 228)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(434, 239)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(61, 243)
+texture = ExtResource("7_nspky")
+
+[node name="Tree4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-79, 239)
+texture = ExtResource("9_70rov")
+
+[node name="Tree25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-149, 175)
+texture = ExtResource("9_70rov")
+
+[node name="Tree5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-31, 241)
+texture = ExtResource("9_70rov")
+
+[node name="Tree6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-55, 267)
+texture = ExtResource("9_70rov")
+
+[node name="Tree22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-24, 268)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(218, 235)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+z_index = 1
+position = Vector2(170, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(125, 242)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(126, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(28, 243)
+texture = ExtResource("9_70rov")
+
+[node name="Tree9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(88, 240)
+texture = ExtResource("9_70rov")
+
+[node name="Tree27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(186, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(114, 264)
+texture = ExtResource("9_70rov")
+
+[node name="Tree8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(64, 266)
+texture = ExtResource("9_70rov")
+
+[node name="Tree21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(241, 252)
+texture = ExtResource("9_70rov")
+
+[node name="Tree11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(198, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(253, 269)
+texture = ExtResource("9_70rov")
+
+[node name="Tree14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(307, 246)
+texture = ExtResource("9_70rov")
+
+[node name="Tree16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(389, 236)
+texture = ExtResource("9_70rov")
+
+[node name="Tree17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(417, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(476, 130)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(478, 154)
+texture = ExtResource("7_nspky")
+
+[node name="Tree20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(478, 180)
+texture = ExtResource("9_70rov")
+
+[node name="Tree23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(479, 220)
+scale = Vector2(1, 0.975)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+z_index = 1
+position = Vector2(509, 185)
+texture = ExtResource("7_nspky")
+
+[node name="Tree19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(502, 274)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(0, 265)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-141, 231)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-97, 267)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(142, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(89, 268)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(32, 270)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(306, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(229, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(282, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-144, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(387, 264)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(342, 241)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(337, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(467, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(360, 270)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(519, 232)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(442, 261)
+texture = ExtResource("7_nspky")
+
+[node name="Tree28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-173, 109)
+texture = ExtResource("9_70rov")
+
+[node name="Tree29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(548, 219)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-189, 148)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-169, 160)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-171, 199)
+texture = ExtResource("7_nspky")
+
+[node name="Tree30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-163, 247)
+texture = ExtResource("9_70rov")
+
+[node name="Tree31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-187, 227)
+texture = ExtResource("9_70rov")
+
+[node name="Tree32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-191, 174)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-183, 230)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(-183, 269)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(514, 121)
+texture = ExtResource("7_nspky")
+
+[node name="Tree33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(517, 158)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB36" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown4"]
+position = Vector2(535, 274)
+texture = ExtResource("7_nspky")
+
+[node name="DecorationTreesDown5" type="Node2D" parent="DecorationTreesDown"]
+position = Vector2(863, -138)
+
+[node name="Tree" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-131, 110)
+texture = ExtResource("9_70rov")
+
+[node name="Tree24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-142, 129)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-147, 149)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-127, 161)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB35" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(547, 173)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-129, 200)
+texture = ExtResource("7_nspky")
+
+[node name="Tree3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-121, 248)
+texture = ExtResource("9_70rov")
+
+[node name="Tree2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-145, 228)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(434, 239)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(61, 243)
+texture = ExtResource("7_nspky")
+
+[node name="Tree4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-79, 239)
+texture = ExtResource("9_70rov")
+
+[node name="Tree25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-149, 175)
+texture = ExtResource("9_70rov")
+
+[node name="Tree5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-31, 241)
+texture = ExtResource("9_70rov")
+
+[node name="Tree6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-55, 267)
+texture = ExtResource("9_70rov")
+
+[node name="Tree22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-24, 268)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(218, 235)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+z_index = 1
+position = Vector2(170, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(125, 242)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(126, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(28, 243)
+texture = ExtResource("9_70rov")
+
+[node name="Tree9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(88, 240)
+texture = ExtResource("9_70rov")
+
+[node name="Tree27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(186, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(114, 264)
+texture = ExtResource("9_70rov")
+
+[node name="Tree8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(64, 266)
+texture = ExtResource("9_70rov")
+
+[node name="Tree21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(241, 252)
+texture = ExtResource("9_70rov")
+
+[node name="Tree11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(198, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(253, 269)
+texture = ExtResource("9_70rov")
+
+[node name="Tree14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(307, 246)
+texture = ExtResource("9_70rov")
+
+[node name="Tree16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(389, 236)
+texture = ExtResource("9_70rov")
+
+[node name="Tree17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(417, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(476, 130)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(478, 154)
+texture = ExtResource("7_nspky")
+
+[node name="Tree20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(478, 180)
+texture = ExtResource("9_70rov")
+
+[node name="Tree23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(479, 220)
+scale = Vector2(1, 0.975)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+z_index = 1
+position = Vector2(509, 185)
+texture = ExtResource("7_nspky")
+
+[node name="Tree19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(502, 274)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(0, 265)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-141, 231)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-97, 267)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(142, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(89, 268)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(32, 270)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(306, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(229, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(282, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-144, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(387, 264)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(342, 241)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(337, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(467, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(360, 270)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(519, 232)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(442, 261)
+texture = ExtResource("7_nspky")
+
+[node name="Tree28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-173, 109)
+texture = ExtResource("9_70rov")
+
+[node name="Tree29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(548, 219)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-189, 148)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-169, 160)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-171, 199)
+texture = ExtResource("7_nspky")
+
+[node name="Tree30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-163, 247)
+texture = ExtResource("9_70rov")
+
+[node name="Tree31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-187, 227)
+texture = ExtResource("9_70rov")
+
+[node name="Tree32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-191, 174)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-183, 230)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(-183, 269)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(514, 121)
+texture = ExtResource("7_nspky")
+
+[node name="Tree33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(517, 158)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB36" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown5"]
+position = Vector2(535, 274)
+texture = ExtResource("7_nspky")
+
+[node name="DecorationTreesDown6" type="Node2D" parent="DecorationTreesDown"]
+position = Vector2(920, -38)
+
+[node name="Tree" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-131, 110)
+texture = ExtResource("9_70rov")
+
+[node name="Tree24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-142, 129)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-147, 149)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-127, 161)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB35" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(547, 173)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-129, 200)
+texture = ExtResource("7_nspky")
+
+[node name="Tree3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-121, 248)
+texture = ExtResource("9_70rov")
+
+[node name="Tree2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-145, 228)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(434, 239)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(61, 243)
+texture = ExtResource("7_nspky")
+
+[node name="Tree4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-79, 239)
+texture = ExtResource("9_70rov")
+
+[node name="Tree25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-149, 175)
+texture = ExtResource("9_70rov")
+
+[node name="Tree5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-31, 241)
+texture = ExtResource("9_70rov")
+
+[node name="Tree6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-55, 267)
+texture = ExtResource("9_70rov")
+
+[node name="Tree22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-24, 268)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(218, 235)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+z_index = 1
+position = Vector2(170, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(125, 242)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(126, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(28, 243)
+texture = ExtResource("9_70rov")
+
+[node name="Tree9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(88, 240)
+texture = ExtResource("9_70rov")
+
+[node name="Tree27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(186, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(114, 264)
+texture = ExtResource("9_70rov")
+
+[node name="Tree8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(64, 266)
+texture = ExtResource("9_70rov")
+
+[node name="Tree21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(241, 252)
+texture = ExtResource("9_70rov")
+
+[node name="Tree11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(198, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(253, 269)
+texture = ExtResource("9_70rov")
+
+[node name="Tree14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(307, 246)
+texture = ExtResource("9_70rov")
+
+[node name="Tree16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(389, 236)
+texture = ExtResource("9_70rov")
+
+[node name="Tree17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(417, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(476, 130)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(478, 154)
+texture = ExtResource("7_nspky")
+
+[node name="Tree20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(478, 180)
+texture = ExtResource("9_70rov")
+
+[node name="Tree23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(479, 220)
+scale = Vector2(1, 0.975)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+z_index = 1
+position = Vector2(509, 185)
+texture = ExtResource("7_nspky")
+
+[node name="Tree19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(502, 274)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(0, 265)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-141, 231)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-97, 267)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(142, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(89, 268)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(32, 270)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(306, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(229, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(282, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-144, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(387, 264)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(342, 241)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(337, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(467, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(360, 270)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(519, 232)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(442, 261)
+texture = ExtResource("7_nspky")
+
+[node name="Tree28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-173, 109)
+texture = ExtResource("9_70rov")
+
+[node name="Tree29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(548, 219)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-189, 148)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-169, 160)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-171, 199)
+texture = ExtResource("7_nspky")
+
+[node name="Tree30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-163, 247)
+texture = ExtResource("9_70rov")
+
+[node name="Tree31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-187, 227)
+texture = ExtResource("9_70rov")
+
+[node name="Tree32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-191, 174)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-183, 230)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(-183, 269)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(514, 121)
+texture = ExtResource("7_nspky")
+
+[node name="Tree33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(517, 158)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB36" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown6"]
+position = Vector2(535, 274)
+texture = ExtResource("7_nspky")
+
+[node name="DecorationTreesDown7" type="Node2D" parent="DecorationTreesDown"]
+position = Vector2(948, -175)
+
+[node name="Tree" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-131, 110)
+texture = ExtResource("9_70rov")
+
+[node name="Tree24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-142, 129)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-147, 149)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-127, 161)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB35" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(547, 173)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-129, 200)
+texture = ExtResource("7_nspky")
+
+[node name="Tree3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-121, 248)
+texture = ExtResource("9_70rov")
+
+[node name="Tree2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-145, 228)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(434, 239)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(61, 243)
+texture = ExtResource("7_nspky")
+
+[node name="Tree4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-79, 239)
+texture = ExtResource("9_70rov")
+
+[node name="Tree25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-149, 175)
+texture = ExtResource("9_70rov")
+
+[node name="Tree5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-31, 241)
+texture = ExtResource("9_70rov")
+
+[node name="Tree6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-55, 267)
+texture = ExtResource("9_70rov")
+
+[node name="Tree22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-24, 268)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(218, 235)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+z_index = 1
+position = Vector2(170, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(125, 242)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(126, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(28, 243)
+texture = ExtResource("9_70rov")
+
+[node name="Tree9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(88, 240)
+texture = ExtResource("9_70rov")
+
+[node name="Tree27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(186, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(114, 264)
+texture = ExtResource("9_70rov")
+
+[node name="Tree8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(64, 266)
+texture = ExtResource("9_70rov")
+
+[node name="Tree21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(241, 252)
+texture = ExtResource("9_70rov")
+
+[node name="Tree11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(198, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(253, 269)
+texture = ExtResource("9_70rov")
+
+[node name="Tree14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(307, 246)
+texture = ExtResource("9_70rov")
+
+[node name="Tree16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(389, 236)
+texture = ExtResource("9_70rov")
+
+[node name="Tree17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(417, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(476, 130)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(478, 154)
+texture = ExtResource("7_nspky")
+
+[node name="Tree20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(478, 180)
+texture = ExtResource("9_70rov")
+
+[node name="Tree23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(479, 220)
+scale = Vector2(1, 0.975)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+z_index = 1
+position = Vector2(509, 185)
+texture = ExtResource("7_nspky")
+
+[node name="Tree19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(502, 274)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(0, 265)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-141, 231)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-97, 267)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(142, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(89, 268)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(32, 270)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(306, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(229, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(282, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-144, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(387, 264)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(342, 241)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(337, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(467, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(360, 270)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(519, 232)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(442, 261)
+texture = ExtResource("7_nspky")
+
+[node name="Tree28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-173, 109)
+texture = ExtResource("9_70rov")
+
+[node name="Tree29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(548, 219)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-189, 148)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-169, 160)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-171, 199)
+texture = ExtResource("7_nspky")
+
+[node name="Tree30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-163, 247)
+texture = ExtResource("9_70rov")
+
+[node name="Tree31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-187, 227)
+texture = ExtResource("9_70rov")
+
+[node name="Tree32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-191, 174)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-183, 230)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(-183, 269)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(514, 121)
+texture = ExtResource("7_nspky")
+
+[node name="Tree33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(517, 158)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB36" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown7"]
+position = Vector2(535, 274)
+texture = ExtResource("7_nspky")
+
+[node name="DecorationTreesDown8" type="Node2D" parent="DecorationTreesDown"]
+position = Vector2(836, -317)
+
+[node name="Tree" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-131, 110)
+texture = ExtResource("9_70rov")
+
+[node name="Tree24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-142, 129)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-147, 149)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-127, 161)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB35" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(547, 173)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-129, 200)
+texture = ExtResource("7_nspky")
+
+[node name="Tree3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-121, 248)
+texture = ExtResource("9_70rov")
+
+[node name="Tree2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-145, 228)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(434, 239)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(61, 243)
+texture = ExtResource("7_nspky")
+
+[node name="Tree4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-79, 239)
+texture = ExtResource("9_70rov")
+
+[node name="Tree25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-149, 175)
+texture = ExtResource("9_70rov")
+
+[node name="Tree5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-31, 241)
+texture = ExtResource("9_70rov")
+
+[node name="Tree6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-55, 267)
+texture = ExtResource("9_70rov")
+
+[node name="Tree22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-24, 268)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(218, 235)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+z_index = 1
+position = Vector2(170, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(125, 242)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(126, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(28, 243)
+texture = ExtResource("9_70rov")
+
+[node name="Tree9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(88, 240)
+texture = ExtResource("9_70rov")
+
+[node name="Tree27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(186, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(114, 264)
+texture = ExtResource("9_70rov")
+
+[node name="Tree8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(64, 266)
+texture = ExtResource("9_70rov")
+
+[node name="Tree21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(241, 252)
+texture = ExtResource("9_70rov")
+
+[node name="Tree11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(198, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(253, 269)
+texture = ExtResource("9_70rov")
+
+[node name="Tree14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(307, 246)
+texture = ExtResource("9_70rov")
+
+[node name="Tree16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(389, 236)
+texture = ExtResource("9_70rov")
+
+[node name="Tree17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(417, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(476, 130)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(478, 154)
+texture = ExtResource("7_nspky")
+
+[node name="Tree20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(478, 180)
+texture = ExtResource("9_70rov")
+
+[node name="Tree23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(479, 220)
+scale = Vector2(1, 0.975)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+z_index = 1
+position = Vector2(509, 185)
+texture = ExtResource("7_nspky")
+
+[node name="Tree19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(502, 274)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(0, 265)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-141, 231)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-97, 267)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(142, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(89, 268)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(32, 270)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(306, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(229, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(282, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-144, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(387, 264)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(342, 241)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(337, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(467, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(360, 270)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(519, 232)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(442, 261)
+texture = ExtResource("7_nspky")
+
+[node name="Tree28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-173, 109)
+texture = ExtResource("9_70rov")
+
+[node name="Tree29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(548, 219)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-189, 148)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-169, 160)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-171, 199)
+texture = ExtResource("7_nspky")
+
+[node name="Tree30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-163, 247)
+texture = ExtResource("9_70rov")
+
+[node name="Tree31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-187, 227)
+texture = ExtResource("9_70rov")
+
+[node name="Tree32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-191, 174)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-183, 230)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(-183, 269)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(514, 121)
+texture = ExtResource("7_nspky")
+
+[node name="Tree33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(517, 158)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB36" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown8"]
+position = Vector2(535, 274)
+texture = ExtResource("7_nspky")
+
+[node name="DecorationTreesDown9" type="Node2D" parent="DecorationTreesDown"]
+position = Vector2(927, -322)
+
+[node name="Tree" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-131, 110)
+texture = ExtResource("9_70rov")
+
+[node name="Tree24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-142, 129)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-147, 149)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-127, 161)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB35" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(547, 173)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-129, 200)
+texture = ExtResource("7_nspky")
+
+[node name="Tree3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-121, 248)
+texture = ExtResource("9_70rov")
+
+[node name="Tree2" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-145, 228)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(434, 239)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(61, 243)
+texture = ExtResource("7_nspky")
+
+[node name="Tree4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-79, 239)
+texture = ExtResource("9_70rov")
+
+[node name="Tree25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-149, 175)
+texture = ExtResource("9_70rov")
+
+[node name="Tree5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-31, 241)
+texture = ExtResource("9_70rov")
+
+[node name="Tree6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-55, 267)
+texture = ExtResource("9_70rov")
+
+[node name="Tree22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-24, 268)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB6" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(218, 235)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB24" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+z_index = 1
+position = Vector2(170, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB22" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(125, 242)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(126, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(28, 243)
+texture = ExtResource("9_70rov")
+
+[node name="Tree9" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(88, 240)
+texture = ExtResource("9_70rov")
+
+[node name="Tree27" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(186, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(114, 264)
+texture = ExtResource("9_70rov")
+
+[node name="Tree8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(64, 266)
+texture = ExtResource("9_70rov")
+
+[node name="Tree21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(241, 252)
+texture = ExtResource("9_70rov")
+
+[node name="Tree11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(198, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(156, 238)
+texture = ExtResource("9_70rov")
+
+[node name="Tree13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(253, 269)
+texture = ExtResource("9_70rov")
+
+[node name="Tree14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(307, 246)
+texture = ExtResource("9_70rov")
+
+[node name="Tree16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(389, 236)
+texture = ExtResource("9_70rov")
+
+[node name="Tree17" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(417, 260)
+texture = ExtResource("9_70rov")
+
+[node name="Tree18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(476, 130)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB26" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(478, 154)
+texture = ExtResource("7_nspky")
+
+[node name="Tree20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(478, 180)
+texture = ExtResource("9_70rov")
+
+[node name="Tree23" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(479, 220)
+scale = Vector2(1, 0.975)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB18" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+z_index = 1
+position = Vector2(509, 185)
+texture = ExtResource("7_nspky")
+
+[node name="Tree19" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(502, 274)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(0, 265)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB3" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-141, 231)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB4" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-97, 267)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB5" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(142, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB21" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(89, 268)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB20" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(32, 270)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB7" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(306, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB8" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(229, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB25" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(282, 266)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB10" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-144, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB11" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(387, 264)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB12" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(342, 241)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB13" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(337, 262)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB14" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(467, 242)
+texture = ExtResource("7_nspky")
+
+[node name="Tree15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(360, 270)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB15" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(519, 232)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB16" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(442, 261)
+texture = ExtResource("7_nspky")
+
+[node name="Tree28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-173, 109)
+texture = ExtResource("9_70rov")
+
+[node name="Tree29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(548, 219)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB28" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-189, 148)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB29" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-169, 160)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-171, 199)
+texture = ExtResource("7_nspky")
+
+[node name="Tree30" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-163, 247)
+texture = ExtResource("9_70rov")
+
+[node name="Tree31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-187, 227)
+texture = ExtResource("9_70rov")
+
+[node name="Tree32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-191, 174)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB31" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-183, 230)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB32" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(-183, 269)
+texture = ExtResource("7_nspky")
+
+[node name="TreeB33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(514, 121)
+texture = ExtResource("7_nspky")
+
+[node name="Tree33" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(517, 158)
+texture = ExtResource("9_70rov")
+
+[node name="TreeB36" type="Sprite2D" parent="DecorationTreesDown/DecorationTreesDown9"]
+position = Vector2(535, 274)
+texture = ExtResource("7_nspky")
+
 [node name="Arrow" type="Sprite2D" parent="."]
 position = Vector2(446, 61)
 scale = Vector2(0.169289, 0.107157)
@@ -2646,7 +5065,6 @@ position = Vector2(188, 218)
 [node name="Camera" parent="." instance=ExtResource("12_ateyf")]
 position = Vector2(176, 40)
 zoom_default = Vector2(0.35, 0.35)
-zoom_out_value = Vector2(0.8, 0.8)
 
 [node name="HUDLayer" parent="." instance=ExtResource("24_4put2")]
 

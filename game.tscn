@@ -1385,11 +1385,10 @@ libraries = {
 }
 
 [node name="Win" type="Node2D" parent="."]
-visible = false
 
 [node name="Label" type="Label" parent="Win"]
 visible = false
-z_index = 10
+z_index = 11
 offset_left = 81.0
 offset_top = 229.0
 offset_right = 1496.0
@@ -1401,7 +1400,7 @@ text = "¡El mal se repliega! Has salvado el Bosque."
 
 [node name="ColorRect" type="ColorRect" parent="Win"]
 modulate = Color(0, 0, 0, 0)
-z_index = 5
+z_index = 10
 offset_left = -91.0
 offset_top = -61.0
 offset_right = 1340.0

@@ -1,70 +1,16 @@
-[gd_scene load_steps=27 format=4 uid="uid://clktf3f0a1h8p"]
+[gd_scene load_steps=21 format=4 uid="uid://clktf3f0a1h8p"]
 
-[ext_resource type="Texture2D" uid="uid://b15lk1tdhi4m" path="res://assets/Tiles/Grass_Middle.png" id="1_7n6eb"]
 [ext_resource type="Script" uid="uid://dvnv75bqspb1l" path="res://tutorials/tutorial.gd" id="1_yb1ct"]
 [ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player/player.tscn" id="3_ehuit"]
-[ext_resource type="Texture2D" uid="uid://c6knd2soisgya" path="res://assets/Tiles/Cliff_Tile.png" id="3_hu44a"]
-[ext_resource type="Texture2D" uid="uid://bqx08jgnivlxi" path="res://assets/Tiles/Path_Tile.png" id="4_0cr88"]
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="4_5mrt3"]
 [ext_resource type="Texture2D" uid="uid://61stnq0st0dt" path="res://assets/Tiles/tiles-combination-6-export-sheet-export.png" id="5_h3npo"]
-[ext_resource type="Texture2D" uid="uid://s3psw4bfcwql" path="res://assets/forest/Plant13.png" id="6_i22ws"]
+[ext_resource type="Texture2D" uid="uid://dieuijvrtxoky" path="res://assets/forest/Plant13.png" id="6_i22ws"]
 [ext_resource type="FontFile" uid="uid://iublapr1rgpr" path="res://assets/Fonts/EightBitDragon-anqx.ttf" id="7_0cr88"]
 [ext_resource type="Texture2D" uid="uid://bdawlh7bro72c" path="res://assets/forest/tree.png" id="7_b5k6b"]
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="8_4t6hg"]
 [ext_resource type="PackedScene" uid="uid://bwnm8og34ktju" path="res://camera/camera.tscn" id="9_dw84t"]
 [ext_resource type="PackedScene" uid="uid://kj0dwwgk0i8v" path="res://trees/decoration_tree.tscn" id="13_4oc3m"]
 [ext_resource type="PackedScene" uid="uid://dwbgiis415ekt" path="res://trees/decoration_tree_b.tscn" id="14_pwdgl"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yb1ct"]
-texture = ExtResource("1_7n6eb")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4t6hg"]
-texture = ExtResource("3_hu44a")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:3/0 = 0
-1:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7vrqn"]
-texture = ExtResource("4_0cr88")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ajtax"]
 texture = ExtResource("5_h3npo")
@@ -365,9 +311,6 @@ texture = ExtResource("5_h3npo")
 
 [sub_resource type="TileSet" id="TileSet_ehuit"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_yb1ct")
-sources/1 = SubResource("TileSetAtlasSource_4t6hg")
-sources/2 = SubResource("TileSetAtlasSource_7vrqn")
 sources/3 = SubResource("TileSetAtlasSource_ajtax")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x7yj3"]
@@ -804,8 +747,6 @@ position = Vector2(248, 80)
 
 [node name="Camera2D" parent="." instance=ExtResource("9_dw84t")]
 position = Vector2(169, 88)
-max_shake = 1.0
-shake_fade = 1.0
 zoom_default = Vector2(0.4, 0.4)
 
 [node name="LevelArea" type="Area2D" parent="."]
