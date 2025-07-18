@@ -3,14 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bdawlh7bro72c" path="res://assets/forest/tree.png" id="1_2al7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32d4t"]
-size = Vector2(12, 16)
+size = Vector2(12, 12)
 
 [node name="DecorationTree" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(0, 17)
 shape = SubResource("RectangleShape2D_32d4t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 2
+z_index = 5
 texture = ExtResource("1_2al7y")
