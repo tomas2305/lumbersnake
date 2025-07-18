@@ -109,8 +109,6 @@ radius = 8.0
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4gyqm")
-MAX_SPEED = 150.0
-BASE_WALK_SPEED = 120.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1

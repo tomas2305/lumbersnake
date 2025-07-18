@@ -4,7 +4,7 @@ extends Node
 @onready var nav: TileMapLayer = $Map/Nav
 @export var curse_duration: float = 120.0
 @onready var hud_layer: CanvasLayer = $HUDLayer
-@onready var tree_container: Node2D = $TreeContainer
+@onready var tree_container: Node2D = $CursedTreeContainer
 @onready var timer: Timer = $Timer
 
 var has_processed_win := false
