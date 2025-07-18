@@ -6,6 +6,7 @@
 size = Vector2(12, 16)
 
 [node name="DecorationTree5" type="StaticBody2D"]
+z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)

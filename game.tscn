@@ -1159,6 +1159,7 @@ texture = ExtResource("7_7sc4i")
 position = Vector2(62, 202)
 
 [node name="DecorationTree2" parent="Map/TreeContainer/TreeColision" instance=ExtResource("8_7sc4i")]
+z_index = 1
 position = Vector2(60, 230)
 
 [node name="DecorationTree3" parent="Map/TreeContainer/TreeColision" instance=ExtResource("10_boyg6")]
@@ -1216,10 +1217,10 @@ position = Vector2(492, 199)
 position = Vector2(286, 44)
 
 [node name="DecorationTree19" parent="Map/TreeContainer/TreeColision" instance=ExtResource("10_boyg6")]
-position = Vector2(284, 75)
+position = Vector2(275, 107)
 
 [node name="DecorationTree20" parent="Map/TreeContainer/TreeColision" instance=ExtResource("8_7sc4i")]
-position = Vector2(279, 102)
+position = Vector2(285, 77)
 
 [node name="DecorationTree21" parent="Map/TreeContainer/TreeColision" instance=ExtResource("8_7sc4i")]
 position = Vector2(322, 46)
@@ -1264,6 +1265,8 @@ position = Vector2(24, 32)
 position = Vector2(147, 496)
 
 [node name="DecorationTree36" parent="Map/TreeContainer/TreeColision" instance=ExtResource("10_boyg6")]
+z_index = 0
+y_sort_enabled = true
 position = Vector2(57, 417)
 
 [node name="DecorationTree44" parent="Map/TreeContainer/TreeColision" instance=ExtResource("10_boyg6")]
@@ -1276,13 +1279,16 @@ position = Vector2(796, 355)
 position = Vector2(795, 389)
 
 [node name="DecorationTree37" parent="Map/TreeContainer/TreeColision" instance=ExtResource("8_7sc4i")]
+z_index = 2
 position = Vector2(58, 455)
 
-[node name="DecorationTree39" parent="Map/TreeContainer/TreeColision" instance=ExtResource("8_7sc4i")]
-position = Vector2(796, 418)
-
 [node name="DecorationTree34" parent="Map/TreeContainer/TreeColision" instance=ExtResource("8_7sc4i")]
+z_index = 2
 position = Vector2(58, 491)
+
+[node name="DecorationTree39" parent="Map/TreeContainer/TreeColision" instance=ExtResource("8_7sc4i")]
+z_index = 4
+position = Vector2(796, 418)
 
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_qhcbd")]
 position = Vector2(90, 109)
@@ -1348,6 +1354,7 @@ position = Vector2(795, 293)
 position = Vector2(465, 119)
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
+visible = false
 offset = Vector2(300, 140)
 transform = Transform2D(1, 0, 0, 1, 300, 140)
 follow_viewport_enabled = true
@@ -1378,6 +1385,7 @@ libraries = {
 }
 
 [node name="Win" type="Node2D" parent="."]
+visible = false
 
 [node name="Label" type="Label" parent="Win"]
 visible = false
