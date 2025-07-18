@@ -8,7 +8,7 @@ var curse_duration_default = 120
 var curse_duration : float = curse_duration_default
 
 func _process(_delta: float) -> void:
-	if arboles_destuidos == 1:
+	if arboles_destuidos == arboles_a_destruir:
 		won = true
 
 

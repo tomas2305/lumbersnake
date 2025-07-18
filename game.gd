@@ -68,7 +68,7 @@ func _process_win():
 	Music.mutear()
 	player.queue_free()
 	hud_layer.visible = false
-	enemy.visible = false
+	enemy.handle_win()
 	cursed_decoration.queue_free()
 	animation_player.play("win")
 

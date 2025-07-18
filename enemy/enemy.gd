@@ -7,15 +7,18 @@ signal state_changed(new_state)
 @onready var agent: NavigationAgent2D = $NavigationAgent2D
 @onready var vision_cone: Node2D = $VisionCone
 @onready var animation_alert: AnimatedSprite2D = $AnimationAlert
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var body_container: Node2D = $BodyContainer
+
 
 const ACCELERATION := 400.0
-@export var MAX_SPEED : float = 180
-@export var BASE_WALK_SPEED : float = 150
+var MAX_SPEED : float = 180
+var BASE_WALK_SPEED : float = 150
 
 
 var WALK_SPEED := BASE_WALK_SPEED
 
-enum State { IDLE, ALERT, CHASE }
+enum State { IDLE, ALERT, CHASE, HEALED }
 var state: State = State.IDLE
 var target_player: Node2D = null
 
@@ -110,6 +113,8 @@ func handle_movement(delta: float) -> void:
 	var desired_speed = WALK_SPEED
 	if state in [State.CHASE, State.ALERT]:
 		desired_speed = MAX_SPEED
+	if state == State.HEALED:
+		desired_speed = 60
 
 	var desired_vel = desired_dir * desired_speed
 	velocity = velocity.move_toward(desired_vel, ACCELERATION * delta)
@@ -199,3 +204,10 @@ func randomize_patrol_queue():
 func _on_killzone_body_entered(body: Node2D) -> void:
 	if body is Player:
 		player.kill()
+		
+
+func handle_win():
+	animation_player.play("new_animation")
+	state = State.HEALED
+	vision_cone.visible = false
+	animation_alert.visible = false

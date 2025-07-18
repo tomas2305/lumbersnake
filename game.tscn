@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://tekakvw8q4vb"]
+[gd_scene load_steps=26 format=4 uid="uid://tekakvw8q4vb"]
 
 [ext_resource type="Script" uid="uid://cbbn5x5jj0osc" path="res://game.gd" id="1_215e1"]
 [ext_resource type="PackedScene" uid="uid://ku2jig7t0fxb" path="res://menus/gameOver.tscn" id="2_80cx4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bdawlh7bro72c" path="res://assets/forest/tree.png" id="7_7sc4i"]
 [ext_resource type="TileSet" uid="uid://2j01w1ruhxst" path="res://tilesets/decoration_tileset.tres" id="7_215e1"]
 [ext_resource type="PackedScene" uid="uid://kj0dwwgk0i8v" path="res://trees/decoration_tree.tscn" id="8_7sc4i"]
+[ext_resource type="Texture2D" uid="uid://dieuijvrtxoky" path="res://assets/forest/Plant13.png" id="8_rvswv"]
 [ext_resource type="PackedScene" uid="uid://dwbgiis415ekt" path="res://trees/decoration_tree_b.tscn" id="10_boyg6"]
 [ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player/player.tscn" id="11_qhcbd"]
 [ext_resource type="PackedScene" uid="uid://butfrm6kcwkfv" path="res://enemy/enemy.tscn" id="12_f1jbl"]
@@ -867,10 +868,24 @@ position = Vector2(206, 282)
 position = Vector2(230, -72)
 
 [node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
-position = Vector2(157, 249)
+position = Vector2(209, 262)
+texture = ExtResource("8_rvswv")
+
+[node name="Tree8" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
+position = Vector2(209, 262)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
 position = Vector2(186, 252)
+texture = ExtResource("8_rvswv")
+
+[node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
+position = Vector2(139, 266)
+texture = ExtResource("8_rvswv")
+
+[node name="Tree7" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
+position = Vector2(139, 266)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
 position = Vector2(168, 276)
@@ -882,6 +897,7 @@ texture = ExtResource("7_7sc4i")
 
 [node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
 position = Vector2(200, 275)
+texture = ExtResource("8_rvswv")
 
 [node name="PackTree10" type="Node2D" parent="Map/TreeContainer"]
 position = Vector2(33, -194)
@@ -896,12 +912,15 @@ texture = ExtResource("7_7sc4i")
 
 [node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
 position = Vector2(219, 255)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
 position = Vector2(168, 280)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
 position = Vector2(427, 406)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
 position = Vector2(206, 282)
@@ -912,6 +931,7 @@ position = Vector2(-1, -2)
 
 [node name="TreeB5" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
 position = Vector2(152, 252)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
 position = Vector2(187, 255)
@@ -927,6 +947,7 @@ texture = ExtResource("7_7sc4i")
 
 [node name="TreeB3" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
 position = Vector2(208, 279)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
 position = Vector2(206, 305)
@@ -938,6 +959,7 @@ texture = ExtResource("7_7sc4i")
 
 [node name="TreeB4" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
 position = Vector2(174, 310)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree9" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
 position = Vector2(211, 327)
@@ -960,9 +982,11 @@ texture = ExtResource("7_7sc4i")
 
 [node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
 position = Vector2(186, 256)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
 position = Vector2(143, 270)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
 position = Vector2(219, 255)
@@ -985,9 +1009,11 @@ position = Vector2(237, 111)
 
 [node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree12"]
 position = Vector2(157, 249)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree12"]
 position = Vector2(186, 252)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree12"]
 position = Vector2(168, 276)
@@ -999,12 +1025,14 @@ texture = ExtResource("7_7sc4i")
 
 [node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree12"]
 position = Vector2(200, 275)
+texture = ExtResource("8_rvswv")
 
 [node name="PackTree8" type="Node2D" parent="Map/TreeContainer"]
 position = Vector2(38, 205)
 
 [node name="TreeB" type="Sprite2D" parent="Map/TreeContainer/PackTree8"]
 position = Vector2(157, 249)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree8"]
 position = Vector2(187, 255)
@@ -1020,12 +1048,14 @@ texture = ExtResource("7_7sc4i")
 
 [node name="TreeB2" type="Sprite2D" parent="Map/TreeContainer/PackTree8"]
 position = Vector2(205, 283)
+texture = ExtResource("8_rvswv")
 
 [node name="PackTree4" type="Node2D" parent="Map/TreeContainer"]
 position = Vector2(480, -189)
 
 [node name="TreeB3" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
 position = Vector2(149, 276)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
 position = Vector2(157, 249)
@@ -1037,6 +1067,7 @@ texture = ExtResource("7_7sc4i")
 
 [node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
 position = Vector2(219, 255)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
 position = Vector2(168, 280)
@@ -1044,6 +1075,7 @@ texture = ExtResource("7_7sc4i")
 
 [node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
 position = Vector2(206, 282)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
 position = Vector2(206, 305)
@@ -1071,6 +1103,7 @@ position = Vector2(481, 56)
 
 [node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
 position = Vector2(157, 249)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
 position = Vector2(187, 255)
@@ -1086,6 +1119,7 @@ texture = ExtResource("7_7sc4i")
 
 [node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
 position = Vector2(206, 282)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
 position = Vector2(206, 305)
@@ -1123,9 +1157,11 @@ texture = ExtResource("7_7sc4i")
 
 [node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
 position = Vector2(219, 255)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
 position = Vector2(168, 280)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
 position = Vector2(206, 282)
@@ -1137,6 +1173,7 @@ texture = ExtResource("7_7sc4i")
 
 [node name="Tree7" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
 position = Vector2(152, 305)
+texture = ExtResource("8_rvswv")
 
 [node name="Tree8" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
 position = Vector2(183, 319)
@@ -1300,6 +1337,7 @@ position = Vector2(530, 428)
 player = NodePath("../Player")
 
 [node name="CursedTreeContainer" type="Node2D" parent="."]
+z_index = 2
 position = Vector2(72, 109)
 
 [node name="BaseTree" parent="CursedTreeContainer" instance=ExtResource("13_vaj68")]
