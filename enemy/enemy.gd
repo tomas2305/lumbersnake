@@ -9,8 +9,9 @@ signal state_changed(new_state)
 @onready var animation_alert: AnimatedSprite2D = $AnimationAlert
 
 const ACCELERATION := 400.0
-@export var MAX_SPEED : float = 190
-@export var BASE_WALK_SPEED : float = 170
+@export var MAX_SPEED : float = 180
+@export var BASE_WALK_SPEED : float = 150
+
 
 var WALK_SPEED := BASE_WALK_SPEED
 

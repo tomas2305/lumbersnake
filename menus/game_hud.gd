@@ -3,6 +3,11 @@ extends CanvasLayer
 @onready var enemy_state_hud: AnimatedSprite2D = $HUD/EnemyStateHUD
 @onready var curse_bar: TextureProgressBar = $HUD/CurseBar
 @onready var win_sound: AudioStreamPlayer2D = $win_sound
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var time_overlay: Node2D = $TimeOverlay
+
+func _ready():
+	time_overlay.visible = false
 
 func _on_enemy_state_changed(new_state: Variant) -> void:
 	match new_state:
@@ -30,3 +35,7 @@ func set_curse_timer(curse_duration : float):
 	curse_bar.min_value = 0
 	curse_bar.max_value = curse_duration
 	curse_bar.value = curse_duration  
+
+func set_time_alert():
+	time_overlay.visible = true
+	animation_player.play("time_danger")

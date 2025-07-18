@@ -2,7 +2,7 @@ extends Node
 
 @export var game_over_scene : PackedScene
 @onready var nav: TileMapLayer = $Map/Nav
-@export var curse_duration: float = 120.0
+@onready var curse_duration: float = Global.curse_duration
 @onready var hud_layer: CanvasLayer = $HUDLayer
 @onready var tree_container: Node2D = $CursedTreeContainer
 @onready var timer: Timer = $Timer
@@ -20,6 +20,7 @@ var gate = [Vector2i(-3,1),
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.curse_duration = curse_duration
 	timer.wait_time = curse_duration
 	timer.start()
 	$Arrow.hide()
@@ -39,6 +40,12 @@ func _process(delta: float) -> void:
 	elif !has_processed_win:
 		var elapsed_time = curse_duration - timer.time_left
 		hud_layer.set_curse_bar(elapsed_time)
+
+	var notified_time : bool
+	if timer.time_left <= 35.0 and not notified_time:
+		print("35 segundos!!!")
+		hud_layer.set_time_alert()
+		notified_time = true
 
 
 func _on_timer_timeout() -> void:

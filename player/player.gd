@@ -137,9 +137,9 @@ func _connect_enemy():
 func _on_enemy_state_changed(state: Enemy.State):
 	print(state)
 	if state == Enemy.State.CHASE:
-		camera.zoom_out()
+		camera.zoom_in_on_player()
 	elif camera.zoom != camera.zoom_default:
-		camera.set_zoom_default()
+		camera.return_to_fixed_view()
 
 func set_tree(tree : BaseTree):
 	current_tree = tree
