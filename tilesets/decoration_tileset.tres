@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cypquqhjpllxb" path="res://assets/forest/combination-v3-export.png" id="1_l4ajq"]
 [ext_resource type="Texture2D" uid="uid://bdawlh7bro72c" path="res://assets/forest/tree.png" id="2_sgwam"]
-[ext_resource type="Texture2D" uid="uid://dtqsoevc55bin" path="res://assets/Tiles/tiles-combination-3-export.png" id="3_sgwam"]
+[ext_resource type="Texture2D" uid="uid://61stnq0st0dt" path="res://assets/Tiles/tiles-combination-6-export-sheet-export.png" id="3_sgwam"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7sc4i"]
 texture = ExtResource("1_l4ajq")
@@ -321,6 +321,9 @@ texture = ExtResource("2_sgwam")
 2:4/0 = 0
 2:4/0/z_index = 2
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgwam"]
+texture = ExtResource("2_sgwam")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idlq0"]
 texture = ExtResource("3_sgwam")
 0:0/0 = 0
@@ -618,12 +621,9 @@ texture = ExtResource("3_sgwam")
 15:17/0 = 0
 16:17/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgwam"]
-texture = ExtResource("2_sgwam")
-
 [resource]
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_80cx4")
 sources/0 = SubResource("TileSetAtlasSource_7sc4i")
-sources/3 = SubResource("TileSetAtlasSource_idlq0")
 sources/4 = SubResource("TileSetAtlasSource_sgwam")
+sources/8 = SubResource("TileSetAtlasSource_idlq0")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b28305gqwv13b"]
+[gd_scene load_steps=28 format=3 uid="uid://b28305gqwv13b"]
 
 [ext_resource type="Script" uid="uid://blssc8wmxi1sb" path="res://menus/game_hud.gd" id="1_2s4jt"]
 [ext_resource type="Texture2D" uid="uid://byt10ut721w50" path="res://assets/Menu/time_circle_v2_2.png" id="2_fcx54"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://budtw4qwxqcu6" path="res://menus/danger.tres" id="7_ld3gc"]
 [ext_resource type="AudioStream" uid="uid://dx2f04t1t2d0l" path="res://menus/woods_saved.mp3" id="7_r8ccr"]
 [ext_resource type="Texture2D" uid="uid://dqa3rpxfn4o13" path="res://menus/time_danger.tres" id="8_ld3gc"]
+[ext_resource type="Texture2D" uid="uid://brwik411meuwj" path="res://menus/win.tres" id="9_nc3pq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ld3gc"]
 atlas = ExtResource("4_r8ccr")
@@ -198,6 +199,7 @@ stream = ExtResource("7_r8ccr")
 volume_db = 4.0
 
 [node name="DangerOverlay" type="Node2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 script = ExtResource("6_2s4jt")
 danger_distance = 400.0
@@ -268,11 +270,40 @@ offset_bottom = 336.0
 rotation = -3.14159
 texture = ExtResource("8_ld3gc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="WinOverlay" type="Node2D" parent="."]
 visible = false
-offset_right = 548.0
+scale = Vector2(2, 2)
+
+[node name="DangerTop" type="TextureRect" parent="WinOverlay"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 274.0
+offset_right = 338.0
+offset_bottom = 274.0
+grow_horizontal = 2
+rotation = 1.57079
+texture = ExtResource("9_nc3pq")
+
+[node name="DangerBottom" type="TextureRect" parent="WinOverlay"]
+offset_top = 168.0
+offset_right = 64.0
+offset_bottom = 442.0
+rotation = -1.57079
+texture = ExtResource("9_nc3pq")
+
+[node name="DangerLeft" type="TextureRect" parent="WinOverlay"]
+offset_right = 64.0
+offset_bottom = 168.0
+texture = ExtResource("9_nc3pq")
+
+[node name="DangerRight" type="TextureRect" parent="WinOverlay"]
+offset_left = 274.0
+offset_top = 168.0
+offset_right = 338.0
 offset_bottom = 336.0
-color = Color(0.407843, 0.219608, 0.423529, 0.207843)
+rotation = -3.14159
+texture = ExtResource("9_nc3pq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

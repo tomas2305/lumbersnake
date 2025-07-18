@@ -22,6 +22,7 @@ func _ready():
 	zoom_target = zoom_default
 
 func trigger_shake():
+	print("SHAKE SHAKE!")
 	_shake_strength = max_shake
 
 func _process(delta: float) -> void:

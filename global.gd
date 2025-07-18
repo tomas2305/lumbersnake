@@ -4,7 +4,7 @@ var arboles_destuidos : int = 0
 var arboles_a_destruir : int = 0
 var won : bool = false
 var first_run = true
-var curse_duration_default = 40
+var curse_duration_default = 120
 var curse_duration : float = curse_duration_default
 
 func _process(_delta: float) -> void:
