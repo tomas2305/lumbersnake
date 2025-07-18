@@ -1,21 +1,16 @@
-[gd_scene load_steps=16 format=4 uid="uid://clktf3f0a1h8p"]
+[gd_scene load_steps=13 format=4 uid="uid://clktf3f0a1h8p"]
 
-[ext_resource type="Texture2D" uid="uid://cxch0i1mgtrgf" path="res://assets/Tiles/Grass_Middle.png" id="1_7n6eb"]
 [ext_resource type="Script" uid="uid://dvnv75bqspb1l" path="res://tutorials/tutorial.gd" id="1_yb1ct"]
 [ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player/player.tscn" id="3_ehuit"]
-[ext_resource type="Texture2D" uid="uid://cmr8nlc3uqb1j" path="res://assets/Tiles/Cliff_Tile.png" id="3_hu44a"]
-[ext_resource type="Texture2D" uid="uid://c2y7weh11rslu" path="res://assets/Tiles/Path_Tile.png" id="4_0cr88"]
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="4_5mrt3"]
 [ext_resource type="FontFile" uid="uid://iublapr1rgpr" path="res://assets/Fonts/EightBitDragon-anqx.ttf" id="7_0cr88"]
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="8_4t6hg"]
-[ext_resource type="PackedScene" uid="uid://cm64eealci0wu" path="res://camera/camera.tscn" id="9_dw84t"]
+[ext_resource type="PackedScene" uid="uid://bwnm8og34ktju" path="res://camera/camera.tscn" id="9_dw84t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yb1ct"]
-texture = ExtResource("1_7n6eb")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4t6hg"]
-texture = ExtResource("3_hu44a")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -43,7 +38,6 @@ texture = ExtResource("3_hu44a")
 2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7vrqn"]
-texture = ExtResource("4_0cr88")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0

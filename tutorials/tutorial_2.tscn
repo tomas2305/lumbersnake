@@ -1,28 +1,19 @@
-[gd_scene load_steps=61 format=4 uid="uid://bm8y3c23tnk0f"]
+[gd_scene load_steps=52 format=4 uid="uid://bm8y3c23tnk0f"]
 
 [ext_resource type="Script" uid="uid://cu34b60ickuu5" path="res://tutorials/tutorial_2.gd" id="1_hxdvl"]
-[ext_resource type="Texture2D" uid="uid://dy0332soslfc3" path="res://assets/Tiles/Path_Middle.png" id="2_h8fsf"]
 [ext_resource type="Texture2D" uid="uid://cypquqhjpllxb" path="res://assets/forest/combination-v3-export.png" id="2_rgtiw"]
-[ext_resource type="Texture2D" uid="uid://c6knd2soisgya" path="res://assets/Tiles/Cliff_Tile.png" id="3_oet7r"]
-[ext_resource type="Texture2D" uid="uid://bqx08jgnivlxi" path="res://assets/Tiles/Path_Tile.png" id="4_euvwd"]
 [ext_resource type="Texture2D" uid="uid://61stnq0st0dt" path="res://assets/Tiles/tiles-combination-6-export-sheet-export.png" id="5_517tr"]
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="6_ateyf"]
-[ext_resource type="Texture2D" uid="uid://bnug2nhyirwi6" path="res://assets/forest/Plant6.png" id="6_rgtiw"]
 [ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player/player.tscn" id="7_e4dj3"]
-[ext_resource type="Texture2D" uid="uid://s3psw4bfcwql" path="res://assets/forest/Plant13.png" id="7_nspky"]
-[ext_resource type="Texture2D" uid="uid://ircqbvlybc0k" path="res://assets/forest/Plant15.png" id="8_4put2"]
+[ext_resource type="Texture2D" uid="uid://dieuijvrtxoky" path="res://assets/forest/Plant13.png" id="7_nspky"]
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="8_80yv5"]
 [ext_resource type="Texture2D" uid="uid://bdawlh7bro72c" path="res://assets/forest/tree.png" id="9_70rov"]
 [ext_resource type="PackedScene" uid="uid://butfrm6kcwkfv" path="res://enemy/enemy.tscn" id="10_euvwd"]
 [ext_resource type="Texture2D" uid="uid://c5o76kkxpjb6m" path="res://assets/forest/bush.png" id="10_r8pnc"]
-[ext_resource type="Texture2D" uid="uid://pw53r1xx815b" path="res://assets/forest/Plant16.png" id="11_fvyqq"]
 [ext_resource type="PackedScene" uid="uid://d2pitdc17bfai" path="res://trees/bush.tscn" id="12_75y7t"]
 [ext_resource type="PackedScene" uid="uid://bwnm8og34ktju" path="res://camera/camera.tscn" id="12_ateyf"]
-[ext_resource type="Texture2D" uid="uid://cn3bwauimu53t" path="res://assets/forest/Plant28.png" id="12_mmdsk"]
-[ext_resource type="Texture2D" uid="uid://cn07vhmbexx1l" path="res://assets/forest/Plant29.png" id="13_cvpam"]
 [ext_resource type="Texture2D" uid="uid://bxi2t8quk44du" path="res://assets/forest/cursed tree_v3.png" id="14_3sthd"]
 [ext_resource type="PackedScene" uid="uid://kj0dwwgk0i8v" path="res://trees/decoration_tree.tscn" id="16_4put2"]
-[ext_resource type="PackedScene" uid="uid://d3jjykaq4odot" path="res://trees/decoration_tree_darker.tscn" id="17_70rov"]
 [ext_resource type="PackedScene" uid="uid://b28305gqwv13b" path="res://menus/game_hud.tscn" id="24_4put2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4put2"]
@@ -348,11 +339,9 @@ navigation_layer_0/layers = 1
 sources/0 = SubResource("TileSetAtlasSource_4put2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yb1ct"]
-texture = ExtResource("2_h8fsf")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4t6hg"]
-texture = ExtResource("3_oet7r")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -380,7 +369,6 @@ texture = ExtResource("3_oet7r")
 2:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7vrqn"]
-texture = ExtResource("4_euvwd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -696,13 +684,11 @@ texture = ExtResource("5_517tr")
 16:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_alfsv"]
-texture = ExtResource("6_rgtiw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ja834"]
 texture = ExtResource("7_nspky")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6qaqs"]
-texture = ExtResource("8_4put2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ne2ul"]
 texture = ExtResource("9_70rov")
@@ -726,7 +712,6 @@ texture = ExtResource("10_r8pnc")
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1unl"]
-texture = ExtResource("6_rgtiw")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -761,7 +746,6 @@ texture = ExtResource("7_nspky")
 3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxldx"]
-texture = ExtResource("8_4put2")
 1:1/0 = 0
 2:1/0 = 0
 1:2/0 = 0
@@ -770,7 +754,6 @@ texture = ExtResource("8_4put2")
 2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_454sr"]
-texture = ExtResource("11_fvyqq")
 1:1/0 = 0
 2:1/0 = 0
 1:2/0 = 0
@@ -779,7 +762,6 @@ texture = ExtResource("11_fvyqq")
 2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghu36"]
-texture = ExtResource("12_mmdsk")
 1:0/0 = 0
 2:0/0 = 0
 1:1/0 = 0
@@ -791,7 +773,6 @@ texture = ExtResource("12_mmdsk")
 2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsu18"]
-texture = ExtResource("13_cvpam")
 1:0/0 = 0
 2:0/0 = 0
 0:1/0 = 0
@@ -2491,20 +2472,70 @@ camera = NodePath("../Camera")
 [node name="DecorationTree" parent="PhysicalDecorationTrees" instance=ExtResource("16_4put2")]
 position = Vector2(-90, 143)
 
-[node name="DecorationTree2" parent="PhysicalDecorationTrees" instance=ExtResource("17_70rov")]
+[node name="DecorationTree2" parent="PhysicalDecorationTrees"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(-89, 111)
+script = null
 
-[node name="DecorationTree5" parent="PhysicalDecorationTrees" instance=ExtResource("17_70rov")]
+[node name="DecorationTree5" parent="PhysicalDecorationTrees"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(182, -9)
+script = null
 
-[node name="DecorationTree6" parent="PhysicalDecorationTrees" instance=ExtResource("17_70rov")]
+[node name="DecorationTree6" parent="PhysicalDecorationTrees"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(320, -120)
+script = null
 
-[node name="DecorationTree12" parent="PhysicalDecorationTrees" instance=ExtResource("17_70rov")]
+[node name="DecorationTree12" parent="PhysicalDecorationTrees"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(437, -88)
+script = null
 
-[node name="DecorationTree13" parent="PhysicalDecorationTrees" instance=ExtResource("17_70rov")]
+[node name="DecorationTree13" parent="PhysicalDecorationTrees"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 position = Vector2(125, 196)
+script = null
 
 [node name="DecorationTree3" parent="PhysicalDecorationTrees" instance=ExtResource("16_4put2")]
 position = Vector2(-93, 185)
@@ -2589,7 +2620,6 @@ position = Vector2(188, 218)
 [node name="Camera" parent="." instance=ExtResource("12_ateyf")]
 position = Vector2(176, 40)
 zoom_default = Vector2(0.35, 0.35)
-zoom_out_value = Vector2(0.8, 0.8)
 
 [node name="HUDLayer" parent="." instance=ExtResource("24_4put2")]
 

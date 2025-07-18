@@ -65,6 +65,7 @@ func _on_enemy_state_changed(new_state: Variant) -> void:
 		Music.reproducir_musica(chasing_music) 
 
 func _process_win():
+	Music.mutear()
 	player.queue_free()
 	hud_layer.visible = false
 	enemy.visible = false

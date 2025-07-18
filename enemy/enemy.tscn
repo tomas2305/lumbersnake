@@ -162,7 +162,6 @@ target_position = Vector2(136, 0)
 collision_mask = 255
 
 [node name="VisionArea" type="Area2D" parent="VisionCone"]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone/VisionArea"]
 scale = Vector2(0.8, 0.8)
