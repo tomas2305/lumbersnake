@@ -220,6 +220,9 @@ radius = 24.0208
 [sub_resource type="CircleShape2D" id="CircleShape2D_r65dl"]
 radius = 882.164
 
+[sub_resource type="Animation" id="Animation_enlkg"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_xshot"]
 resource_name = "kill_tree"
 length = 4.0
@@ -251,9 +254,6 @@ tracks/1/keys = {
 "method": &"kill"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_enlkg"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qlsjk"]
 _data = {

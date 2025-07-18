@@ -37,6 +37,7 @@ bushes="bushes for hiding"
 camera=""
 enemy=""
 player=""
+enemy_body=""
 
 [input]
 

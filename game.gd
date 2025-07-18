@@ -16,18 +16,12 @@ enum State { IDLE, ALERT, CHASE }
 var idle_music = load("res://assets/mystry-forest-278844.mp3")
 var chasing_music = load("res://assets/imminent-contact-dark-hybrid-trailer-horror-action-music-215163.mp3")
 
-var gate = [Vector2i(-3,1),
-			Vector2i(-3,2),
-			Vector2i(-3,3),
-			Vector2i(-3,4),]
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Global.curse_duration = curse_duration
 	timer.wait_time = curse_duration
 	timer.start()
-	$Arrow.hide()
 	Global.reset()
 	hud_layer.set_curse_timer(curse_duration)
 	Global.arboles_a_destruir = tree_container.get_child_count()
@@ -71,9 +65,10 @@ func _on_enemy_state_changed(new_state: Variant) -> void:
 		Music.reproducir_musica(chasing_music) 
 
 func _process_win():
+	Music.mutear()
 	player.queue_free()
 	hud_layer.visible = false
-	enemy.visible = false
+	enemy.handle_win()
 	cursed_decoration.queue_free()
 	animation_player.play("win")
 
