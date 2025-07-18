@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwbgiis415ekt"]
+
+[ext_resource type="Texture2D" uid="uid://s3psw4bfcwql" path="res://assets/forest/Plant13.png" id="1_xpypc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32d4t"]
+size = Vector2(12, 16)
+
+[node name="DecorationTree5" type="StaticBody2D"]
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_32d4t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("1_xpypc")

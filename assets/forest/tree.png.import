@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ban8b8nqm3fha"
-path="res://.godot/imported/FarmLand_Tile.png-2efca35a003eeab7e078d4e14ac596c6.ctex"
+uid="uid://bdawlh7bro72c"
+path="res://.godot/imported/tree.png-918de2c817bf1df4e6c3a1055969dd5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tiles/FarmLand_Tile.png"
-dest_files=["res://.godot/imported/FarmLand_Tile.png-2efca35a003eeab7e078d4e14ac596c6.ctex"]
+source_file="res://assets/forest/tree.png"
+dest_files=["res://.godot/imported/tree.png-918de2c817bf1df4e6c3a1055969dd5e.ctex"]
 
 [params]
 

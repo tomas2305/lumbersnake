@@ -92,3 +92,9 @@ func _on_segment_player_nearby(_segment: Node, body: Node) -> void:
 	var enemy = get_parent()
 	if enemy and enemy.has_method("start_chase"):
 		enemy.start_chase(body)
+
+func change_color():
+	for body in get_tree().get_nodes_in_group("enemy_body"):
+		print("body")
+		print("change!")
+		body.change_color()

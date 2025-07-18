@@ -395,10 +395,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 6.30599
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_onrkg")
-SPEED = 100.0
+SPEED = 120.0
 metadata/_edit_group_ = true
 
 [node name="WalkParticles" type="CPUParticles2D" parent="."]
@@ -416,12 +416,12 @@ scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_g1dw6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -2)
 scale = Vector2(1.2, 1.352)
 sprite_frames = SubResource("SpriteFrames_gcmgo")
 animation = &"walk_x"
-frame = 3
-frame_progress = 0.1876
+frame_progress = 0.10748
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 3.5)

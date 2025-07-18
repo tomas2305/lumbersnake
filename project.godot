@@ -35,6 +35,9 @@ window/stretch/scale_mode="integer"
 cursed_trees=""
 bushes="bushes for hiding"
 camera=""
+enemy=""
+player=""
+enemy_body=""
 
 [input]
 
