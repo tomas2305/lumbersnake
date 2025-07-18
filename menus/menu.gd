@@ -6,7 +6,7 @@ func _ready() -> void:
 
 func _on_start_pressed() -> void:
 	if Global.first_run:
-		get_tree().change_scene_to_file("res://tutorials/tutorial_1.tscn")
+		get_tree().change_scene_to_file("res://tutorials/tutorial_2.tscn")
 	else:
 		get_tree().change_scene_to_file("res://game.tscn")
 		Music.reproducir_musica(preload("res://assets/mystry-forest-278844.mp3"))

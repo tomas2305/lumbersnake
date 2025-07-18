@@ -44,21 +44,31 @@ _data = {
 [node name="Pause" type="Control"]
 process_mode = 3
 layout_mode = 3
-anchor_right = 0.391
-anchor_bottom = 0.696
-offset_right = -0.13401
-offset_bottom = 0.071991
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -89.0
+offset_top = -140.0
+offset_right = -89.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 script = ExtResource("1_45vjg")
-metadata/_edit_group_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.951
-offset_bottom = 0.0179977
+anchor_bottom = 0.717
+offset_left = -13.0
+offset_top = -10.0
+offset_right = 167.0
+offset_bottom = 110.544
+scale = Vector2(1.12, 1.12778)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -93,25 +103,29 @@ libraries = {
 }
 
 [node name="StopMusic" type="Button" parent="."]
-layout_mode = 2
-anchor_left = 0.447
-anchor_top = 0.793
-anchor_right = 0.553
-anchor_bottom = 0.89
-offset_left = 0.0279999
-offset_top = -0.026001
-offset_right = -0.0280037
-offset_bottom = 0.0199966
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 88.0
+offset_top = 103.0
+offset_right = 96.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.323029, 0.408793)
 size_flags_horizontal = 4
 size_flags_vertical = 8
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="StopMusic"]
-position = Vector2(6, 5)
-scale = Vector2(-0.0110659, -0.0120524)
+position = Vector2(11.0184, 5.42309)
+scale = Vector2(0.0887361, 0.0721275)
 texture = ExtResource("3_lqg6t")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="StopMusic" to="." method="_on_music_pressed"]
