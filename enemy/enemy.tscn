@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://butfrm6kcwkfv"]
+[gd_scene load_steps=23 format=3 uid="uid://butfrm6kcwkfv"]
 
 [ext_resource type="Script" uid="uid://dch864dvvnkgw" path="res://enemy/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://cuk6w7l06s887" path="res://assets/Enemies/snake.png" id="2_pmsee"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://5wxh4mmjok38" path="res://enemy/body_container.gd" id="3_qi2p4"]
 [ext_resource type="PackedScene" uid="uid://dc4dediq6oetg" path="res://enemy/body_segment.tscn" id="4_epg4t"]
 [ext_resource type="Script" uid="uid://b72rpg7r4k441" path="res://enemy/vision_cone.gd" id="4_iifgy"]
+[ext_resource type="Texture2D" uid="uid://b3tnw71t4agov" path="res://assets/Enemies/texture-cone.png" id="7_y5vj3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wwld"]
 atlas = ExtResource("2_pmsee")
@@ -150,6 +151,9 @@ rotation_offset = 1.5
 [node name="Polygon2D" type="Polygon2D" parent="VisionCone"]
 scale = Vector2(0.8, 0.8)
 color = Color(0.880472, 0.880472, 0, 0.329412)
+texture = ExtResource("7_y5vj3")
+texture_offset = Vector2(363, 246)
+texture_rotation = 1.44513
 polygon = PackedVector2Array(0, 0, 173.2, -100, 173.2, 100)
 
 [node name="RayCast2D" type="RayCast2D" parent="VisionCone/Polygon2D"]
@@ -158,6 +162,7 @@ target_position = Vector2(136, 0)
 collision_mask = 255
 
 [node name="VisionArea" type="Area2D" parent="VisionCone"]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone/VisionArea"]
 scale = Vector2(0.8, 0.8)
