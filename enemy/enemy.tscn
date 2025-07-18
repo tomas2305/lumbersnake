@@ -109,8 +109,6 @@ radius = 8.0
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 wall_min_slide_angle = 0.0
 script = ExtResource("1_4gyqm")
-MAX_SPEED = 150.0
-BASE_WALK_SPEED = 120.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
@@ -145,6 +143,7 @@ body_texture = SubResource("AtlasTexture_iifgy")
 tail_texture = SubResource("AtlasTexture_epg4t")
 
 [node name="VisionCone" type="Node2D" parent="."]
+rotation = 1.57079
 script = ExtResource("4_iifgy")
 rotation_offset = 1.5
 

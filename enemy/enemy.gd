@@ -9,8 +9,10 @@ signal state_changed(new_state)
 @onready var animation_alert: AnimatedSprite2D = $AnimationAlert
 
 const ACCELERATION := 400.0
-@export var MAX_SPEED := 120.0
-@export var BASE_WALK_SPEED := 90.0
+@export var MAX_SPEED : float = 180
+@export var BASE_WALK_SPEED : float = 150
+
+
 var WALK_SPEED := BASE_WALK_SPEED
 
 enum State { IDLE, ALERT, CHASE }
@@ -41,6 +43,7 @@ const MAX_ROUTE_TIME := 10.0
 func _ready() -> void:
 	add_to_group("enemy")
 	protected_trees = get_tree().get_nodes_in_group("cursed_trees")
+	print("protected trees: ", protected_trees )
 	total_trees = protected_trees.size()
 	patrol_points = protected_trees.map(func(t): return t.global_position) 
 	patrol_queue = patrol_points.duplicate()

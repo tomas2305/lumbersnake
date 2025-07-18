@@ -4,7 +4,7 @@ extends Node2D
 @export var fade_speed: float = 3.0
 
 @onready var player = get_tree().get_first_node_in_group("player")
-@onready var enemy = get_tree().get_first_node_in_group("enemy")
+@onready var enemy : Enemy = get_tree().get_first_node_in_group("enemy")
 @onready var top = $DangerTop
 @onready var bottom = $DangerBottom
 @onready var left = $DangerLeft
@@ -19,7 +19,7 @@ func _process(delta):
 	if time_since_start >= delay_to_activate:
 		danger_active = true
 
-	if not danger_active:
+	if not danger_active or enemy.state != enemy.State.CHASE:
 		_hide_all()
 		return
 

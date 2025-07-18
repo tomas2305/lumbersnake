@@ -6,7 +6,7 @@ signal chased
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var walk_particles: CPUParticles2D = $WalkParticles
 @export var SPEED := 50.0
-@onready var camera: Camera2D = $Camera
+@export var camera: Camera2D
 @onready var enemy = get_tree().get_first_node_in_group("enemy")
 
 var frozen = false
@@ -116,7 +116,7 @@ func _play_hit_animation(_unused: Vector2 = Vector2.ZERO) -> void:
 func _on_bush_player_entered_bush(body: Node2D) -> void:
 	if body == self:
 		is_hidden = true
-		anim.modulate.a = 0.8
+		anim.modulate.a = 0.4
 
 func _on_bush_player_exited_bush(body: Node2D) -> void:
 	if body == self:
@@ -137,9 +137,9 @@ func _connect_enemy():
 func _on_enemy_state_changed(state: Enemy.State):
 	print(state)
 	if state == Enemy.State.CHASE:
-		camera.zoom_out()
+		camera.zoom_in_on_player()
 	elif camera.zoom != camera.zoom_default:
-		camera.set_zoom_default()
+		camera.return_to_fixed_view()
 
 func set_tree(tree : BaseTree):
 	current_tree = tree
