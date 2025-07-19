@@ -304,10 +304,6 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoundArea" groups=["cursed_trees"]]
 shape = SubResource("CircleShape2D_r65dl")
 
-[node name="Falling" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_y7jcc")
-volume_db = 10.927
-
 [node name="Axe" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_y4okj")
 
