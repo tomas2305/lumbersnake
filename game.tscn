@@ -1,15 +1,17 @@
-[gd_scene load_steps=26 format=4 uid="uid://tekakvw8q4vb"]
+[gd_scene load_steps=28 format=4 uid="uid://tekakvw8q4vb"]
 
 [ext_resource type="Script" uid="uid://cbbn5x5jj0osc" path="res://game.gd" id="1_215e1"]
 [ext_resource type="PackedScene" uid="uid://ku2jig7t0fxb" path="res://menus/gameOver.tscn" id="2_80cx4"]
 [ext_resource type="TileSet" uid="uid://djdhvidilkbs1" path="res://tilesets/enemy_nav.tres" id="4_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://dtqsoevc55bin" path="res://assets/Tiles/tiles-combination-3-export.png" id="6_7sc4i"]
-[ext_resource type="Texture2D" uid="uid://bdawlh7bro72c" path="res://assets/forest/tree.png" id="7_7sc4i"]
 [ext_resource type="TileSet" uid="uid://2j01w1ruhxst" path="res://tilesets/decoration_tileset.tres" id="7_215e1"]
+[ext_resource type="PackedScene" uid="uid://c26ik645axxna" path="res://trees/pack_tree_medium.tscn" id="7_boyg6"]
 [ext_resource type="PackedScene" uid="uid://kj0dwwgk0i8v" path="res://trees/decoration_tree.tscn" id="8_7sc4i"]
-[ext_resource type="Texture2D" uid="uid://dieuijvrtxoky" path="res://assets/forest/Plant13.png" id="8_rvswv"]
+[ext_resource type="PackedScene" uid="uid://dx2uny8q467f7" path="res://trees/pack_tree_small.tscn" id="8_e36ub"]
+[ext_resource type="PackedScene" uid="uid://cmb8l3wkdsy5f" path="res://trees/pack_tree_small2.tscn" id="9_hb5m1"]
 [ext_resource type="PackedScene" uid="uid://dwbgiis415ekt" path="res://trees/decoration_tree_b.tscn" id="10_boyg6"]
 [ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player/player.tscn" id="11_qhcbd"]
+[ext_resource type="PackedScene" uid="uid://bh3uwyrc4ru0p" path="res://trees/large_tree_block.tscn" id="12_e36ub"]
 [ext_resource type="PackedScene" uid="uid://butfrm6kcwkfv" path="res://enemy/enemy.tscn" id="12_f1jbl"]
 [ext_resource type="PackedScene" uid="uid://bwnm8og34ktju" path="res://camera/camera.tscn" id="13_lc2xo"]
 [ext_resource type="PackedScene" uid="uid://b38e16u4df4j2" path="res://trees/base_tree.tscn" id="13_vaj68"]
@@ -844,351 +846,50 @@ tile_set = SubResource("TileSet_215e1")
 z_index = 2
 position = Vector2(1, 2)
 
-[node name="PackTree" type="Node2D" parent="Map/TreeContainer"]
-position = Vector2(10, -202)
-
-[node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree"]
-position = Vector2(157, 249)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree"]
-position = Vector2(187, 255)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree"]
-position = Vector2(219, 255)
-
-[node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree"]
-position = Vector2(168, 280)
-
-[node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree"]
-position = Vector2(206, 282)
-
-[node name="PackTree11" type="Node2D" parent="Map/TreeContainer"]
-position = Vector2(230, -72)
-
-[node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
-position = Vector2(209, 262)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree8" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
-position = Vector2(209, 262)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
-position = Vector2(186, 252)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
-position = Vector2(139, 266)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree7" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
-position = Vector2(139, 266)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
-position = Vector2(168, 276)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
-position = Vector2(217, 254)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree11"]
-position = Vector2(200, 275)
-texture = ExtResource("8_rvswv")
-
-[node name="PackTree10" type="Node2D" parent="Map/TreeContainer"]
-position = Vector2(33, -194)
-
-[node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
-position = Vector2(157, 249)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
-position = Vector2(187, 255)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
-position = Vector2(219, 255)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
-position = Vector2(168, 280)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
-position = Vector2(427, 406)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree10"]
-position = Vector2(206, 282)
-texture = ExtResource("7_7sc4i")
-
-[node name="PackTree7" type="Node2D" parent="Map/TreeContainer"]
+[node name="PackTree7" parent="Map/TreeContainer" instance=ExtResource("7_boyg6")]
 position = Vector2(-1, -2)
 
-[node name="TreeB5" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(152, 252)
-texture = ExtResource("8_rvswv")
+[node name="PackTree17" parent="Map/TreeContainer" instance=ExtResource("7_boyg6")]
+position = Vector2(476, 53)
 
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(187, 255)
-texture = ExtResource("7_7sc4i")
+[node name="PackTree18" parent="Map/TreeContainer" instance=ExtResource("7_boyg6")]
+position = Vector2(478, 96)
 
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(219, 255)
-texture = ExtResource("7_7sc4i")
+[node name="PackTree19" parent="Map/TreeContainer" instance=ExtResource("7_boyg6")]
+position = Vector2(480, -187)
 
-[node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(168, 280)
-texture = ExtResource("7_7sc4i")
-
-[node name="TreeB3" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(208, 279)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(206, 305)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree7" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(152, 305)
-texture = ExtResource("7_7sc4i")
-
-[node name="TreeB4" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(174, 310)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree9" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(211, 327)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree11" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(211, 327)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree10" type="Sprite2D" parent="Map/TreeContainer/PackTree7"]
-position = Vector2(157, 326)
-texture = ExtResource("7_7sc4i")
-
-[node name="PackTree9" type="Node2D" parent="Map/TreeContainer"]
-position = Vector2(237, 67)
-
-[node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
-position = Vector2(157, 249)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
-position = Vector2(186, 256)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
-position = Vector2(143, 270)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
-position = Vector2(219, 255)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree7" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
-position = Vector2(136, 306)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
-position = Vector2(168, 280)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree9"]
-position = Vector2(204, 287)
-texture = ExtResource("7_7sc4i")
-
-[node name="PackTree12" type="Node2D" parent="Map/TreeContainer"]
-position = Vector2(237, 111)
-
-[node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree12"]
-position = Vector2(157, 249)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree12"]
-position = Vector2(186, 252)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree12"]
-position = Vector2(168, 276)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree12"]
-position = Vector2(217, 254)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree12"]
-position = Vector2(200, 275)
-texture = ExtResource("8_rvswv")
-
-[node name="PackTree8" type="Node2D" parent="Map/TreeContainer"]
+[node name="PackTree8" parent="Map/TreeContainer" instance=ExtResource("8_e36ub")]
 position = Vector2(38, 205)
 
-[node name="TreeB" type="Sprite2D" parent="Map/TreeContainer/PackTree8"]
-position = Vector2(157, 249)
-texture = ExtResource("8_rvswv")
+[node name="PackTree9" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(225, 75)
 
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree8"]
-position = Vector2(187, 255)
-texture = ExtResource("7_7sc4i")
+[node name="PackTree14" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(245, -84)
 
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree8"]
-position = Vector2(219, 255)
-texture = ExtResource("7_7sc4i")
+[node name="PackTree15" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(5, -203)
 
-[node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree8"]
-position = Vector2(163, 283)
-texture = ExtResource("7_7sc4i")
+[node name="PackTree13" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(225, 75)
 
-[node name="TreeB2" type="Sprite2D" parent="Map/TreeContainer/PackTree8"]
-position = Vector2(205, 283)
-texture = ExtResource("8_rvswv")
+[node name="PackTree16" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(34, -202)
 
-[node name="PackTree4" type="Node2D" parent="Map/TreeContainer"]
-position = Vector2(480, -189)
+[node name="PackTree12" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(225, 75)
 
-[node name="TreeB3" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(149, 276)
-texture = ExtResource("8_rvswv")
+[node name="PackTree10" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(237, 83)
 
-[node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(157, 249)
-texture = ExtResource("7_7sc4i")
+[node name="PackTree21" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(237, 83)
 
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(187, 255)
-texture = ExtResource("7_7sc4i")
+[node name="PackTree11" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(219, -87)
 
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(219, 255)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(168, 280)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(206, 282)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(206, 305)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree7" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(152, 305)
-
-[node name="Tree8" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(183, 319)
-
-[node name="Tree9" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(214, 312)
-
-[node name="Tree11" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(211, 327)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree10" type="Sprite2D" parent="Map/TreeContainer/PackTree4"]
-position = Vector2(157, 326)
-texture = ExtResource("7_7sc4i")
-
-[node name="PackTree5" type="Node2D" parent="Map/TreeContainer"]
-position = Vector2(481, 56)
-
-[node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(157, 249)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(187, 255)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(219, 255)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(168, 280)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(206, 282)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(206, 305)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree7" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(152, 305)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree8" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(183, 319)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree9" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(211, 327)
-
-[node name="Tree11" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(211, 327)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree10" type="Sprite2D" parent="Map/TreeContainer/PackTree5"]
-position = Vector2(157, 326)
-texture = ExtResource("7_7sc4i")
-
-[node name="PackTree6" type="Node2D" parent="Map/TreeContainer"]
-position = Vector2(475, 98)
-
-[node name="Tree" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(157, 249)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree2" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(187, 255)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree3" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(219, 255)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree4" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(168, 280)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree5" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(206, 282)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree6" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(206, 305)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree7" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(152, 305)
-texture = ExtResource("8_rvswv")
-
-[node name="Tree8" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(183, 319)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree9" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(211, 327)
-
-[node name="Tree11" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(211, 327)
-texture = ExtResource("7_7sc4i")
-
-[node name="Tree10" type="Sprite2D" parent="Map/TreeContainer/PackTree6"]
-position = Vector2(157, 326)
-texture = ExtResource("7_7sc4i")
+[node name="PackTree20" parent="Map/TreeContainer" instance=ExtResource("9_hb5m1")]
+position = Vector2(219, -87)
 
 [node name="TreeColision" type="Node2D" parent="Map/TreeContainer"]
 
@@ -1327,6 +1028,136 @@ position = Vector2(58, 491)
 z_index = 4
 position = Vector2(796, 418)
 
+[node name="OutsideTrees" type="Node2D" parent="Map/TreeContainer"]
+
+[node name="LargeTreeBlock" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(280, -218)
+
+[node name="LargeTreeBlock3" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(296, -497)
+
+[node name="LargeTreeBlock4" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(723, -471)
+
+[node name="LargeTreeBlock5" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1145, -452)
+
+[node name="LargeTreeBlock6" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1556, -418)
+
+[node name="LargeTreeBlock7" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1962, -386)
+
+[node name="LargeTreeBlock8" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(-147, -249)
+
+[node name="LargeTreeBlock9" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(717, -195)
+
+[node name="LargeTreeBlock10" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1143, -174)
+
+[node name="LargeTreeBlock11" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1554, -139)
+
+[node name="LargeTreeBlock12" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1985, -103)
+
+[node name="LargeTreeBlock13" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(-360, 47)
+
+[node name="LargeTreeBlock14" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(63, 67)
+
+[node name="LargeTreeBlock15" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(142, 76)
+
+[node name="LargeTreeBlock16" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(177, 228)
+
+[node name="LargeTreeBlock17" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(168, 508)
+
+[node name="LargeTreeBlock18" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(-269, 339)
+
+[node name="LargeTreeBlock19" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(-274, 595)
+
+[node name="LargeTreeBlock20" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1489, 134)
+
+[node name="LargeTreeBlock21" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1920, 183)
+
+[node name="LargeTreeBlock22" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(2348, 235)
+
+[node name="LargeTreeBlock23" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1422, 318)
+
+[node name="LargeTreeBlock24" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1845, 479)
+
+[node name="LargeTreeBlock25" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1845, 479)
+
+[node name="LargeTreeBlock26" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(578, 616)
+
+[node name="LargeTreeBlock27" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1018, 632)
+
+[node name="LargeTreeBlock28" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1427, 622)
+
+[node name="LargeTreeBlock29" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(148, 809)
+
+[node name="LargeTreeBlock30" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(148, 809)
+
+[node name="LargeTreeBlock31" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(576, 874)
+
+[node name="LargeTreeBlock32" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1020, 913)
+
+[node name="LargeTreeBlock33" parent="Map/TreeContainer/OutsideTrees" instance=ExtResource("12_e36ub")]
+z_index = -1
+position = Vector2(1448, 916)
+
 [node name="Player" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("11_qhcbd")]
 position = Vector2(90, 109)
 scale = Vector2(0.7, 0.7)
@@ -1439,10 +1270,10 @@ text = "¡El mal se repliega! Has salvado el Bosque."
 [node name="ColorRect" type="ColorRect" parent="Win"]
 modulate = Color(0, 0, 0, 0)
 z_index = 10
-offset_left = -91.0
-offset_top = -61.0
-offset_right = 1340.0
-offset_bottom = 873.0
+offset_left = 113.0
+offset_top = -44.0
+offset_right = 1544.0
+offset_bottom = 890.0
 color = Color(0, 0, 0, 1)
 
 [connection signal="chased" from="Player" to="." method="_on_player_chased"]

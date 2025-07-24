@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://c26ik645axxna"]
+
+[ext_resource type="Texture2D" uid="uid://dieuijvrtxoky" path="res://assets/forest/Plant13.png" id="1_f8bm2"]
+[ext_resource type="Texture2D" uid="uid://bdawlh7bro72c" path="res://assets/forest/tree.png" id="2_aor3q"]
+
+[node name="PackTree7" type="Node2D"]
+
+[node name="TreeB5" type="Sprite2D" parent="."]
+position = Vector2(152, 252)
+texture = ExtResource("1_f8bm2")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(187, 255)
+texture = ExtResource("2_aor3q")
+
+[node name="Tree3" type="Sprite2D" parent="."]
+position = Vector2(219, 255)
+texture = ExtResource("2_aor3q")
+
+[node name="Tree4" type="Sprite2D" parent="."]
+position = Vector2(168, 280)
+texture = ExtResource("2_aor3q")
+
+[node name="TreeB3" type="Sprite2D" parent="."]
+position = Vector2(208, 279)
+texture = ExtResource("1_f8bm2")
+
+[node name="Tree6" type="Sprite2D" parent="."]
+position = Vector2(206, 305)
+texture = ExtResource("2_aor3q")
+
+[node name="Tree7" type="Sprite2D" parent="."]
+position = Vector2(152, 305)
+texture = ExtResource("2_aor3q")
+
+[node name="TreeB4" type="Sprite2D" parent="."]
+position = Vector2(174, 310)
+texture = ExtResource("1_f8bm2")
+
+[node name="Tree9" type="Sprite2D" parent="."]
+position = Vector2(211, 327)
+texture = ExtResource("2_aor3q")
+
+[node name="Tree11" type="Sprite2D" parent="."]
+position = Vector2(211, 327)
+texture = ExtResource("2_aor3q")
+
+[node name="Tree10" type="Sprite2D" parent="."]
+position = Vector2(157, 326)
+texture = ExtResource("2_aor3q")

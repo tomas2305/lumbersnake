@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh3uwyrc4ru0p"]
+
+[ext_resource type="PackedScene" uid="uid://c26ik645axxna" path="res://trees/pack_tree_medium.tscn" id="1_gyuey"]
+
+[node name="LargeTreeBlock" type="Node2D"]
+
+[node name="PackTree22" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-545, -291)
+
+[node name="PackTree23" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-462, -290)
+
+[node name="PackTree24" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-376, -290)
+
+[node name="PackTree25" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-559, -200)
+
+[node name="PackTree26" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-473, -200)
+
+[node name="PackTree27" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-385, -199)
+
+[node name="PackTree28" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-636, -305)
+
+[node name="PackTree29" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-639, -207)
+
+[node name="PackTree30" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-723, -322)
+
+[node name="PackTree31" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-727, -220)
+
+[node name="PackTree32" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-729, -124)
+
+[node name="PackTree33" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-646, -106)
+
+[node name="PackTree34" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-557, -106)
+
+[node name="PackTree35" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-483, -102)
+
+[node name="PackTree36" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-395, -100)
+
+[node name="PackTree37" parent="." instance=ExtResource("1_gyuey")]
+position = Vector2(-395, -100)

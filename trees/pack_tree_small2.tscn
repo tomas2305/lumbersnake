@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmb8l3wkdsy5f"]
+
+[ext_resource type="Texture2D" uid="uid://dieuijvrtxoky" path="res://assets/forest/Plant13.png" id="1_pg5yf"]
+[ext_resource type="Texture2D" uid="uid://bdawlh7bro72c" path="res://assets/forest/tree.png" id="2_bocty"]
+
+[node name="PackTree9" type="Node2D"]
+
+[node name="TreeB" type="Sprite2D" parent="."]
+position = Vector2(219, 254)
+texture = ExtResource("1_pg5yf")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(163, 252)
+texture = ExtResource("2_bocty")
+
+[node name="Tree3" type="Sprite2D" parent="."]
+position = Vector2(188, 250)
+texture = ExtResource("2_bocty")
+
+[node name="Tree5" type="Sprite2D" parent="."]
+position = Vector2(156, 284)
+texture = ExtResource("2_bocty")
+
+[node name="TreeB2" type="Sprite2D" parent="."]
+position = Vector2(187, 287)
+texture = ExtResource("1_pg5yf")
+
+[node name="Tree6" type="Sprite2D" parent="."]
+position = Vector2(215, 285)
+texture = ExtResource("2_bocty")
