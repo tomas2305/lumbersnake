@@ -4,7 +4,7 @@ var has_processed_ended := false
 
 @onready var nav: TileMapLayer = $TutorialBackground
 @onready var arrow: Sprite2D = $Arrow
-@export var curse_duration: float = 30.0
+@export var curse_duration: float = 100.0
 
 @onready var tree_container: Node2D = $CursedTreeContainer
 @onready var lock: StaticBody2D = $Lock
