@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://clktf3f0a1h8p"]
+[gd_scene load_steps=18 format=4 uid="uid://clktf3f0a1h8p"]
 
 [ext_resource type="Script" uid="uid://dvnv75bqspb1l" path="res://tutorials/tutorial.gd" id="1_yb1ct"]
 [ext_resource type="PackedScene" uid="uid://b6hh4rixs2dfv" path="res://player/player.tscn" id="3_ehuit"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c7bofi0b22c6u" path="res://assets/arrow.png" id="8_4t6hg"]
 [ext_resource type="PackedScene" uid="uid://bwnm8og34ktju" path="res://camera/camera.tscn" id="9_dw84t"]
 [ext_resource type="PackedScene" uid="uid://bh3uwyrc4ru0p" path="res://trees/large_tree_block.tscn" id="10_t2s4v"]
+[ext_resource type="PackedScene" uid="uid://c0gatxglg33pj" path="res://trees/world_env.tscn" id="11_5xr7h"]
 [ext_resource type="PackedScene" uid="uid://kj0dwwgk0i8v" path="res://trees/decoration_tree.tscn" id="13_4oc3m"]
 [ext_resource type="PackedScene" uid="uid://dwbgiis415ekt" path="res://trees/decoration_tree_b.tscn" id="14_pwdgl"]
 
@@ -640,6 +641,7 @@ tile_map_data = PackedByteArray("AAAFAAUAAAAHAAcAAAAFAAYAAAAHAAgAAAAFAAcAAAAHAAk
 tile_set = SubResource("TileSet_g85np")
 
 [node name="TreesContainer" type="Node2D" parent="."]
+position = Vector2(0, 1)
 
 [node name="DecorationTree" parent="TreesContainer" instance=ExtResource("13_4oc3m")]
 position = Vector2(-79, 137)
@@ -752,5 +754,7 @@ position = Vector2(40, 242)
 
 [node name="LargeTreeBlock11" parent="OutsideTrees" instance=ExtResource("10_t2s4v")]
 position = Vector2(26, 531)
+
+[node name="WorldEnv" parent="." instance=ExtResource("11_5xr7h")]
 
 [connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]

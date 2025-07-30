@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b38e16u4df4j2"]
+[gd_scene load_steps=40 format=3 uid="uid://b38e16u4df4j2"]
 
 [ext_resource type="Script" uid="uid://bfc38wvohoqp" path="res://trees/base_tree.gd" id="1_nnvrw"]
 [ext_resource type="Texture2D" uid="uid://bxi2t8quk44du" path="res://assets/forest/cursed tree_v3.png" id="2_y4okj"]
@@ -10,8 +10,8 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.995169, 0.146068), 0.0, 0.0, 0
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_y4okj"]
-offsets = PackedFloat32Array(0.674033, 1)
-colors = PackedColorArray(1, 0.466667, 0.658824, 1, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0.5, 1)
+colors = PackedColorArray(1, 0.466667, 0.658824, 1, 1, 1, 1, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8uk1c"]
 atlas = ExtResource("2_y4okj")
@@ -174,7 +174,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u3r75")
 }],
-"loop": false,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -222,6 +222,46 @@ radius = 882.164
 
 [sub_resource type="Animation" id="Animation_enlkg"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.5, 1.5, 1.5, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.3, 1.3, 1.3, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y4okj"]
+resource_name = "hit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1.3, 1.3, 1.3, 1), Color(1.35, 1.35, 1.35, 1), Color(1.3, 1.3, 1.3, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_xshot"]
 resource_name = "kill_tree"
@@ -254,10 +294,23 @@ tracks/1/keys = {
 "method": &"kill"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.133333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qlsjk"]
 _data = {
 &"RESET": SubResource("Animation_enlkg"),
+&"hit": SubResource("Animation_y4okj"),
 &"kill_tree": SubResource("Animation_xshot")
 }
 
@@ -265,6 +318,7 @@ _data = {
 script = ExtResource("1_nnvrw")
 
 [node name="TreeHitParticle" type="CPUParticles2D" parent="."]
+self_modulate = Color(2, 2, 2, 1)
 position = Vector2(1, 4)
 emitting = false
 amount = 40
@@ -273,18 +327,22 @@ one_shot = true
 explosiveness = 1.0
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 25.0
-initial_velocity_max = 50.0
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
 scale_amount_min = 2.0
-scale_amount_max = 4.0
+scale_amount_max = 5.0
 scale_amount_curve = SubResource("Curve_y4okj")
 color_ramp = SubResource("Gradient_y4okj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1.3, 1.3, 1.3, 1)
+self_modulate = Color(1.5, 1.5, 1.5, 1)
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_nnvrw")
-animation = &"idle"
+animation = &"focus"
 autoplay = "idle"
+frame = 2
+frame_progress = 0.058307
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

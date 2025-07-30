@@ -24,6 +24,7 @@ func _ready() -> void:
 	required_hits = randi_range(min_hits, max_hits)
 	chop_area.body_entered.connect(_on_body_entered)
 	chop_area.body_exited.connect(_on_body_exited)
+	animated_sprite_2d.play("idle")
 	animated_sprite_2d.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _on_body_entered(body: Node) -> void:
@@ -49,7 +50,7 @@ func interact(by: Player):
 	print("Golpe recibido:", current_hits, "/", required_hits)
 
 	emit_signal("sound_emitted", global_position)
-	animated_sprite_2d.play("hit")
+	animation_player.play("hit")
 	tree_hit_particle.emitting = true
 	returning_to_focus_after_hit = true
 

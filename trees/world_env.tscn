@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0gatxglg33pj"]
+
+[sub_resource type="Environment" id="Environment_e36ub"]
+background_mode = 3
+tonemap_mode = 1
+tonemap_white = 0.81
+glow_enabled = true
+glow_strength = 2.0
+glow_blend_mode = 1
+glow_hdr_threshold = 3.63
+glow_hdr_scale = 2.45
+glow_hdr_luminance_cap = 92.55
+
+[node name="WorldEnv" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e36ub")

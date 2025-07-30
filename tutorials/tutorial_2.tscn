@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://bm8y3c23tnk0f"]
+[gd_scene load_steps=50 format=4 uid="uid://bm8y3c23tnk0f"]
 
 [ext_resource type="Script" uid="uid://cu34b60ickuu5" path="res://tutorials/tutorial_2.gd" id="1_hxdvl"]
 [ext_resource type="Texture2D" uid="uid://cypquqhjpllxb" path="res://assets/forest/combination-v3-export.png" id="2_rgtiw"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bwnm8og34ktju" path="res://camera/camera.tscn" id="12_ateyf"]
 [ext_resource type="Texture2D" uid="uid://bxi2t8quk44du" path="res://assets/forest/cursed tree_v3.png" id="14_3sthd"]
 [ext_resource type="PackedScene" uid="uid://dwbgiis415ekt" path="res://trees/decoration_tree_b.tscn" id="16_4put2"]
+[ext_resource type="PackedScene" uid="uid://c0gatxglg33pj" path="res://trees/world_env.tscn" id="17_q3aqr"]
 [ext_resource type="PackedScene" uid="uid://b28305gqwv13b" path="res://menus/game_hud.tscn" id="24_4put2"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4put2"]
@@ -2365,6 +2366,8 @@ zoom_default = Vector2(0.35, 0.35)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
+
+[node name="WorldEnv" parent="." instance=ExtResource("17_q3aqr")]
 
 [connection signal="chased" from="Player" to="." method="_on_player_chased"]
 [connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]
